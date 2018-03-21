@@ -1,0 +1,980 @@
+<template name="elements">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			{{> sideNav }}
+		</div>
+		<div class="col-sm-9">
+			<div class="row">
+				<div class="col-12">
+					<h3 id="about">About</h3>
+					<p>This page contains a preview of (most) elements used throughout Opz.io. Use as a reference for when building new sections or features.</p>
+					<p>The underlying framework is V4 (alpa still) of Bootstrap. For a full reference on what can be done and how it should be done, refer it <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap documentation</a>.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h3 id="colors">Colors</h3>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="brand-color">Brand colors</h4>
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<h5>Blue</h5>
+								<ul class="color-palette">
+									<li class="bg-blue">
+										<a href="#"><b>$blue/$brand-primary</b><br>#009BDD</a>
+									</li>
+									<li class="bg-blue-light">
+										<a href="#"><b>$blue-light</b><br>#5ECFFF</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Aqua</h5>
+								<ul class="color-palette">
+									<li class="bg-aqua">
+										<a href="#"><b>$aqua/$teal</b><br>   #30DBD6</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Purple</h5>
+								<ul class="color-palette">
+									<li class="bg-purple">
+										<a href="#"><b>$purple</b><br>#5C6BC0</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="state-color">State colors</h4>
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<h5>Green / Success</h5>
+								<ul class="color-palette">
+									<li class="bg-green">
+										<a href="#"><b>$green/$brand-success</b><br>#66BB6A</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Orange / Warning</h5>
+								<ul class="color-palette">
+									<li class="bg-orange">
+										<a href="#"><b>$orange/$brand-warning</b><br>#FFA726</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Red / Danger</h5>
+								<ul class="color-palette">
+									<li class="bg-red">
+										<a href="#"><b>$red/$brand-danger</b> <br>#EF5350</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="black-grey-color">Black, grey &amp; white</h4>
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<h5>Gray</h5>
+								<ul class="color-palette">
+									<li class="bg-gray">
+										<a href="#"><b>$gray</b> -  #575756</a>
+									</li>
+									<li class="bg-gray-dark">
+										<a href="#"><b>$gray-dark</b> -  #292B2C</a>
+									</li>
+									<li class="bg-gray-light">
+										<a href="#"><b>$gray-light</b> -  #636C72</a>
+									</li>
+									<li class="bg-gray-lighter">
+										<a href="#"><b>$gray-lighter</b> -  #ECEEEf</a>
+									</li>
+									<li class="bg-gray-lightest">
+										<a href="#"><b>$gray-lightest</b> -  #F7F7F9</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Black</h5>
+								<ul class="color-palette">
+									<li class="bg-black">
+										<a href="#"><b>$black</b> -  #000</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>White</h5>
+								<ul class="color-palette">
+									<li class="bg-white">
+										<a href="#"><b>$white</b> -  #FFF</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="gradient-color">Gradients</h4>
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<h5>Blue dominant</h5>
+								<ul class="color-palette">
+									<li class="blue-gradient">
+										<a class="text-white" href="#">.blue-gradient</a>
+									</li>
+									<li></li>
+									<li class="blue-gradient-alt">
+										<a class="text-white" href="#">.blue-gradient-alt</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Aqua dominant</h5>
+								<ul class="color-palette">
+									<li class="aqua-gradient">
+										<a class="text-white" href="#">.aqua-gradient</a>
+									</li>
+									<li></li>
+									<li class="aqua-gradient-alt">
+										<a class="text-white" href="#">.aqua-gradient-alt</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Purple dominant</h5>
+								<ul class="color-palette">
+									<li class="purple-gradient">
+										<a class="text-white" href="#">.purple-gradient</a>
+									</li>
+									<li></li>
+									<li class="purple-gradient-alt">
+										<a class="text-white" href="#">.purple-gradient-alt</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<p>Animate gradients by addding a <mark>.animate</mark> class to any gradient. Careful at animating full screen gradients, some browsers can render with glitches.</p>
+
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<h5>Blue dominant</h5>
+								<ul class="color-palette">
+									<li class="blue-gradient animate">
+										<a class="text-white" href="#">.blue-gradient.animate</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Aqua dominant</h5>
+								<ul class="color-palette">
+									<li class="aqua-gradient animate">
+										<a class="text-white" href="#">.aqua-gradient.animate</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<h5>Purple dominant</h5>
+								<ul class="color-palette">
+									<li class="purple-gradient animate">
+										<a class="text-white" href="#">.purple-gradient.animate</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="m-4"></div>
+					<h4 id="text-color">Text colors</h4>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12 col-md-3">
+								<p>Black (default): Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>
+							<div class="col-sm-12 col-md-3">
+								<p class="text-blue">Blue: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+							<div class="col-sm-12 col-md-3">
+								<p class="text-aqua">Aqua: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+							<div class="col-sm-12 col-md-3">
+								<p class="text-purple">Purple: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+							<div class="col-sm-12 col-md-3">
+								<p class="text-green">Green: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+							<div class="col-sm-12 col-md-3">
+								<p class="text-orange">Orange: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+							<div class="col-sm-12 col-md-3">
+								<p class="text-red">Red: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+							<div class="col-sm-12 col-md-3">
+								<p class="text-gray">Gray: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, placeat, iure.</p>
+							</div>	
+						</div>
+					</div>
+				</div>
+
+				<div class="m-3"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<h3 id="typography">Typography</h3>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="headers">Headers</h4>
+						<h1>h1. I'm a h1 heading</h1>
+						<h2>h2. I'm a h2 heading</h2>
+						<h3>h3. I'm a h3 heading</h3>
+						<h4>h4. I'm a h4 heading</h4>
+						<h5>h5. I'm a h5 heading</h5>
+						<h6>h6. I'm a h6 heading</h6>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="paragraphs">Paragraphs</h4>
+						<p>I'm a normal paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis possimus laudantium dolores, accusantium pariatur, nostrum eveniet vitae harum voluptate illum.</p>
+						<br>
+						<p class="lead">
+						  Add a <mark>.lead</mark> class to highlight a paragraph like this. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+						</p>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="links">Links</h4>
+						<a href="#">I'm a super normal link. </a>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="inline-text">Inline text elements</h4>
+						<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+						<p><del>This line of text is meant to be treated as deleted text.</del></p>
+						<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+						<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+						<p><u>This line of text will render as underlined</u></p>
+						<p><small>This line of text is meant to be treated as fine print.</small></p>
+						<p><strong>This line rendered as bold text.</strong></p>
+						<p><em>This line rendered as italicized text.</em></p>
+					</div>
+					<div class="container-fluid">
+						<div class="m-4"></div>
+						<h4 id="lists">Lists</h4>
+						<p><b>Normal list</b></p>
+						<ul>
+							<li>Lorem ipsum dolor sit amet, consectetur adipisicing</li> 
+							<li>elit. Quas minus perferendis obcaecati tempore</li> 
+							<li>consectetur, qui adipisci blanditiis saepe deleniti</li>
+							<li>explicabo. Eos ut tenetur accusamus odit molestiae, fugiat eligendi. Libero, repellendus.</li>
+						</ul>
+						<p><b>Add <mark>.list-unstyled</mark> to remove padding and list-styles for immediate children</b></p>
+						<ul class="list-unstyled">
+						  <li>Lorem ipsum dolor sit amet</li>
+						  <li>Consectetur adipiscing elit</li>
+						  <li>Nulla volutpat aliquam velit
+						    <ul>
+						      <li>Phasellus iaculis neque</li>
+						      <li>Purus sodales ultricies</li>
+						      <li>Vestibulum laoreet porttitor sem</li>
+						      <li>Ac tristique libero volutpat at</li>
+						    </ul>
+						  </li>
+						  <li>Faucibus porta lacus fringilla vel</li>
+						  <li>Aenean sit amet erat nunc</li>
+						  <li>Eget porttitor lorem</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 id="buttons">Buttons</h3>
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="full-buttons">Full background buttons</h4>
+						<p>Set the class <mark>.btn</mark> to a <code>button</code>, <code>a</code> or <code>input</code> element. Style it using <mark>btn-primary</mark>, <mark>btn-secondary</mark>, <mark>btn-success</mark>, <mark>btn-info</mark>, <mark>btn-warning</mark>, <mark>btn-danger</mark> and <mark>btn-link</mark></p>
+						<button type="button" class="btn btn-primary">Primary</button>
+						<button type="button" class="btn btn-secondary">Secondary</button>
+						<button type="button" class="btn btn-success">Success</button>
+						<button type="button" class="btn btn-info">Info</button>
+						<button type="button" class="btn btn-warning">Warning</button>
+						<button type="button" class="btn btn-danger">Danger</button>
+						<button type="button" class="btn btn-link">Link</button>
+						
+						<p><br>You can also use gradients instead of normal button colors and animate them.</p>
+						<button type="button" class="btn blue-gradient">Static Gradient</button>
+						<button type="button" class="btn aqua-gradient-alt animate">I'm animated</button>
+					</div>
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="outline-buttons">Outline color buttons</h4>
+						<p>Set <mark>outline</mark> to any state class, as in <code>btn-outline-primary</code></p>
+						<button type="button" class="btn btn-outline-primary">Primary</button>
+						<button type="button" class="btn btn-outline-secondary">Secondary</button>
+						<button type="button" class="btn btn-outline-success">Success</button>
+						<button type="button" class="btn btn-outline-info">Info</button>
+						<button type="button" class="btn btn-outline-warning">Warning</button>
+						<button type="button" class="btn btn-outline-danger">Danger</button>
+					</div>
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="rounded-buttons">Rounded corners</h4>
+						<p>Add <mark>.rounded</mark> to set a 2em border-radius</p>
+						<button type="button" class="btn btn-primary rounded">Primary</button>
+						<button type="button" class="btn btn-outline-info rounded">Secondary</button>
+						<button type="button" class="btn blue-gradient animate rounded">Animated Gradient</button>
+					</div>
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 id="dropdowns">Dropdowns</h3>
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<p>Any <code>button</code> or <code>a</code> with a <mark>.btn</mark> class can be turned into a dropdown (refer to <a href="https://v4-alpha.getbootstrap.com/components/dropdowns/#examples" target="_blank">Bootstrap markup</a> for details).</p>
+						<div class="row">
+							<div class="col-6">
+								<div class="dropdown">
+									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    Dropdown
+								    </button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<h6 class="dropdown-header">Group 1 header</h6>
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<h6 class="dropdown-header">Group 2 header</h6>
+										<a class="dropdown-item" href="#">Another thing here</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+										<div class="dropdown-divider"></div>
+									    <a class="dropdown-item" href="#">Separated link</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="dropup">
+									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    Dropup
+								    </button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<h6 class="dropdown-header">Dropdown header</h6>
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+										<div class="dropdown-divider"></div>
+									    <a class="dropdown-item" href="#">Separated link</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="m-3"></div>
+					<div class="m-3"></div>
+					<h3 id="forms">Forms</h3>
+					<p>Form elements have changes to the original Bootstrap styles, specially checkboxes, radios and text labels.</p>
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="input-text">Text</h4>
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<label class="control-label" for="exampleInputEmail1">Email address</label>
+									<input autocomplete="new-email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+									<small id="emailHelp" class="form-text text-muted">Use <mark>small</mark> for additional text.</small>
+								</div>
+							</div>
+							
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<label class="control-label" for="exampleTextInput">Text</label>
+									<input class="form-control" type="text" placeholder="Write a one liner here" id="exampleTextInput">
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<label class="control-label" for="exampleInputPassword">Password</label>
+									<input autocomplete="new-password" type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+									<small id="exampleInputPassword" class="form-text text-red">Here's an example of an error message.</small>
+								 </div>
+							</div>
+
+						</div>
+						
+					</div>
+
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="input-textarea">Textarea</h4>
+						<br>
+						<div class="row">
+							<div class="col-12">
+								<div class="form-group">
+									<label class="control-label" for="exampleTextarea">Your message</label>
+		    						<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+		    						<small id="exampleTextarea" class="form-text text-muted">A friendly reminder of something.</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="input-select">Select</h4>
+						<p>Select elements are manipulated by <a href="http://selectize.github.io/selectize.js/" target="_blank">Selectie.js</a>.</p>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<p>Single <br></p>
+								<div class="form-group selectize">
+									<label class="control-label">Select one genius</label>
+									<input class="form-control demo-default selectized" type="text" id="singleSelectDemo" name="singleSelectDemo" placeholder="Pick your favourite one">
+								</div>	
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<p>Multiple <br></p>
+								<div class="form-group selectize">
+									<label class="control-label">Select multiple geniuses</label>
+									<input class="form-control demo-default selectized" type="text" id="multipleSelectDemo" name="multipleSelectDemo" placeholder="Pick your favourite geniuses">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="input-checkboxes">Checkboxes</h4>
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<p>Normal</p>
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-6">
+											<div class="form-group">
+												<input checked type="checkbox" id="checkboxNormal" />
+												<label data-action="select" for="checkboxNormal"></label>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<input checked disabled type="checkbox" id="checkboxNormalDisabled" />
+												<label data-action="select" for="checkboxNormalDisabled"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<p>Filled style with <mark>.filled-in</mark></p>
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-6">
+											<div class="form-group">
+												<input checked type="checkbox" class="filled-in" id="checkboxFilled" />
+												<label data-action="select" for="checkboxFilled"></label>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<input disabled checked type="checkbox" class="filled-in" id="checkboxFilledDisabled" />
+												<label data-action="select" for="checkboxFilledDisabled"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<p><mark>.filled-in</mark> + <mark>.variant</mark></p>
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-6">
+											<div class="form-group">
+												<input checked type="checkbox" class="filled-in variant" id="checkboxFilledVariant" />
+												<label data-action="select" for="checkboxFilledVariant"></label>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<input disabled checked type="checkbox" class="filled-in variant" id="checkboxFilledVariantDisabled" />
+												<label data-action="select" for="checkboxFilledVariantDisabled"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="input-radio">Radio buttons</h4>
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input name="radio-example" type="radio" id="radio2" value="2" />
+									<label for="radio2">Option 1</label>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input checked name="radio-example" type="radio" id="radio1" value="1" />
+									<label for="radio1">Option 2</label>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input disabled name="radio-example" type="radio" id="radio0" value="0" />
+									<label for="radio0">Disabled Option</label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-fluid">
+						<div class="m-3"></div>
+						<h4 id="input-switches">Switches</h4>
+						<div class="row">
+							<div class="col-4">
+								<p>Checked</p>
+								<div class="switch">
+									<label>
+										Off
+										<input checked type="checkbox">
+										<span class="lever"></span>
+										On
+									</label>
+								</div>
+							</div>
+							<div class="col-4">
+								<p>Unchecked</p>
+								<div class="switch">
+									<label>
+										Off
+										<input type="checkbox">
+										<span class="lever"></span>
+										On
+									</label>
+								</div>
+							</div>
+							<div class="col-4">
+								<p>Disabled</p>
+								<div class="switch">
+									<label>
+										Off
+										<input disabled type="checkbox">
+										<span class="lever"></span>
+										On
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="m-3"></div>
+					<h3 id="cards">Cards</h3>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<h4>Basic card</h4>
+								<div class="card">
+									<div class="card-block">
+										<h4 class="card-title">Card title</h4>
+										<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+										<a href="#" class="card-link text-gray">Cancel</a>
+										<a href="#" class="card-link">Some link</a>
+									</div>
+								</div>
+								<br>
+								<h4>Basic card w/ shadow</h4>
+								<div class="card shadow">
+									<div class="card-block">
+										<h4 class="card-title">Hey there</h4>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+										<a href="#" class="card-link pull-right">Proceed</a>
+									</div>
+								</div>
+								<br>
+								<h4>W/ header &amp; footer</h4>
+								<div class="card">
+									<div class="card-header">
+									Some header info
+									</div>
+									<div class="card-block">
+										<h4 class="card-title">I'm the card title</h4>
+										<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+										<a href="#" class="btn btn-outline-primary rounded">Do something</a>
+									</div>
+									<div class="card-footer">
+										Put something in the footer
+									</div>
+								</div>
+								<br>
+								<h4>Card w/ form</h4>
+								<div class="card">
+									<div class="card-block">
+										<h4 class="card-title">Create account</h4>
+										<form>
+											<div class="row">
+												<div class="col-12">
+													<div class="form-group">
+														<label class="control-label" for="exampleInputEmail1">Email address</label>
+														<input autocomplete="new-email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+													</div>
+												</div>
+												<div class="col-12">
+													<div class="form-group">
+														<label class="control-label" for="cardInputPassword">Password</label>
+														<input autocomplete="new-password" type="password" class="form-control" id="cardInputPassword" placeholder="Password">
+													 </div>
+												</div>
+												<div class="col-12">
+													<div class="form-group">
+														<label class="control-label" for="cardInputPassword">Confirm Password</label>
+														<input autocomplete="new-password" type="password" class="form-control" id="cardInputPassword" placeholder="Password">
+													 </div>
+												</div>
+												<div class="col-12">
+													<div class="form-group">
+														<input type="checkbox" id="cardInputCheckboxNormal" />
+														<label data-action="select" for="cardInputCheckboxNormal">I've read an accept the <a href="#">terms and conditions</a></label>
+													</div>
+												</div>
+											</div>
+										</form>
+										<br>
+										<a href="#" class="card-link btn btn-outline-secondary rounded">Login</a>
+										<a href="#" class="card-link btn btn-primary rounded pull-right">Register</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<h4>Card w/ image</h4>
+								<div class="card">
+									<img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+									<div class="card-block">
+										<h4 class="card-title">Card title</h4>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+										<a href="#" class="btn blue-gradient animate pull-right">Go somewhere</a>
+									</div>
+								</div>
+								<br>
+								<h4>Card w/ list</h4>
+								<div class="card">
+									<img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+									<div class="card-block">
+										<h4 class="card-title">Card title</h4>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									</div>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">Cras justo odio</li>
+										<li class="list-group-item">Dapibus ac facilisis in</li>
+										<li class="list-group-item">Vestibulum at eros</li>
+									</ul>
+									<div class="card-block">
+										<a href="#" class="card-link btn btn-outline-secondary rounded">Cancel</a>
+										<a href="#" class="card-link btn btn-primary rounded pull-right">Continue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="m-3"></div>
+					<h3 id="toasts">Toasts</h3>
+					<p>Toasts are dialogs you can show to the user.</p>
+					<p>You can call like <code>callToast(toastType, toastBody, toastTitle, timetOut)</code> where <ul>
+						<li>toastType [string] - What toast style you want (info, success, warning, error)</li>
+						<li>toastBody [string] - Main toast content</li>
+						<li>toastTitle [string] - Toast title</li>
+						<li>timeOut [number] - Optional. How long you want (in milliseconds) the toast to be displayed (default 5000ms)</li>
+					</ul></p>
+					<p>Call toasts by clicking these:</p>
+					<div class="containe-fluid">
+						<div class="row">
+							<div class="col-xs-12 col-md-3">
+								<a href="" class="btn btn-info" id="infoToastr">Info</a>
+							</div>
+							<div class="col-xs-12 col-md-3">
+								<a href="" class="btn btn-success rounded" id="successToastr">Success</a>
+							</div>
+							<div class="col-xs-12 col-md-3">
+								<a href="" class="btn btn-warning" id="warningToastr">Info</a>
+							</div>
+							<div class="col-xs-12 col-md-3">
+								<a href="" class="btn btn-danger" id="errorToastr">Error</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			
+
+			<div class="row">
+				<div class="col-12">
+					<div class="m-3"></div>
+					<h3 id="modal">Modal</h3>
+					<div class="container-fluid">
+						<p>Click the buttons to open their respective modals</p>
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-3">
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+								  Normal modal
+								</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus, animi pariatur similique quod tempora voluptatum in, iure ipsum quaerat provident ipsa fugiat non inventore ab blanditiis quasi voluptatibus optio!
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								        <button type="button" class="btn btn-primary">Got it</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-3">
+								<!-- long modal -->
+								<button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModalLong">
+								  Modal with scroll
+								</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, repellat. Cupiditate deleniti magni, quas sunt laboriosam! Aliquam, esse iusto consequatur asperiores cumque dolorum cupiditate doloribus dolores, quaerat tempore libero deserunt!<br>
+								        
+								        
+								        
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								        <button type="button" class="btn btn-primary">Got it</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-3">
+								<!-- Large modal -->
+								<button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+								<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+								  <div class="modal-dialog modal-lg">
+								  	<div class="modal-content">
+								  	  <div class="modal-header">
+								  	    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+								  	    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								  	      <span aria-hidden="true">&times;</span>
+								  	    </button>
+								  	  </div>
+								  	  <div class="modal-body">
+								  	    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus, animi pariatur similique quod tempora voluptatum in, iure ipsum quaerat provident ipsa fugiat non inventore ab blanditiis quasi voluptatibus optio!
+								  	  </div>
+								  	  <div class="modal-footer">
+								  	    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								  	    <button type="button" class="btn btn-primary">Got it</button>
+								  	  </div>
+								  	</div>
+								  </div>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-3">
+								<!-- no fade -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalNoFade">
+								  No fade in
+								</button>
+
+								<!-- Modal -->
+								<div class="modal" id="exampleModalNoFade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus, animi pariatur similique quod tempora voluptatum in, iure ipsum quaerat provident ipsa fugiat non inventore ab blanditiis quasi voluptatibus optio!
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								        <button type="button" class="btn btn-primary">Got it</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="m-3"></div>
+					<h3 id="tabs">Tabs</h3>
+					<div class="container-fluid">
+						<ul class="nav nav-tabs" role="tablist">
+						  <li class="nav-item">
+						    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+						  </li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+						  <div class="tab-pane p-2 active" id="home" role="tabpanel">
+						  	<h3>Panel one</h3>
+						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum asperiores nisi eveniet modi tempore, culpa laborum enim sed, quod atque quam esse, veritatis iusto nesciunt dignissimos voluptates dolorum fugit.</p>
+						  </div>
+						  <div class="tab-pane p-2" id="profile" role="tabpanel">
+						  	<h3>Panel two</h3>
+						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum asperiores nisi eveniet modi tempore, culpa laborum enim sed, quod atque quam esse, veritatis iusto nesciunt dignissimos voluptates dolorum fugit.</p>
+						  </div>
+						  <div class="tab-pane p-2" id="messages" role="tabpanel">
+						  	<h3>Panel three</h3>
+						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum asperiores nisi eveniet modi tempore, culpa laborum enim sed, quod atque quam esse, veritatis iusto nesciunt dignissimos voluptates dolorum fugit.</p>
+						  </div>
+						  <div class="tab-pane p-2" id="settings" role="tabpanel">
+						  	<h3>And the fourth panel</h3>
+						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum asperiores nisi eveniet modi tempore, culpa laborum enim sed, quod atque quam esse, veritatis iusto nesciunt dignissimos voluptates dolorum fugit.</p>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="m-3"></div>
+					<h3 id="shadow">Shadow</h3>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<p>Add shadow to any element by adding <mark>.shadow</mark> to it. Buttons will lose their shadow on click.</p>
+								<button class="btn btn-primary shadow">Full</button>
+								&nbsp;
+								<button class="btn btn-outline-secondary shadow rounded">Outline</button>
+								&nbsp;
+								<button class="btn purple-gradient animate shadow rounded">Gradient</button>
+								<br>
+								<br>
+								<div class="card shadow">
+									<div class="card-block">
+										<h4 class="card-title">Normal shadow</h4>
+										<p class="card-text">Shadow doesn't do anything on hover or click.</p>
+										<a href="#" class="card-link text-gray">Cancel</a>
+										<a href="#" class="card-link">Some link</a>
+									</div>
+								</div>
+								<br>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<p>Add <mark>.shadow-interact</mark> to allow for hover &amp; active/focus effects.</p>
+								<button class="btn btn-primary shadow shadow-interact">Full</button>
+								&nbsp;
+								<button class="btn btn-outline-secondary shadow shadow-interact rounded">Outline</button>
+								&nbsp;
+								<button class="btn purple-gradient animate shadow shadow-interact rounded">Gradient</button>
+								<br>
+								<br>
+								<div class="card shadow shadow-interact">
+									<div class="card-block">
+										<h4 class="card-title">Interactive Shadow</h4>
+										<p class="card-text">Shadow changes when you hover or click me.</p>
+										<a href="#" class="card-link text-gray">Cancel</a>
+										<a href="#" class="card-link">Some link</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="m-3"></div>
+				<div class="m-3"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="m-3"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

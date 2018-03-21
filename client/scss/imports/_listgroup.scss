@@ -1,0 +1,38 @@
+.list-group{
+	border: 1px solid $bluegrey-50;
+	&.max-height{
+		height: 380px;
+		overflow-y: auto;
+	}
+
+	.list-group-item{
+		border-radius: 0;
+		border: none;
+		border-bottom: 1px solid $bluegrey-50;
+		margin-bottom: 1px;
+
+		&.no-items{
+			background: transparent;
+			text-align: center;
+			border: none;
+		}
+
+		.item-date{
+			//float: right;
+		}
+
+		.list-group-item-heading{
+			
+		}
+		.list-group-item-subheading{
+			margin: 10px 0 0px;
+		}
+		.list-group-item-text{
+			//margin-top: 30px;
+		}
+
+		.item-group-footer{
+
+		}
+	}
+}

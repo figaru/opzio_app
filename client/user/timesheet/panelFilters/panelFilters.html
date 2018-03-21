@@ -1,0 +1,60 @@
+<template name="panelLogsSelector">
+<span class="dropdown">
+	<a class="btn btn-default dropdown-toggle no-shadow" type="button" id="selectPanelLogs_{{ this._id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-filter"></i> Select <i class="fa fa-caret-down"></i></a>
+  	<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="selectPanelLogs_{{ this._id }}">
+ 		<li class="dropdown-header">Select</li>
+ 		<li class="menu-option half left">
+ 			<div data-action="selectAll" data-type="all" class="main-link align-left bulkSelectPanel"><i class="fa fa-minus-square"></i> All</div>
+ 		</li>
+ 		<li class="menu-option half right">
+ 			<div data-action="selectNone" data-type="all" class="main-link align-left bulkSelectPanel"><i class="fa fa-square-o"></i> None</div>
+ 		</li>
+ 		<li class="menu-option half left">
+ 			<div data-action="selectAllValid" data-type="valid" class="main-link align-left bulkSelectPanel"><i class="fa fa-check"></i> Valid</div>
+ 		</li>
+ 		<li class="menu-option half right">
+ 			<div data-action="selectAllInvalid" data-type="valid" class="main-link align-left bulkSelectPanel"><i class="fa fa-close"></i> Invalid</div>
+ 		</li>
+ 		<li class="menu-option half left">
+ 			<div data-action="selectAllPublic" data-type="private" class="main-link align-left bulkSelectPanel"><i class="fa fa-eye"></i> Public</div>
+ 		</li>
+ 		<li class="menu-option half right">
+ 			<div data-action="selectAllPrivate" data-type="private" class="main-link align-left bulkSelectPanel"><i class="fa fa-eye-slash"></i> Private</div>
+ 		</li>
+  	</ul>
+</span>
+</template>
+
+<template name="panelLogActions">
+<span class="dropdown">
+	<a class="btn btn-default dropdown-toggle no-shadow" type="button" id="panelLogActions_{{ this._id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-cog"></i> Actions <i class="fa fa-caret-down"></i></a>
+	
+	<div class="dropdown-input-group">
+		<input type="text" name="selectInputPanel" class="form-control demo-default selectized selectInputPanel" value="" data-selected="">
+		<span class="dismiss-input">
+			<i class="fa fa-close"></i>
+		</span>
+	</div>
+  	<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="panelLogActions_{{ this._id }}">
+ 		<li class="menu-option">
+ 			<div data-action="save" class="main-link bulkActionPanel"><i class="fa fa-floppy-o"></i> Save All</div>
+ 		</li>
+ 		<li class="dropdown-header">Set</li>
+ 		<li class="menu-option">
+ 			<div data-action="setProject" class="main-link bulkActionPanel"><i class="fa fa-cubes"></i> Project <i class="fa fa-caret-right" style="float: right;margin-top: 4px;"></i></div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-action="setCategory" class="main-link bulkActionPanel"><i class="fa fa-bookmark"></i> Category <i class="fa fa-caret-right" style="float: right;margin-top: 4px;"></i></div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-action="setValid" class="main-link bulkActionPanel"><i class="fa fa-check"></i> Valid</div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-action="setPublic" class="main-link bulkActionPanel"><i class="fa fa-eye"></i> Public</div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-action="setPrivate" class="main-link bulkActionPanel"><i class="fa fa-eye-slash"></i> Private</div>
+ 		</li>
+  	</ul>
+</span>
+</template>

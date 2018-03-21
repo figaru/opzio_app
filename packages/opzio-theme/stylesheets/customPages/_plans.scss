@@ -1,0 +1,25 @@
+.plan-card{
+	.plan-price{
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: 600;
+		.currency{
+			font-size: 16px;
+		    margin-top: 0px;
+		    position: absolute;
+		    margin-left: -15px;
+		}
+		.frequency{
+			margin-top: -5px;
+			font-size: .6em;
+		    font-weight: normal;
+		    display: block;
+		}
+
+		.price-wrapper{
+			&.smaller{
+				font-size: .8em;
+			}
+		}
+	}
+}

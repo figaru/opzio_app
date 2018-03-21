@@ -1,0 +1,149 @@
+.timeline{
+  min-height: 400px;
+  &.max-height{
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .no-data{
+    width: 100%;
+    padding: 15%;
+    text-align: center;
+  }
+
+  .timeline-tooltip{
+    z-index: 12000;
+  }
+}
+
+.vis{
+  &.timeline{
+    &.root{
+      border: none;
+    }
+
+    .timeaxis{
+      .background{
+        .grid{
+          &.current-month{
+
+          }
+          &.even{
+
+          }
+          &.odd{
+            
+          }
+        }
+      }
+    }
+
+    .background:nth-of-type(n+2){
+      border-top: 1px solid $bluegrey-50;
+    }
+
+    .vispanel{
+      &.center{
+        //margin-top: -2px;
+      }
+      &.left{
+        border-top: 1px solid $white;
+        .content{
+          text-align: right;
+        }
+      }
+    }
+    
+    .labelset{
+      .vlabel{
+        .inner{
+          padding: 15px 5px;
+          h3{
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .item{
+  
+      background-color: $bluegrey-50;
+      border: none;
+      border-radius: 0;
+      -moz-box-shadow: 0px -2px 0px rgba(0,0,0,.075);
+      -webkit-box-shadow: 0px -2px 0px rgba(0,0,0,.075);
+      box-shadow: inset 0px -2px 0px rgba(0,0,0,.075);
+      &.background{
+        background-color: $bluegrey-trans-alt;
+      }
+
+      &.line, &.dot{
+        border-color: $bluegrey-200;
+      }
+
+      &.box, &.range{
+        border: none;
+        border-radius: 0;
+        border-top: 1px solid rgba(0,0,0,.075);
+        border-right: 1px solid rgba(0,0,0,.075);
+        border-left: 1px solid rgba(0,0,0,.075);
+      }
+
+      &.box{
+        background: $white;
+        .content{
+          i{
+            font-size: 1.2em;
+            margin: 5px;
+          }
+        }
+      }
+
+      &.range{
+        
+        &.selected{
+          background-color: $white-trans;
+        }
+
+        .content{
+          padding: 3px 3px 0px;
+          .item-description{
+            margin: 2px 5px;
+            display: inline-block;
+          }
+
+          .badge{
+            float: left;
+            display: inline-block;
+          }
+          .state{
+            float: none;
+          }
+        }
+
+
+        /* Colors */  
+        &.blue{
+          color: $dark;
+          box-shadow: inset 0px -2px 0px rgba(64, 196, 255, 1);
+        }
+
+        &.purple{
+          color: $dark;
+          box-shadow: inset 0px -2px 0px rgba(212, 163, 222, 1);
+        }
+
+        &.green{
+          color: $dark;
+          box-shadow: inset 0px -2px 0px rgba(145, 220, 149, 1);
+        }
+
+        &.red{
+          color: $dark;
+          box-shadow: inset 0px -2px 0px rgba(239, 154, 154, 1);
+        }
+
+      }
+    }
+  }
+}

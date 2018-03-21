@@ -1,0 +1,181 @@
+.dropdown-container{
+  overflow-y: hidden;
+  &.expanded{
+    .notifications-anchor{
+      background: $secondary-color;
+    }
+    .notification-dropdown{
+      width: 300px;
+      transition: width 0.3s;
+      -webkit-animation: fadein .5s;
+      -moz-animation: fadein .5s;
+      -ms-animation: fadein .5s;
+      -o-animation: fadein .5s;
+      animation: fadein .5s;
+  
+      @media screen and (max-width: 640px){
+        width: 100%;
+      }
+
+      .notification-group{
+        .notification-tab{
+          h4, .label{
+            visibility: visible;
+            transition: visibility 5s;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .notifications-anchor{
+    transition: background .2s;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+  .notification-dropdown{
+    position: absolute;
+    width: 0px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+    background: #eee;
+    margin-top: 3px;
+    margin-right: -1px!important;
+    border-top: 4px solid $secondary-color;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 999;
+    transition: width 0.3s;
+
+    -webkit-box-shadow: 2px 2px 15px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 15px -10px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 15px -10px rgba(0,0,0,0.75);
+    -webkit-animation: fadeout .5s;
+    -moz-animation: fadeout .5s;
+    -ms-animation: fadeout .5s;
+    -o-animation: fadeout .5s;
+    animation: fadeout .5s;
+    
+    .notification-group{
+      border-bottom: 1px solid $bluegrey-trans;
+      overflow: hidden;
+      min-height: 65px;
+      &:last-child{
+        border-bottom: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+      
+      .notification-tab{
+        padding: 0px 25px;
+        min-height: 65px;
+        text-align: left;
+        h4, .label{
+          visibility: hidden;
+          transition: visibility 5s;
+          display: none;
+        }
+        .fa, h4, .label{
+          color: #333;
+        }
+        .fa{
+          display: inline-block;
+          margin-right: 5px;
+          margin-top: 25px;
+          font-size: 1.2em;
+        }
+        .label{
+          float: right;
+          margin-top: 20px;
+          color: $primary-color;
+          border: 1px solid $primary-color;
+          padding: 5px 10px 8px;
+          font-size: 1.1em;
+          border-radius: 15px;
+        }
+        &:hover{
+          cursor: pointer;
+          background: $primary-color;
+          .fa, h4, .label{
+            color: #FFF;
+            display: inline-block;
+          }
+          .label{
+            background: $secondary-color;
+            border-color: $secondary-color;
+          }
+        }
+      }
+      
+      .notification-list{
+        padding: 0;
+        overflow-y: auto;
+        height: 0px;
+        max-height: 250px;
+        transition: height .5s;
+        .notification-list-item{
+          	padding: 5px 25px;
+          	border-bottom: 1px solid $bluegrey-200;
+      		text-align: left;
+          
+          .message{
+          	line-height: 1.4em;
+            margin: 5px 5px 10px;
+          }
+          .item-footer{
+          	line-height: 18px;
+            a{
+            	padding: 0;
+            	display: inline-block;
+            	font-size: 1.2em;
+            	line-height: 1em;
+				color: $primary-color;
+				text-decoration: none;
+				text-transform: none;
+            }
+            .date{
+              float:right;
+            }
+          }
+          &:nth-of-type(odd){
+            background: $bluegrey-50;
+          }
+          &:hover{
+            cursor: pointer;
+          }
+          &:last-child{
+            border-bottom: 0;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+          }
+        }
+        
+      }
+      
+      &.expanded{
+        .notification-tab{
+          background: $primary-color;
+          .fa, h4, .label{
+            color: #FFF;
+            display: inline-block;
+          }
+          .label{
+            background: $secondary-color;
+            border-color: $secondary-color;
+          }
+        }
+        .notification-list{
+          height: 250px;
+          max-height: 250px;
+          transition: height .5s;
+        }
+      }
+    }
+  }
+}

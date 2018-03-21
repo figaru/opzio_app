@@ -1,0 +1,26 @@
+<template name="userRulesArea">
+	<div id="rules" class="row" styles="overflow:hidden;">
+		<div class="col-xs-12">
+			<div class="panel">
+				<div class="panel-header">
+					<h2 class="panel-title">Classification Rules<i class="fa fa-info-circle tooltipster" title="<h4 class='title'>Classification Rules</h4><p>A set of rules that specify how to classify and categorize your activity.<br><br>Default rules apply to domains or specific apps. You can verride each rule <em>per activity log</em> in your <a href='/user/{{ currentUser._id }}#timesheet'>Timesheet</a></p>"></i></h2>
+					<div class="controls">
+						<span class="single-input has-icon">
+							<i class="fa fa-search"></i>
+							<input id="domainSearchInput" type="text" class="form-control" placeholder="Search">
+						</span>
+					</div>
+				</div>
+				<div class="panel-description">
+					<div class="row">
+						
+						<div class="col-xs-12">
+							<div id="rulesArea" class="max-height h-600 scroll"></div>
+						</div>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,60 @@
+<template name="newTasklistModal">
+<div id="newTasklistModal" class="tasklistModal modal col-xs-11 col-sm-10 col-md-8 col-lg-5">
+	<div class="modal-content">
+		<h3 id="tasklistCodeName" class="modal-title">New Task</h3>
+		<span class="modal-controls">
+			{{> tasklistStateMenu }}
+			{{> priorityMenu }}
+		</span>
+
+		<form id="newTasklistForm" class="modal-form">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<div class="form-group">
+						<label>Name</label>
+						<input id="tasklistName" class="form-control" type="text" placeholder='Name'>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="form-group">
+						<label>Project</label>
+						{{#if currentProject }}
+						<input disabled id="relatedProject" data-project="{{ currentProject._id }}" class="form-control" type="text" placeholder='{{ getProjectFromID currentProject._id }}'>
+						{{else}}
+						<input id="relatedProject" class="form-control" type="text" placeholder='Pick project'>
+						{{/if}}
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label>Start date</label>
+						<input id="tasklistStartDate" class="form-control datepicker" value="" data-content="" placeholder="">
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label>End date</label>
+						<input id="tasklistEndDate" class="form-control datepicker" value="" data-content="" placeholder="">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="form-group">
+						<label>
+							Planned time
+							<i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Planned time</h3><p>Use this field to specify how many time you plan working on this tasklist.<br> You can insert a value of hours such as:<br>- Numeric: 1, 24, 120.<br>- Smart string:<ul><li>4h 30m = 4.5h</li><li>1d = 8h</li><li>1w = 40h</li><li>1M = 168h</li></ul><p>You can change the the default values for smart string on your <a href='#'>organization profile</a></p>"></i> 
+						</label>
+						<input id="tasklistPlannedTime" name="planned-time" type="text" class="form-control" placeholder="0" data-content="0" value="0">
+					</div>
+				</div>
+			</div>
+			<div id="pushProjectDate" style="display:none;" data-value="0"></div>
+		</form>
+
+	</div>
+	<div class="modal-footer">
+		<button style="display:none" id="createNewTasklist" class="modal-action modal-primary-action btn btn-primary">Create</button>
+		<button style="display:none" id="updateTasklist" class="modal-action modal-primary-action btn btn-primary">Update</button>
+		<button class="modal-action modal-close btn pull-left">Cancel</button>
+	</div>
+</div>
+</template>

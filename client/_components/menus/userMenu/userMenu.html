@@ -1,0 +1,36 @@
+<template name="userMenu">
+{{#if canViewMenu }}
+<div class="navigation-header">
+	<nav class="tab-slider menu-swiper swiper-container" role="navigation">
+		<div class="swiper-wrapper">
+			{{#if canViewTimesheet}}
+			<span class="tab-item swiper-slide" data-section="calendar" data-index="0">
+				<a href="{{ pathFor route='userDashboard' userId=currentUser._id section='calendar' }}"><i class="fa fa-calendar-o"></i> My Activity</a>
+			</span>
+			{{/if}}
+			<span class="tab-item swiper-slide" data-section="dashboard" data-index="1">
+				<a href="{{ pathFor route='userDashboard' userId=currentUser._id section='dashboard' }}">
+					<!--i class="svg-icon user-dashboard"></i--> 
+					<i class="fa fa-bar-chart"></i>
+					Dashboard
+					</a>
+			</span>
+			<!--span class="tab-item swiper-slide" data-section="timeline" data-index="2">
+				<a href="{{ pathFor route='userDashboard' userId=currentUser._id section='timeline' }}"><i class="fa fa-map-o"></i> Timeline</a>
+			</span-->
+			<!--span class="tab-item swiper-slide" data-section="financial" data-index="2">
+				<a href="#"><i class="fa fa-usd"></i> Financial</a>
+			</span-->
+			<!--span class="tab-item swiper-slide" data-section="profile" data-index="2">
+				<a href="{{ pathFor route='userDashboard' userId=currentUser._id section='profile' }}"><i class="fa fa-info-circle"></i> Profile</a>
+			</span-->
+			{{#if canViewSettings}}
+			<span class="tab-item swiper-slide" data-section="settings" data-index="3">
+				<a href="{{ pathFor route='userDashboard' userId=currentUser._id section='settings' }}"><i class="fa fa-cog"></i> Settings</a>
+			</span>
+			{{/if}}
+		</div>
+	</nav>
+</div>
+{{/if}}
+</template>

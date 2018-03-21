@@ -1,0 +1,35 @@
+<template name="mainDashboard">
+<!--div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			{{> yield 'badgesArea'}}
+		</div>
+	</div>
+</div-->
+
+<div class="container-fluid section-container">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow">
+			<div class="row grid">
+				<!--div class="msnry-item col-12">
+					{{> yield 'badgesArea'}}
+				</div-->
+				<div class="msnry-item grid-sizer col-xs-12 col-md-6 col-lg-4">
+					{{> organizationActivitiesChart }}
+				</div>
+				<div class="msnry-item col-xs-12 col-md-6 col-lg-8">
+					{{> activityChart }}
+				</div>
+				<!--div class="msnry-item col-xs-12 col-md-6 col-lg-4"-->
+				<!--div class="msnry-item col-xs-12">
+					<{{> dashboardTimeline }}>
+				</div-->
+
+				<!--div class="msnry-item col-xs-12 col-md-4">
+					{{> projectsDeliveries }}
+				</div-->
+			</div>
+		</div>
+	</div>
+</div>
+</template>

@@ -1,0 +1,80 @@
+.anim-shake{
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+}
+
+//Animation
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    -ms-transform: rotate(-4deg); /* IE 9 */
+    -webkit-transform: rotate(-4deg); /* Chrome, Safari, Opera */
+    transform: rotate(-4deg);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    -ms-transform: rotate(-3deg); /* IE 9 */
+    -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+    transform: rotate(-3deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+     -ms-transform: rotate(3deg); /* IE 9 */
+    -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+    transform: rotate(3deg);
+  }
+}
+
+.pulse{
+  -webkit-animation: pulse 2s ease-out infinite;
+  -moz-animation: pulse 2s ease-out infinite;
+  -ms-animation: pulse 2s ease-out infinite;
+  animation: pulse 2s ease-out infinite;
+}
+
+//Pulse
+@-moz-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+  }
+
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+  }
+}
+
+@-ms-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 512px 80px rgba(0, 0, 0, 1);
+  }
+}

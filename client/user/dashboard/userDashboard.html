@@ -1,0 +1,28 @@
+<template name="userDashboard">
+<div class="container-fluid section-container">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow">
+			<div class="row grid">
+				<div class="msnry-item col-12">
+					{{> yield 'badgesArea'}}
+				</div>
+				<div class="msnry-item grid-sizer col-xs-12 col-md-4">
+					{{ > userProjectsChart }}
+				</div>
+				<div class="msnry-item col-xs-12 col-md-8">
+					{{> userActivityChart }}
+				</div>
+				<div class="msnry-item col-xs-12 col-md-4">
+					{{> userActivitiesChart }}
+				</div>
+				<div class="msnry-item col-xs-12 col-md-8">
+					{{> userActivitiesAreaChart}}
+				</div>
+			</div>
+		</div>
+		<!--div class="msnry-item col-xs-12">
+			{{> projectList userProjects='true'}}
+		</div-->
+	</div>
+</div>
+</template>

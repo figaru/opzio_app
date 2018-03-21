@@ -1,0 +1,61 @@
+<template name="publicNav">
+<nav class="navbar fixed-top navbar-toggleable-sm {{#if nottransparent }}navbar-trans bg-gray-lighter{{else}}navbar-trans{{/if}} publicNav">
+	<div class="container">
+		<button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="{{ pathFor route='home' }}">
+			<!--img class="head-image" src="/images/bot/opz_head.png" alt=""-->
+			<img src="/images/opzio_logo_transparent_black_400.png" class="logo" alt="Opz.io Brand Logo">
+		</a>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<!--
+				<li class="nav-item btn dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarSolutionsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Solutions
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarSolutionsDropdown">
+						<h6 class="dropdown-header">By Industry</h6>
+						<a class="dropdown-item" href="{{ pathFor route='solutions' industry='legal-practitioners-time-management-software'}}">Legal</a>
+						<a class="dropdown-item" href="{{ pathFor route='solutions' industry='consulting-project-resources-management-software'}}">Consulting</a>
+						<a class="dropdown-item" href="{{ pathFor route='solutions' industry='it-services-time-management-software'}}">IT Services</a>
+						<div class="dropdown-divider"></div>
+						<h6 class="dropdown-header">By Size</h6>
+						<a class="dropdown-item" href="#">Teams</a>
+						<a class="dropdown-item" href="#">Individuals</a>
+					</div>
+				</li>
+				<li class="nav-item btn dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarFeaturesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Features
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarFeaturesDropdown">
+						<h6 class="dropdown-header">Features</h6>
+						<li><a href="#" class="dropdown-item">Activity Tracking</a></li>
+						<li><a href="#" class="dropdown-item">Real Time Reports</a></li>
+						<li><a href="#" class="dropdown-item">Project Management</a></li>
+						<div class="dropdown-divider"></div>
+						<h6 class="dropdown-header">Plugins</h6>
+						<li><a href="{{ pathFor route='publicPlugins' hash='browsing'}}" class="dropdown-item">Browsing</a></li>
+						<li><a href="{{ pathFor route='publicPlugins' hash='documentation'}}" class="dropdown-item">Documentation</a></li>
+						<li><a href="{{ pathFor route='publicPlugins' hash='programming'}}" class="dropdown-item">Programming</a></li>
+					</div>
+				</li>
+				<li class="nav-item btn">
+					<a class="nav-link" href="{{ pathFor route='plans' }}">Plans</a>
+				</li>
+				-->
+			</ul>
+			<ul class="navbar-nav login-buttons">
+				<!--li class="nav-item btn">
+					<a class="btn btn-outline-white rounded shadow shadow-interact text-uppercase" href="#">Start <span class="hidden-sm-up">30 </span>Trial</a>
+				</li-->
+				<li class="nav-item btn">
+					<a class="btn btn-white rounded" href="{{ pathFor route='login' }}"><span class="text-purple">Log In</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+</template>

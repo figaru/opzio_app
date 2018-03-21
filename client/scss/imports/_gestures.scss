@@ -1,0 +1,61 @@
+.gesture-wrapper{
+	position: relative;
+	width: 100%;
+	top: 80px;
+	z-index: 1000;
+	opacity: 1;
+	//Hide wrapper after x seconds
+	-webkit-animation: hide .5s forwards;
+	-webkit-animation-delay: 6s;
+	animation: hide .5s forwards;
+	animation-delay: 6s;
+	
+	&.right{
+		right: 10px;
+	}
+	&.left{
+		left: 20px;
+	}
+
+	img{
+		position: absolute;
+		width: 50px;
+		right: 50px;
+		opacity: 0;
+
+		-webkit-animation: slideRight 1s forwards;
+		-webkit-animation-delay: 1s;
+		animation: slideRight 1s forwards;
+		animation-delay: 1s;
+	}
+
+	@media only screen and (min-device-width : 1200px) {
+		display: none;
+	}
+}
+
+@-webkit-keyframes slideRight {
+    100% {
+    	right: 0; 
+    	opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    100% {
+    	right: 0;
+    	opacity: 1;
+    }
+}
+
+@-webkit-keyframes hide {
+    100% {
+    	opacity: 0;
+    }
+}
+
+@keyframes hide {
+    100% {
+    	opacity: 0;
+    }
+}

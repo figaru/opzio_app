@@ -1,0 +1,421 @@
+//Charts within cards
+
+.card-chart{
+	.card-title{
+		font-weight: 300;
+	}
+
+	.no-chart-data{
+		.title{
+			font-weight: 300;
+		}
+	}
+}
+
+//Older stuff
+.chart{
+	.highcharts-stack-labels{
+		text{
+			opacity: 0;
+			transition: opacity .5s;
+		}
+	}
+	&:hover{
+		.highcharts-stack-labels{
+			text{
+				opacity: 1;
+				transition: opacity .5s;
+			}
+		}
+	}
+}
+
+.radial-chart{
+	max-width: 110px;
+	width: 100%;
+	float: left;
+	.number{
+		display: none;
+	}
+
+	line, text:not(.icon){
+		display: none;
+	}
+}
+
+.horizontal-bar{
+	display: block;
+	position: relative;
+	margin: 0px;
+	//padding: 2px;
+	background: $gray-light;
+	min-width: 50px;
+	height: auto;
+	border-radius: 2px;
+
+	.column-wrapper{
+		display: block;
+		//height: 20px;
+		width: 100%;
+		background: $gray-lighter;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		.column{
+			//height: 10px;
+			//min-height: 10px;
+			position: relative;
+			width: 0%;
+			z-index: 10;
+			padding: 2px 0;
+
+			/*
+			&.empty{
+				display: none;
+			}
+			*/
+
+			&.completion{
+				color: $gray;
+				z-index: 20;
+			}
+
+			&.remaining{
+				z-index: 15;
+				//background: $gray-light;
+			}
+
+			.bar-tooltip{
+				display: block;
+				width: auto;
+				background: transparent;
+				position: relative;
+				margin: 0 2px;
+				font-size: $font-size-sm ;
+				&.empty{
+					right: 0;
+					left: 5px;
+					width: 150px;
+					i{
+						color: $black;
+					}
+
+					.content{
+						width: 150px;
+						opacity: 0;
+						transition: opacity .5s;
+					}
+				}
+				.content{
+					padding: 0 4px;
+				}
+			}
+
+			//Column color states
+			&.very-high{
+				.bar-tooltip{
+					.content, i{
+						color: $white;
+					}
+				}
+			}
+		}
+
+
+		/*
+		&:hover{
+			.column{
+				.bar-tooltip{
+					&.empty{
+						.content{
+							opacity: 1;
+							transition: opacity .5s;
+						}
+					}
+				}
+			}
+		}
+		*/
+	}
+
+	&.empty{
+		.column{
+			display: none;
+		}
+	}
+
+}
+
+//Empty charts placeholders
+.chart-container{
+	&.panel-description.chart{
+		//padding: 12px 0;
+		&.300-height{
+			height: 300px;
+		}
+	}
+
+	.no-chart-data{
+		min-height: 350px;
+		width: 100%;
+		overflow: hidden;
+		&.alt{
+			margin-top: -100px;
+			.title{
+				margin-top: 50px;
+			}
+		}
+		  
+		.title{
+			position: absolute;
+			color: $gray;
+			font-size: 25px;
+			display: flex;
+			left: 50%;
+			top: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -100%);
+			z-index: 100;
+		}
+
+		.y-axis, .x-axis{
+			position: absolute;
+			left: 25px;
+			bottom: 25px;
+		}
+
+		.y-axis{
+			display: none;
+			height: 350px;
+			width: 1px;
+			border-left: 2px solid #F5F5F5;
+		}
+
+		.x-axis{
+			height: 1px;
+			width: 95%;
+			border-bottom: 2px solid #F5F5F5;
+		}
+
+		.bars{
+			position: absolute;
+			display: inline-block;
+			bottom: 15px;
+			left: 35px;
+			width: 100%;
+			margin: 0 auto;
+			//overflow: hidden;
+			background: rgba(0,0,0,.1);
+
+			.bar{
+				background: $gray-lighter;
+				display: inline-block;
+				position: absolute;
+				min-height: 5px;
+				width: 2%;
+				max-width: 25px;
+				bottom: 10px;
+				margin: 0 .8%;
+				border-top: 1px solid #FFF;
+				border-left: 1px solid #FFF;
+				border-right: 1px solid #FFF;
+				
+				&.bar-0 {
+					display: inline-block;
+					margin-left: 1%;
+				}
+				&.bar-1 {
+					display: inline-block;
+					margin-left: 5%;
+				}
+				&.bar-2 {
+					display: inline-block;
+					margin-left: 9%;
+				}
+				&.bar-3 {
+					display: inline-block;
+					margin-left: 13%;
+				}
+				&.bar-4 {
+					display: inline-block;
+					margin-left: 17%;
+				}
+				&.bar-5 {
+					height: 20px;
+					display: inline-block;
+					margin-left: 21%;
+				}
+				&.bar-6 {
+					height: 50px;
+					display: inline-block;
+					margin-left: 25%;
+				}
+				&.bar-7 {
+					height: 80px;
+					display: inline-block;
+					margin-left: 29%;
+				}
+				&.bar-8 {
+					height: 100px;
+					display: inline-block;
+					margin-left: 33%;
+				}
+				&.bar-9 {
+					height: 143px;
+					display: inline-block;
+					margin-left: 37%;
+				}
+				&.bar-10 {
+					height: 130px;
+					display: inline-block;
+					margin-left: 41%;
+				}
+				&.bar-11 {
+					height: 145px;
+					display: inline-block;
+					margin-left: 45%;
+				}
+				&.bar-12 {
+					height: 150px;
+					display: inline-block;
+					margin-left: 49%;
+				}
+				&.bar-13 {
+					height: 60px;
+					display: inline-block;
+					margin-left: 53%;
+				}
+				&.bar-14 {
+					height: 120px;
+					display: inline-block;
+					margin-left: 57%;
+				}
+				&.bar-15 {
+					height: 135px;
+					display: inline-block;
+					margin-left: 61%;
+				}
+				&.bar-16 {
+					height: 150px;
+					display: inline-block;
+					margin-left: 65%;
+				}
+				&.bar-17 {
+					height: 150px;
+					display: inline-block;
+					margin-left: 69%;
+				}
+				&.bar-18 {
+					height: 110px;
+					display: inline-block;
+					margin-left: 73%;
+				}
+				&.bar-19 {
+					height: 50px;
+					display: inline-block;
+					margin-left: 77%;
+				}
+				&.bar-20 {
+					height: 28px;
+					display: inline-block;
+					margin-left: 81%;
+				}
+				&.bar-21 {
+					display: inline-block;
+					margin-left: 85%;
+				}
+				&.bar-22 {
+					display: inline-block;
+					margin-left: 89%;
+				}
+				&.bar-23 {
+					display: inline-block;
+					margin-left: 92%;
+				}
+
+			}
+		}
+
+		.radial{
+			text-align: center;
+			.outer-circle{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -150px;
+				margin-left: -150px;
+				display: block;
+				background: $gray-lighter;
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+			}
+
+			.inner-circle{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -100px;
+				display: block;
+				background: #FFF;
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+			}
+		}
+
+		.horizontal-bars-empty{
+			position: absolute;
+			width: 100%;
+			height: 350px;
+			//background: red;
+			padding: 0;
+			.bar{
+				//transform: rotate(90deg);
+				position: relative;
+				background: $gray-lighter;
+				list-style-type: none;
+				height: 20px;
+				width: 40px;
+				margin: 15px 0;
+				
+				
+				&.bar-0 {
+					width: 80%;
+				}
+				&.bar-1 {
+					width: 78%;	
+				}
+				&.bar-2 {
+					width: 73%;
+				}
+				&.bar-3 {
+					width: 70%;
+				}
+				&.bar-4 {
+					width: 69%;
+				}
+				&.bar-5 {
+					width: 64%;
+				}
+				&.bar-6 {
+					width: 61%;
+				}
+				&.bar-7 {
+					width: 60%;
+				}
+				&.bar-8 {
+					width: 48%;
+				}
+				&.bar-9 {
+					width: 45%;
+				}
+				&.bar-10 {
+					width: 30%;
+				}
+			}
+		}
+	}
+
+}

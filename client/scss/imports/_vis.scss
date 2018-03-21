@@ -1,0 +1,98 @@
+
+.vis{
+	&.timeline{
+		&.root{
+			border: none;
+		}
+
+		.vispanel{
+		  &.center{
+		    //margin-top: -2px;
+		  }
+		  &.left{
+		    border-top: 1px solid $white;
+		    .content{
+		      text-align: right;
+		    }
+		  }
+		}
+		
+		// .labelset{
+		//   .vlabel{
+		//     .inner{
+		//       padding: 15px 5px;
+		//       h3{
+		//         margin: 0;
+		//       }
+		//     }
+		//   }
+		// }
+
+		.item{
+			padding: 0 5px;
+			&.background{
+		  		&.blue{
+		        	background: lighten($blue, 45%);
+		        	//opacity: .2;
+		        }
+		        &.aqua{
+		        	background: lighten($aqua, 45%);
+		        	//opacity: .2;
+		        }
+		        &.green{
+		        	background: lighten($green, 45%);
+		        	//opacity: .2;
+		        }
+		        &.orange{
+		        	background: lighten($orange, 45%);
+		        	//opacity: .2;
+		        }
+		        &.purple{
+		        	background: lighten($purple, 45%);
+		        	color: $white;
+		        	//opacity: .2;
+		        }
+		        &.red{
+		        	background: lighten($red, 45%);
+		        	//opacity: .2;
+		        }
+		        &.gray-lighter{
+		        	background: rgba(247, 247, 249, .8);
+		        	box-shadow: inset 0px -4px 0px 0px $blue;
+		        }
+		        &.gray-lightest{
+		        	background: rgba(247, 247, 249, .8);
+		        	box-shadow: inset 0px -4px 0px 0px $blue-light;
+		        }
+		    }
+		    &.range{
+		    	&.cluster{
+		    		border-radius: 4px;
+		    		background: $gray-lighter;
+		    		border-color: $gray-lighter;
+		    		border-bottom-color: $blue;
+		    		border-bottom-width: 2px;
+
+					.content{
+						width: 100%;
+					}
+
+					&.selected{
+						background: $gray-lightest;
+						border-color: $gray-lightest;
+						border-bottom-color: $blue-light;
+						border-bottom-width: 2px;
+
+						-webkit-box-shadow: 0px 2px 10px -4px rgba(0,0,0,0.5);
+						-moz-box-shadow: 0px 2px 10px -4px rgba(0,0,0,0.5);
+						box-shadow: 0px 2px 10px -4px rgba(0,0,0,0.5);
+						transition: box-shadow .5s;
+					}
+			    }
+		    }
+		}
+	}
+}
+
+//.vis-label .vis-inner { max-height: 100px; }
+

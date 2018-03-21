@@ -1,0 +1,22 @@
+<template name="chromeTracker">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<img class="tracker-img" src="/images/trackers/chrome_browser.png"/>
+			<h2 class="browserValid font-weight-light">Google Chrome</h2>
+			<div class="browserDownload"></div>
+		</div>
+		<div class="col-12">
+			<div class="tutorial-instructions">
+				<h3>Installing</h3>
+				<p><b>1)</b> Download the extension from Google Chrome Store.</p> 
+				<p><b>2)</b> You should now see the Opz.io extension on the extensions bar. Login with your Opz.io credentials and you're all set!</p>
+				<p><b>3)</b> The extension sends data to Opz.io according to your <a href="{{ pathFor route='userDashboard' userId=currentUser._id hash='settings' }}">privacy settings</a></p>
+				<img class="tutorial-image" src="/images/trackers/tutorials/chrome/plugin_menu.png" alt="Plugin Menu">
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

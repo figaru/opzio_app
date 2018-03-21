@@ -1,0 +1,49 @@
+<template name="userTimesheet">
+<div class="container-fluid padding-bottom-50">
+	<div class="row grid px-3" id="hourLogsArea">
+		{{#if userLogs.length }}
+		<div class="col-12 msnry-item grid-sizer">
+			<div class="panel non-hoverable fixed" id="userLogFilters">
+				<div class="panel-header filter-panel smaller-padding">
+					<div class="controls">
+						{{ > groupLogsFilter }}
+
+						{{ > timesheetPanelsVisibility }}
+						
+						{{ > groupLogsAction }}
+
+						{{ > groupLogsSelector }}
+						
+					</div>
+				</div>
+				<div class="panel-description filter-badge">
+					{{{ dailyValidationBadge }}}
+				</div>
+			</div>
+		</div>
+		{{#each userLogs}}
+			{{> userLogsPanel}}
+		{{/each}}
+		{{else}}
+		<div class="col-12 py-2 section-content shadow">
+			<div class="card border-0">
+				<div class="card-block text-center">
+					<h4 class="card-title font-weight-light">No recorded activity.</h4>
+					<h6 class="card-subtitle mb-2 text-muted">Seems you haven't registered any activity on this day.<br>Use your arrows to move the day back and forth.</h6>
+					<img class="opzio-bot hover w-15 mt-3" src="/images/bot/confused.png" />
+				</div>
+			</div>
+			<!--
+			<span class="range-shifter prev"><i class="fa fa-angle-left"></i></span>
+			<span class="range-shifter next"><i class="fa fa-angle-right"></i></span>
+			<div class="align-center">
+				<h4>Sorry, no logs found for today.</h4>
+			</div>
+			-->
+		</div>
+		{{/if}}
+	</div>
+</div>
+{{ > domainRulesModal }}
+</template>
+

@@ -1,0 +1,73 @@
+<template name="userLogRow">
+<tr 
+	id="{{this._id}}" 
+	data-projectid="{{ getProjectId this }}" 
+	data-projectname="{{ getProjectName this }}"
+	data-projectgitname="{{ getProjectGitName this }}" 
+	data-type="{{ this.type }}" 
+	data-title="{{ this.pageTitle }}" 
+	data-url="{{ getUrl this }}" 
+	data-domain="{{ this.domain }}"
+	data-categoryid="{{ this.category._id }}"
+	data-categorylabel="{{ this.category.label }}" 
+	data-private="{{ isPrivateLog this }}" 
+	data-validated="{{ isValidatedLog this }}" 
+	data-usedForTraining="{{ isTrainedLog this }}"
+	data-classified="{{ isClassifiedLog this }}"  
+	data-totaltime="{{ this.totalTime }}" 
+	data-unsavedchanges="[]"
+	>
+
+	<td>
+		<input type="checkbox" class="selectCheckbox filled-in variant" id="selectLog_{{this._id}}" />
+		<label data-action="select" for="selectLog_{{this._id}}"></label>
+	</td>
+	
+	<td class="capped-width sourceTooltip" title="{{ getSourceTooltip this }}">
+		<!--span class="tooltipster" title="{{ getSourceTooltip this }}" >{{{ getSourceIcon this }}} {{ displayLogUri this }} </span-->
+		<span>{{{ getSourceIcon this }}} {{ this.uri }} </span>
+		<div class="cover"></div>
+	</td>
+	
+	<td class="capped-width tooltipster" title="{{ this.pageTitle }}">
+		<span>{{ this.pageTitle }}</span>
+		<div class="cover"></div>
+	</td>
+	
+	<td>
+		{{{ categorySelectInput this }}}
+	</td>
+	
+	<td>
+		{{{ projectSelectInput this }}}
+	</td>
+	
+	<td>{{ getStringFromEpoch this.totalTime true }}</td>
+	
+	<td>{{{ privateLogCheckbox this }}}</td>
+	
+	<td>{{{ validatedLogCheckbox this }}}</td>
+	
+	<td>
+		<div class="dropdown logRowAction">
+			<a class="btn btn-default dropdown-toggle" type="button" id="rowAction_{{ this._id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-cog"></i> <i class="fa fa-caret-down"></i></a>
+		  	<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="rowAction_{{ this._id }}">
+		 		<li class="menu-option">
+		 			<div data-action="save" class="main-link rowAction saveAction disabled"><i class="fa fa-floppy-o"></i> Save</div>
+		 		</li>
+		 		<li class="menu-option">
+		 			<div data-action="setRule" class="main-link rowAction"><i class="fa fa-code-fork"></i> Set Rules</div>
+		 		</li>
+		 		<li role="separator" class="divider"></li>
+		 		<li class="menu-option">
+		 			<div data-action="deleteLog" class="main-link rowAction"><i class="fa fa-trash"></i> Delete Log</div>
+		 		</li>
+		  	</ul>
+		</div>
+	</td>
+
+	<td class="hasUnsavedChanges">
+		
+	</td>
+</tr>
+</template>

@@ -1,0 +1,38 @@
+<template name="projectsTotalList">
+<div class="container-fluid">
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="toolbar">
+				<ul class="toollist left-side">
+					<li class="search-input">
+						<input id="projectSearchInput" type="text" class="form-control" placeholder="Search">
+					</li>
+				</ul>
+				<ul class="toollist right-side">
+					<li class="checkbox-input">
+						<input class="filled-in" type="checkbox" id="showArchived" />
+						<label data-action="showArchived" for="showArchived">Hide Archived</label>
+					</li>
+					<li>
+						<div class="dropdown">
+							<a class="btn btn-default dropdown-toggle" type="button" id="hierarchyType" data-action="{{ sortOption }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Sort by: <span id="sortOption">{{ sortOption }}</span> <i class="fa fa-caret-down"></i></a>
+						  	<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="hierarchyType">
+								<li class="menu-option"><a href="#name" data-action="none" class="sort-option">Name</a></li>
+								<li class="menu-option"><a href="#delivery" data-action="delivery" class="sort-option">Delivery</a></li>
+								<li class="menu-option"><a href="#update" data-action="update" class="sort-option">Update</a></li>
+						  	</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="row grid">
+		{{#each projects }}
+		{{> projectListItem_alt }}
+		{{/each}}
+	</div>
+</div>
+</template>

@@ -1,0 +1,21 @@
+<template name="userTimeline">
+<div class="container-fluid">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow">
+			<div class="row grid">
+				<div class="msnry-item grid-sizer col-12">
+					<div class="timeline-controls mb-5">
+						<button class="btn btn-outline-primary btn-sm pull-left" id="toggleGroup">Group by: {{ groupBy }}</button>
+						
+						<!--button class="btn btn-outline-primary btn-sm pull-right mx-1" id="zoomTimelineIn"><i class="fa fa-plus"></i></button>
+						<button class="btn btn-outline-secondary btn-sm pull-right" id="zoomTimelineOut"><i class="fa fa-minus"></i></button-->
+					</div>
+				</div>
+				<div class="msnry-item col-12 px-0">
+					<div id="userTimeline"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

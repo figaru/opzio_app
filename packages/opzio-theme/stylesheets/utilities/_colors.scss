@@ -1,0 +1,277 @@
+//Background colors
+
+.bg-blue{
+	background: $blue;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+.bg-blue-light{
+	background: $blue-light;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+.bg-aqua, .bg-info{
+	background: $aqua;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+.bg-purple{
+	background: $purple;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+.bg-gray{
+	background: $gray;
+	color: $white;
+	a{
+		color: $white;
+	}
+	&-dark{
+		background: $gray-dark;
+		color: $white;
+		a{ color: $white; }
+	}
+	&-light{
+		background: $gray-light;
+		color: $white;
+		a{ color: $white; }
+	}
+	&-lighter{
+		background: $gray-lighter;
+		color: $black;
+		a{ color: $black; }
+	}
+	&-lightest{
+		background: $gray-lightest;
+		color: $black;
+		a{ color: $black; }
+	}
+}
+
+.bg-black{
+	background: $black;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+.bg-white{
+	background: $white;
+	color: $black;
+	a{
+		color: $black;
+	}
+}
+
+//States
+.bg-green, .bg-success{
+	background: $green;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+.bg-orange, .bg-warning{
+	background: $orange;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+.bg-red, .bg-danger{
+	background: $red;
+	color: $white;
+	a{
+		color: $white;
+	}
+}
+
+//Gradients
+
+.blue-gradient{
+
+	color: $white;
+	background: rgb(48,219,214);
+	background: -moz-linear-gradient(45deg, rgba(48,219,214,1) 0%, rgba(0,155,221,1) 45%, rgba(61,174,219,1) 75%, rgba(48,219,214,1) 100%);
+	background: -webkit-linear-gradient(45deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+	background: linear-gradient(45deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30dbd6', endColorstr='#30dbd6',GradientType=1 );
+	
+	&:hover{
+		color: $white;
+	}
+
+	&.animate{
+		background-size: 400% 400%;
+		-webkit-animation: gradientAnimation 20s ease infinite;
+		-moz-animation: gradientAnimation 20s ease infinite;
+		animation: gradientAnimation 20s ease infinite;
+	}
+
+	&-alt{
+		color: white;
+		background: rgb(48,219,214);
+		background: -moz-linear-gradient(125deg, rgba(48,219,214,1) 0%, rgba(0,155,221,1) 45%, rgba(61,174,219,1) 75%, rgba(48,219,214,1) 100%);
+		background: -webkit-linear-gradient(125deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+		background: linear-gradient(125deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30dbd6', endColorstr='#30dbd6',GradientType=1 );
+
+		&.animate{
+			background-size: 400% 400%;
+			-webkit-animation: gradientAnimationAlt 20s ease infinite;
+			-moz-animation: gradientAnimationAlt 20s ease infinite;
+			animation: gradientAnimationAlt 20s ease infinite;
+		}
+	}
+
+
+}
+
+.aqua-gradient{
+	color: $white;
+	background: rgb(0,155,221);
+	background: -moz-linear-gradient(45deg, rgba(0,155,221,1) 0%, rgba(48,219,214,1) 35%, rgba(48,219,214,1) 60%, rgba(0,155,221,1) 100%);
+	background: -webkit-linear-gradient(45deg, rgba(0,155,221,1) 0%,rgba(48,219,214,1) 35%,rgba(48,219,214,1) 60%,rgba(0,155,221,1) 100%);
+	background: linear-gradient(45deg, rgba(0,155,221,1) 0%,rgba(48,219,214,1) 35%,rgba(48,219,214,1) 60%,rgba(0,155,221,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009bdd', endColorstr='#009bdd',GradientType=1 );
+	
+	&:hover{
+		color: $white;
+	}
+
+	&.animate{
+		background-size: 400% 400%;
+		-webkit-animation: gradientAnimation 20s ease infinite;
+		-moz-animation: gradientAnimation 20s ease infinite;
+		animation: gradientAnimation 20s ease infinite;
+	}
+
+	&-alt{
+		color: white;
+		background: rgb(0,155,221);
+		background: -moz-linear-gradient(125deg, rgba(0,155,221,1) 0%, rgba(48,219,214,1) 35%, rgba(48,219,214,1) 60%, rgba(0,155,221,1) 100%);
+		background: -webkit-linear-gradient(125deg, rgba(0,155,221,1) 0%,rgba(48,219,214,1) 35%,rgba(48,219,214,1) 60%,rgba(0,155,221,1) 100%);
+		background: linear-gradient(125deg, rgba(0,155,221,1) 0%,rgba(48,219,214,1) 35%,rgba(48,219,214,1) 60%,rgba(0,155,221,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009bdd', endColorstr='#009bdd',GradientType=1 );
+
+		&.animate{
+			background-size: 400% 400%;
+			-webkit-animation: gradientAnimationAlt 20s ease infinite;
+			-moz-animation: gradientAnimationAlt 20s ease infinite;
+			animation: gradientAnimationAlt 20s ease infinite;
+		}
+	}
+}
+
+.purple-gradient{
+	color: $white;
+	background: rgb(48,219,214);
+	background: -moz-linear-gradient(45deg, rgba(48,219,214,1) 0%, rgba(92,107,192,1) 30%, rgba(92,107,192,1) 75%, rgba(48,219,214,1) 100%);
+	background: -webkit-linear-gradient(45deg, rgba(48,219,214,1) 0%,rgba(92,107,192,1) 30%,rgba(92,107,192,1) 75%,rgba(48,219,214,1) 100%);
+	background: linear-gradient(45deg, rgba(48,219,214,1) 0%,rgba(92,107,192,1) 30%,rgba(92,107,192,1) 75%,rgba(48,219,214,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30dbd6', endColorstr='#30dbd6',GradientType=1 );
+	
+	&:hover{
+		color: $white;
+	}
+
+	&.animate{
+		background-size: 400% 400%;
+		-webkit-animation: gradientAnimation 20s ease infinite;
+		-moz-animation: gradientAnimation 20s ease infinite;
+		animation: gradientAnimation 20s ease infinite;
+	}
+
+	&-alt{
+		color: white;
+		background: rgb(48,219,214);
+		background: -moz-linear-gradient(125deg, rgba(48,219,214,1) 0%, rgba(92,107,192,1) 30%, rgba(92,107,192,1) 75%, rgba(48,219,214,1) 100%);
+		background: -webkit-linear-gradient(125deg, rgba(48,219,214,1) 0%,rgba(92,107,192,1) 30%,rgba(92,107,192,1) 75%,rgba(48,219,214,1) 100%);
+		background: linear-gradient(125deg, rgba(48,219,214,1) 0%,rgba(92,107,192,1) 30%,rgba(92,107,192,1) 75%,rgba(48,219,214,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30dbd6', endColorstr='#30dbd6',GradientType=1 );
+
+		&.animate{
+			background-size: 400% 400%;
+			-webkit-animation: gradientAnimationAlt 20s ease infinite;
+			-moz-animation: gradientAnimationAlt 20s ease infinite;
+			animation: gradientAnimationAlt 20s ease infinite;
+		}
+	}
+}
+
+.animate-gradient{
+	background-size: 400% 400%;
+	-webkit-animation: gradientAnimationAlt 20s ease infinite;
+	-moz-animation: gradientAnimationAlt 20s ease infinite;
+	animation: gradientAnimationAlt 20s ease infinite;
+}
+
+//Text colors
+
+.text-blue{
+	color: $blue;
+}
+
+.text-blue-light{
+	color: $blue-light;
+}
+
+.text-aqua, .text-info{
+	color: $aqua;
+}
+
+.text-purple{
+	color: $purple;
+}
+
+.text-gray{
+	color: $gray;
+	&-dark{
+		color: $gray-dark;
+	}
+	&-light{
+		color: $gray-light;
+	}
+	&-lighter{
+		color: $gray-lighter;
+	}
+	&-lightest{
+		color: $gray-lightest;
+	}
+}
+
+.text-black{
+	color: $black;
+}
+
+.text-white{
+	color: $white;
+}
+
+//States
+
+.text-green, .text-success{
+	color: $green;
+}
+
+.text-orange, .text-warning{
+	color: $orange;
+}
+
+.text-red, .text-danger{
+	color: $red;
+}

@@ -1,0 +1,73 @@
+<template name="organizationBadges">
+	<div class="gesture-wrapper right"><img src="/images/gestures/swipe_right.png" alt="Swipe"></div>
+
+	<div id="badgesArea" class="swiper-container badges-area main">
+		<div class="swiper-wrapper">
+			{{> organizationActivity }}
+			{{> organizationVariation }}
+			{{> organizationUsers }}
+			{{> organizationGoals }}
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</template>
+
+<template name="organizationActivity">
+	<div class="stats-badge swiper-slide">
+		<div class="panel-content">
+			<div class="panel-header">
+				<h2 class="panel-title">Activity <i class="fa fa-info-circle tooltipster" title="<h4 class='title'>Organization Activity</h4><p>The valid VS. total time of your organization.<br>Note that only <b>public</b> time is displayed. You can see the total of your personal time on your own <a href='/user/{{currentUser._id}}#dashboard'>profile</a>.</p>"></i></h2>
+			</div>
+			<div class="panel-description" data-totaltime='0'>
+				<div id="organizationActivity" class="chart radial-chart"></div>
+				<span class="label metric">--/--</span>
+				<span class="label description">--/--</span>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="organizationVariation">
+	<div class="stats-badge swiper-slide">
+		<div class="panel-content">
+			<div class="panel-header">
+				<h2 class="panel-title">Variation</h2>
+			</div>
+			<div class="panel-description">
+				<div id="organizationVariation" class="chart radial-chart"></div>
+				<span class="label metric">--/--</span>
+				<span class="label description"></span>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="organizationUsers">
+	<div class="stats-badge swiper-slide">
+		<div class="panel-content">
+			<div class="panel-header">
+				<h2 class="panel-title">Active Users</h2>
+			</div>
+			<div class="panel-description" data-activeusers="0">
+				<div id="organizationUsers" class="chart radial-chart"></div>
+				<span class="label metric">--/--</span>
+				<span class="label description"></span>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="organizationGoals">
+	<div class="stats-badge swiper-slide">
+		<div class="panel-content">
+			<div class="panel-header">
+				<h2 class="panel-title">Goals <i class="fa fa-info-circle tooltipster" title="<h4 class='title'>Organization Goals</h4><p>How far your organization is from reaching your activity goals, considering only <em>validated time</em>.</p>"></i></h2>
+			</div>
+			<div class="panel-description">
+				<div id="organizationGoals" class="chart radial-chart"></div>
+				<span class="label metric">--/--</span>
+				<!--span class="label description">Projects</span-->
+			</div>
+		</div>
+	</div>
+</template>

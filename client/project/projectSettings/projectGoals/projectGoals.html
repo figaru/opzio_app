@@ -1,0 +1,33 @@
+<template name="projectGoals">
+<div id="goals" class="card border-0 mb-3">
+	<div class="card-block">
+		<div class="card-controls pull-right d-inline-block">			
+			<span class="btn btn-sm btn-success saveChanges hidden" id="saveGoals"><i class="fa fa-floppy-o"></i> Save</span>
+		</div>
+		<h4 class="card-title font-weight-light">Goals <!--i class="fa fa-info-circle tooltipster"  title="<h3 class='title'>Categorization</h3><p>If you want to consider this project for categorization, just tick the rightmost checkbox. Unselecting the checkbox will make Opzio ignore this project for consequent activity categorization.</p><p>Use the settings below to add rules to the way this project is classified.</p>"></i--></h4>
+		<h6 class="card-subtitle text-muted">
+			Set goals for this project.<br>Goals performance is represented in your project's dashboard badges as well as email reports. All project's team members contribute towards achieving these goals.
+		</h6>
+	</div>
+	<div class="card-block">
+		<div class="row">
+			<div class="col-12">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th>Type</th>
+				      <th>Period</th>
+				      <th>Min. value to reach</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	{{ > goalRow project=project goalType='time' }}
+				  	{{ > goalRow project=project goalType='financial' }}
+				  </tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</div>
+</template>

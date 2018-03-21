@@ -1,0 +1,52 @@
+<template name="projectCategorizationParameters">
+<div id="classification" class="card border-0 mb-3">
+	<div class="card-block">
+		<!--div class="controls">
+			<span class="collapse-panel expanded"><i class="fa fa-angle-up"></i></span>
+			<span class="input-group">
+				{{#if useForCategorization}}
+				<input checked="checked" class="categorizeCheckbox filled-in" type="checkbox" id="useForCategorization" />
+				<label data-action="categorize" for="useForCategorization"></label>
+				{{else}}
+				<input class="categorizeCheckbox filled-in" type="checkbox" id="useForCategorization" />
+				<label data-action="categorize" for="useForCategorization"></label>
+				{{/if}}
+			</span>
+		</div-->
+		<h4 class="card-title font-weight-light">Classification <!--i class="fa fa-info-circle tooltipster"  title="<h3 class='title'>Categorization</h3><p>If you want to consider this project for categorization, just tick the rightmost checkbox. Unselecting the checkbox will make Opzio ignore this project for consequent activity categorization.</p><p>Use the settings below to add rules to the way this project is classified.</p>"></i--></h4>
+	</div>
+	<div class="card-block">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group is-selectize">
+					<label class="control-label" for="matchingKeywords">
+						Matching Keywords
+						<!--i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Matching Keywords</h3><p>Add keywords that, when found in a log, will <em>increase</em> the categorization score."></i--> 
+					</label>
+					<input class="form-control green demo-default selectized" type="text" id="matchingKeywords" name="matchingKeywords" placeholder="Add words separated by space.">
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group is-selectize">
+					<label class="control-label" for="excludingKeywords">
+						Excluding Keywords
+						<!--i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Excluding Keywords</h3><p>Add keywords that, when found in a log, will <em>decrease</em> the categorization score."></i--> 
+					</label>
+					<input class="form-control green" id="excludingKeywords" name="excludingKeywords" type="text" placeholder="Add words separated by space.">
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="control-label" for="googleAnalyticsId">
+						Google Analytics ID
+						<!--i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Google Analytics ID</h3><p>Specify the ID of this projects' analytics account. When found in a URL, will instantly match the log to this project."></i-->
+					</label>
+					<input class="form-control" id="googleAnalyticsId" name="code" type="text" value="{{ project.externalServices.analyticsID }}" placeholder="Google Analytics ID">
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+</div>
+</template>

@@ -1,0 +1,28 @@
+<template name="projectDashboard">
+<div class="container-fluid">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow">
+			<div class="row grid">
+				<div class="msnry-item col-12">
+					{{> yield 'badgesArea'}}
+				</div>
+				<!--div class="msnry-item grid-sizer col-xs-12 col-md-4">
+					{{> projectDeliveries }}
+				</div-->
+				<div class="msnry-item col-xs-12 grid-sizer col-md-6 col-lg-4">
+					{{> projectUsersPieChart }}
+				</div>
+				<div class="msnry-item col-xs-12 col-md-6 col-lg-8">
+					{{> projectActivityChart }}
+				</div>
+				<!--div class="msnry-item col-xs-12 col-md-6 col-lg-4">
+					{{> projectDistributionChart }}
+				</div>
+				<div class="msnry-item col-xs-12 col-md-6 col-lg-8">
+					{{> userListing }}
+				</div-->
+			</div>
+		</div>
+	</div>
+</div>
+</template>

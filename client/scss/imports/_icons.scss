@@ -1,0 +1,9 @@
+.svg-icon{
+	display: inline-block;
+	height: 100%;
+	width: 40px;
+	&.user-dashboard{
+		background: url('/icons/userDashboard.svg') no-repeat center center;
+		background-size: contain;
+	}
+}

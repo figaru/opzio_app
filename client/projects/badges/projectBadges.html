@@ -1,0 +1,60 @@
+<template name="projectsBadges">
+	<div id="badgesArea" class="badges-area main">
+		{{> projectsActivity }}
+		{{> projectsUsers }}
+		{{> somethingElse1 }}
+		{{> somethingElse2 }}
+	</div>
+</template>
+
+<template name="projectsActivity">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">Activity</h2>
+	</div>
+	<div class="panel-description">
+		<canvas id="organizationActivity" class="chart" height="100" width="100"></canvas>
+		<span class="label metric">--/--</span>
+		<span class="label description">--/--</span>	
+	</div>
+</div>
+</template>
+
+<template name="projectsUsers">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">Active Users</h2>
+	</div>
+	<div class="panel-description">
+		<canvas id="organizationUsers" class="chart" height="100" width="100"></canvas>
+		<span class="label metric">--/--</span>
+		<span class="label description">--/--</span>	
+	</div>
+</div>
+</template>
+
+<template name="somethingElse1">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">somethingElse1</h2>
+	</div>
+	<div class="panel-description">
+		<canvas id="projectsCap" class="chart" height="100" width="100"></canvas>
+		<span class="label metric">--/--</span>
+		<!--span class="label description">Projects</span-->
+	</div>
+</div>
+</template>
+
+<template name="somethingElse2">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">somethingElse2</h2>
+	</div>
+	<div class="panel-description">
+		<canvas id="variation" class="chart" height="100" width="100"></canvas>
+		<span class="label metric">--/--</span>
+		<!--span class="label description">Projects</span-->
+	</div>
+</div>
+</template>

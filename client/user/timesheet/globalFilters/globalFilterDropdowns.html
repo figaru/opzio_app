@@ -1,0 +1,82 @@
+<template name="groupLogsFilter">
+<div class="dropdown dropup pull-left groupLogsFilter">
+	<a class="btn btn-default dropdown-toggle no-shadow" type="button" id="groupLogsBy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-reorder"></i> Group by: {{ currentGroupFilter }} <i class="fa fa-caret-down"></i></a>
+  	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="groupLogsBy">
+ 		<li class="dropdown-header">
+ 			Group by
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-group="source" class="main-link"><i class="fa fa-upload"></i> Source</div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-group="hour" class="main-link"><i class="fa fa-clock-o"></i> Hour</div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-group="project" class="main-link"><i class="fa fa-cubes"></i> Project</div>
+ 		</li>
+  	</ul>
+</div>
+</template>
+
+<template name="groupLogsSelector">
+<div class="dropdown dropup pull-right groupLogsSelector">
+	<a class="btn btn-default dropdown-toggle no-shadow" type="button" id="selectLogsBy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-filter"></i> {{{ displaySelectedLogs }}} <i class="fa fa-caret-down"></i></a>
+  	<ul class="dropdown-menu" aria-labelledby="selectLogsBy">
+ 		<li class="dropdown-header">Select</li>
+ 		<li class="menu-option half left">
+ 			<div data-action="selectAll" data-type="all" class="main-link bulkSelect"><i class="fa fa-minus-square"></i> All</div>
+ 		</li>
+ 		<li class="menu-option half right">
+ 			<div data-action="selectNone" data-type="all" class="main-link bulkSelect"><i class="fa fa-square-o"></i> None</div>
+ 		</li>
+ 		<li class="menu-option half left">
+ 			<div data-action="selectAllValid" data-type="valid" class="main-link bulkSelect"><i class="fa fa-check"></i> Valid</div>
+ 		</li>
+ 		<li class="menu-option half right">
+ 			<div data-action="selectAllInvalid" data-type="valid" class="main-link bulkSelect"><i class="fa fa-close"></i> Invalid</div>
+ 		</li>
+ 		<li class="menu-option half left">
+ 			<div data-action="selectAllPublic" data-type="private" class="main-link bulkSelect"><i class="fa fa-eye"></i> Public</div>
+ 		</li>
+ 		<li class="menu-option half right">
+ 			<div data-action="selectAllPrivate" data-type="private" class="main-link bulkSelect"><i class="fa fa-eye-slash"></i> Private</div>
+ 		</li>
+ 		{{{ getSelectOptions }}}
+  	</ul>
+</div>
+</template>
+
+<template name="groupLogsAction">
+<span class="dropdown dropup purple">
+	<a class="btn btn-default dropdown-toggle purple no-shadow" type="button" id="logBulkActions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-cog"></i> Actions <i class="fa fa-caret-down"></i></a>
+	
+	<div class="dropdown-input-group">
+		<input type="text" name="selectInputPanel" class="form-control demo-default selectized selectInputPanel" value="" data-selected="">
+		<span class="dismiss-input">
+			<i class="fa fa-close"></i>
+		</span>
+	</div>
+
+  	<ul class="dropdown-menu dropdown-menu-right purple" aria-labelledby="logBulkActions">
+ 		<li class="menu-option">
+			<div data-action="save" class="main-link logBulkAction"><i class="fa fa-floppy-o"></i> Save All</div>
+		</li>
+		<li class="dropdown-header">Set</li>
+		<li class="menu-option">
+			<div data-action="setProject" class="main-link logBulkAction"><i class="fa fa-cubes"></i> Project <i class="fa fa-caret-right" style="float: right;margin-top: 4px;"></i></div>
+		</li>
+		<li class="menu-option">
+			<div data-action="setCategory" class="main-link logBulkAction"><i class="fa fa-bookmark"></i> Category <i class="fa fa-caret-right" style="float: right;margin-top: 4px;"></i></div>
+		</li>
+		<li class="menu-option">
+			<div data-action="setValid" data-type="valid" class="main-link logBulkAction"><i class="fa fa-check"></i> Valid</div>
+		</li>
+		<li class="menu-option">
+			<div data-action="setPublic" data-type="private" class="main-link logBulkAction"><i class="fa fa-eye"></i> Public</div>
+		</li>
+		<li class="menu-option">
+			<div data-action="setPrivate" data-type="private" class="main-link logBulkAction"><i class="fa fa-eye-slash"></i> Private</div>
+		</li>
+  	</ul>
+</span>
+</template>

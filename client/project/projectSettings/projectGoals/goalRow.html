@@ -1,0 +1,8 @@
+<template name="goalRow">
+<tr class="goalRow" data-projectid="{{project._id}}" data-goaltype="{{ goalType }}">
+	<td class="pt-4">
+		{{ displayGoalType goalType }}
+	</td>
+	{{{ goalPeriodDropdownAndValue project goalType}}}
+</tr>
+</template>

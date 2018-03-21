@@ -1,0 +1,76 @@
+<template name="projectInfo">
+<div class="container-fluid">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow mih-90">
+			<div class="row grid">
+				<div class="col-12">
+					<div class="card border-0 mb-3">
+						<div class="msnry-item col-12">
+							<div class="card-block px-0">
+								<h4 class="card-title font-weight-light d-inline-block">Project Info</h4>
+								<div class="card-controls pull-right d-inline-block">
+									<span class="btn btn-sm btn-success saveChanges hidden" id="saveChanges"><i class="fa fa-floppy-o"></i> Save</span>
+
+								</div>
+							</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-6 col-md-3">
+							<div class="form-group">
+								<label class="control-label" for="projectName">Name</label>
+								<input id="projectName" class="form-control" name="name" type="text" data-current="{{ project.name }}" value="{{ project.name }}" placeholder="Project Name">
+							</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-6 col-md-3">
+							<div class="form-group">
+								<label class="control-label" for="projectCodeName">
+									Code
+									<i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Project Code</span><span class='font-weight-light'>A unique identifier of your project.<br>You can change it as long as it is composed by 3 characters (letters only) and is unique accross your projects.</span></h6>"></i>
+								</label>
+								<input class="form-control" id="projectCodeName" name="code" type="text" data-current="{{ project.codeName }}" value="{{ project.codeName }}" placeholder="Project Code">
+							</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-6 col-md-3 grid-sizer">
+							<div class="my-4">{{{ getProjectState project }}}</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-6 col-md-3">
+							<div class="my-4">{{{ getProjectPriority project }}}</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-6 col-md-3">
+							<div class="form-group">
+								<label class="control-label" for="projectStartDate">Start Date</label>
+								<input id="projectStartDate" class="form-control datepicker" data-current="{{project.createDate}}" placeholder="">
+							</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-6 col-md-3">
+							<div class="form-group">
+								<label class="control-label" for="projectEndDate">End Date</label>
+								<input id="projectEndDate" class="form-control datepicker" data-current="{{project.deliveryDate}}" placeholder="">
+							</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-12 col-md-6">
+							<div class="form-group">
+								<label class="control-label" for="projectBrief">Brief</label>
+								{{#if project.brief }}
+								<textarea id="projectBrief" data-name="brief" rows="2" class="form-control dynamic-height" data-current="{{ project.brief }}" value="{{ project.brief }}"></textarea>
+								{{else}}
+								<textarea id="projectBrief" data-name="brief" rows="2" class="form-control dynamic-height" data-current="" placeholder="Describe your project"></textarea>
+								{{/if}}
+							</div>
+						</div>
+						<div class="msnry-item col-xs-12 col-sm-12 col-md-6">
+							<div class="form-group">
+								<label class="control-label" for="projectUrl">URL</label>
+								{{#if project.url}}
+								<input class="form-control" name="projectUrl" type="text" data-current="{{ project.url }}" value="{{ project.url }}">
+								{{else}}
+								<input class="form-control" name="projectUrl" type="text" data-current="" value="" placeholder="http://example.com">
+							{{/if}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

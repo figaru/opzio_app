@@ -1,0 +1,17 @@
+<template name="dateRangeMenu">
+{{# if canViewDateMenu }}
+{{ reloadDatepicker }}
+{{/if}}
+<div class="{{# if canViewDateMenu }}{{else}}hidden {{/if}}dateRange-group btn btn-outline-secondary">
+	{{#if singleDatePicker}}
+	<span class="range-shifter prev" title="Previous range"><i class="fa fa-angle-left"></i></span>
+	<a id="dateRangeAnchor" class="rwd-daterange-link"><i class="fa fa-calendar"></i></a>
+	<input id="dateRangeInput" name="daterange" class='dropdown-button daterange single' readonly="true" data-constrainwidth='false' data-alignment='right' data-activates='date-dropdown' value="{{ currentRange }}" title="Change date" />
+	<span class="range-shifter next" title="Next range"><i class="fa fa-angle-right"></i></span>
+	{{else}}
+	<span class="range-shifter prev" title="Previous range"><i class="fa fa-angle-left"></i></span>
+	<input id="dateRangeInput" name="daterange" class='dropdown-button daterange' readonly="true" data-constrainwidth='false' data-alignment='right' data-activates='date-dropdown' value="{{ currentRange }}" title="Change date" />
+	<span class="range-shifter next" title="Next range"><i class="fa fa-angle-right"></i></span>
+	{{/if}}
+</div>
+</template>

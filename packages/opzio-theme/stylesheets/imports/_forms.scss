@@ -1,0 +1,1066 @@
+// scss-lint:disable QualifyingElement
+
+//
+// Textual form controls
+//
+
+.form-control {
+  display: block;
+  width: 100%;
+  // // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  // height: $input-height;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+  background-image: none;
+  background-clip: padding-box;
+  border: none;
+  border-bottom: 2px solid $input-border-color;
+  border-radius: 0;
+  /*
+  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  @if $enable-rounded {
+    // Manually use the if/else instead of the mixin to account for iOS override
+    border-radius: $input-border-radius;
+  } @else {
+    // Otherwise undo the iOS default
+    border-radius: 0;
+  }
+  */
+
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  @include form-control-focus();
+
+  // Placeholder
+  /*
+  &::placeholder {
+    color: $input-color-placeholder;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+  */
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    color: $gray-light;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+
+  &:disabled {
+    cursor: $cursor-disabled;
+  }
+
+  &.error{
+    border-bottom-color: $brand-danger;
+  }
+}
+
+
+.form-control::placeholder,
+.form-control::-webkit-input-placeholder{
+  opacity: 0;
+  color: transparent;
+  transition: 240ms;
+}
+
+input[type="text"].form-control::-moz-placeholder,
+input[type="email"].form-control::-moz-placeholder,
+input[type="password"].form-control::-moz-placeholder,
+input[type="number"].form-control::-moz-placeholder{
+  opacity: 0;
+  color: transparent;
+  transition: 240ms;
+}
+
+.form-control:focus::-webkit-input-placeholder {
+    transition: none;
+}
+
+.form-group.focused .form-control::-webkit-input-placeholder, 
+.form-group.force-focused .form-control::-webkit-input-placeholder {
+    opacity: 1;
+    color: $gray-placeholder;
+}
+
+
+select.form-control {
+  &:not([size]):not([multiple]) {
+    $select-border-width: ($border-width * 2);
+    height: calc(#{$input-height} + #{$select-border-width});
+  }
+
+  &:focus::-ms-value {
+    // Suppress the nested default white text on blue background highlight given to
+    // the selected option text when the (still closed) <select> receives focus
+    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+    // match the appearance of the native widget.
+    // See https://github.com/twbs/bootstrap/issues/19398.
+    color: $input-color;
+    background-color: $input-bg;
+  }
+}
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.form-control-file,
+.form-control-range {
+  display: block;
+}
+
+
+//
+// Labels
+//
+
+// For use with horizontal and inline forms, when you need the label text to
+// align with the form controls.
+.col-form-label {
+  padding-top: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
+  margin-bottom: 0; // Override the `<label>` default
+}
+
+.col-form-label-lg {
+  padding-top: calc(#{$input-padding-y-lg} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y-lg} - #{$input-btn-border-width} * 2);
+  font-size: $font-size-lg;
+}
+
+.col-form-label-sm {
+  padding-top: calc(#{$input-padding-y-sm} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y-sm} - #{$input-btn-border-width} * 2);
+  font-size: $font-size-sm;
+}
+
+.control-label {
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0.4;
+    pointer-events: none;
+    position: absolute;
+    transform: translate3d(12px, 12px, 0) scale(1);
+    margin: 0;
+    transform-origin: left top;
+    transition: 240ms;
+    z-index: 50;
+}
+
+//Change label when using selectize
+.form-group.is-selectize{
+  .control-label {
+    transform: translate3d(12px, 0px, 0) scale(1);
+  }
+}
+
+
+//
+// Legends
+//
+
+// For use with horizontal and inline forms, when you need the legend text to
+// be the same size as regular labels, and to align with the form controls.
+.col-form-legend {
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  margin-bottom: 0;
+  font-size: $font-size-base;
+}
+
+
+// Static form control text
+//
+// Apply class to an element to make any string of text align with labels in a
+// horizontal form layout.
+
+.form-control-static {
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  margin-bottom: 0; // match inputs if this class comes on inputs with default margins
+  line-height: $input-line-height;
+  border: solid transparent;
+  border-width: $input-btn-border-width 0;
+
+  &.form-control-sm,
+  &.form-control-lg {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+// Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+//
+// The `.form-group-* form-control` variations are sadly duplicated to avoid the
+// issue documented in https://github.com/twbs/bootstrap/issues/15074.
+
+.form-control-sm {
+  padding: $input-padding-y-sm $input-padding-x-sm;
+  font-size: $font-size-sm;
+  @include border-radius($input-border-radius-sm);
+}
+
+select.form-control-sm {
+  &:not([size]):not([multiple]) {
+    height: $input-height-sm;
+  }
+}
+
+.form-control-lg {
+  padding: $input-padding-y-lg $input-padding-x-lg;
+  font-size: $font-size-lg;
+  @include border-radius($input-border-radius-lg);
+}
+
+select.form-control-lg {
+  &:not([size]):not([multiple]) {
+    height: $input-height-lg;
+  }
+}
+
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-group {
+  margin-bottom: $form-group-margin-bottom;
+
+  &.smartpass-wrapper,
+  &.selectize,
+  input[type="text"], 
+  input[type="password"], 
+  input[type="email"], 
+  input[type="textarea"], 
+  input[type="number"]{
+    margin-top: $form-group-margin-top;
+  }
+
+  &.force-focused{
+    margin-top: $form-group-margin-top;
+  }
+}
+
+.form-group.focused .control-label {
+    opacity: 1;
+    transform: scale(.8) translate3d(12px, -24px, 0);
+    //
+}
+
+.form-group.force-focused .control-label{
+  opacity: 1;
+  transform: translate3d(12px, -24px, 0);
+}
+
+.form-group.force-focused-alt .control-label{
+  opacity: 1;
+  transform: scale(.8) translate3d(12px, -24px, 0);
+}
+
+.form-text {
+  display: block;
+  margin-top: $form-text-margin-top;
+}
+
+.form-error {
+  display: block;
+  color: $red;
+  padding: 0 $input-padding-x;
+}
+
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+
+.form-check {
+  position: relative;
+  display: block;
+  margin-bottom: $form-check-margin-bottom;
+
+  &.disabled {
+    .form-check-label {
+      color: $text-muted;
+      cursor: $cursor-disabled;
+    }
+  }
+}
+
+.form-check-label {
+  padding-left: $form-check-input-gutter;
+  margin-bottom: 0; // Override default `<label>` bottom margin
+  cursor: pointer;
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: $form-check-input-margin-y;
+  margin-left: -$form-check-input-gutter;
+
+  &:only-child {
+    position: static;
+  }
+}
+
+/********************
+  Checkboxes custom styles
+********************/
+
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+// Checkbox Styles
+input[type="checkbox"] {
+
+  // Text Label Style
+  + label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1rem;
+
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+
+    &.weekday{
+      font-size: 1em;
+      font-weight: normal;
+    }
+
+  }
+
+  /* checkbox aspect */
+  + label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    z-index: 0;
+    border: 2px solid $gray-light;
+    border-radius: 1px;
+    margin-top: 2px;
+    transition: all .2s;
+  }
+
+  &:not(:checked):disabled + label:before {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.26);
+  }
+
+}
+
+input[type="checkbox"]:checked {
+  + label:before {
+    top: -4px;
+    left: -3px;
+    width: 12px; 
+    height: 22px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid $green;
+    border-bottom: 2px solid $green;
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+
+  &:disabled + label:before {
+    border-right: 2px solid rgba(0, 0, 0, 0.26);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.26);
+  }
+
+}
+
+/* Indeterminate checkbox */
+input[type="checkbox"]:indeterminate {
+  +label:before {
+    left: -10px;
+    top: -11px;
+    width: 10px; height: 22px;
+    border-top: none;
+    border-left: none;
+    border-right: 2px solid $green;
+    border-bottom: none;
+    transform: rotate(90deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+
+  // Disabled indeterminate
+  &:disabled + label:before {
+    border-right: 2px solid rgba(0, 0, 0, 0.26);
+    background-color: transparent;
+  }
+}
+
+// Filled in Style
+input[type="checkbox"].filled-in {
+  // General
+  + label:after {
+    border-radius: 0px;
+  }
+  + label:before,
+  + label:after {
+    content: '';
+    left: 0;
+    position: absolute;
+    /* .1s delay is for check animation */
+    transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
+    z-index: 1;
+  }
+  // Unchecked style
+  &:not(:checked) + label:before {
+    width: 0;
+     height: 0;
+     border: 3px solid transparent;
+     left: 6px;
+     top: 10px;
+
+     -webkit-transform: rotateZ(37deg);
+             transform: rotateZ(37deg);
+     -webkit-transform-origin: 20% 40%;
+             transform-origin: 100% 100%;
+  }
+  &:not(:checked) + label:after {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid $gray-light;
+    top: 0px;
+    z-index: 0;
+  }
+  // Checked style
+  &:checked {
+    + label:before {
+      top: 0;
+      left: 1px;
+      width: 8px;
+      height: 13px;
+      border-top: 2px solid transparent;
+      border-left: 2px solid transparent;
+      border-right: 2px solid #FFF;
+      border-bottom: 2px solid #FFF;
+      -webkit-transform: rotateZ(37deg);
+      transform: rotateZ(37deg);
+
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+    }
+    + label:after {
+      top: 0px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $green;
+      background-color: $green;
+      z-index: 0;
+    }
+  }
+  // Disabled style
+  &:disabled:not(:checked) + label:before {
+
+    background-color: transparent;
+    border: 2px solid transparent;
+  }
+  &:disabled:not(:checked) + label:after {
+    border-color: transparent;
+    background-color: #9E9E9E;
+  }
+  &:disabled:checked + label:before {
+    background-color: transparent;
+
+  }
+  &:disabled:checked + label:after {
+    background-color: #9E9E9E;
+    border-color: #9E9E9E;
+  }
+
+  &.variant{
+    &:checked {
+      + label:before {
+        top: -4px;
+        left: -4px;
+        width: 8px;
+        height: 13px;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid #FFF;
+        border-bottom: 2px solid transparent;
+        border-radius: 5px;
+        -webkit-transform: rotateZ(90deg);
+        transform: rotateZ(90deg);
+      }
+      + label:after {
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid $blue;
+        background-color: $blue;
+        z-index: 0;
+      }
+    }
+    //Disabled
+    // Disabled style
+    &:disabled:not(:checked) + label:before {
+
+      background-color: transparent;
+      border: 2px solid transparent;
+    }
+    &:disabled:not(:checked) + label:after {
+      border-color: transparent;
+      background-color: #9E9E9E;
+    }
+    &:disabled:checked + label:before {
+      background-color: transparent;
+
+    }
+    &:disabled:checked + label:after {
+      background-color: #9E9E9E;
+      border-color: #9E9E9E;
+    }
+  }
+
+}
+
+
+// Radios and checkboxes on same line
+.form-check-inline {
+  display: inline-block;
+
+  .form-check-label {
+    vertical-align: middle;
+  }
+
+  + .form-check-inline {
+    margin-left: $form-check-inline-margin-x;
+  }
+}
+
+/***************
+  Radio Buttons
+***************/
+
+/* Remove default Radio Buttons */
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: inherit;
+  transition: .28s ease;
+
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  ul{
+    padding-left: 15px;
+  }
+  p, li{
+    font-weight: normal;
+    color: $black;
+  }
+}
+
+[type="radio"] + label:before,
+[type="radio"] + label:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  transition: .28s ease;
+}
+
+
+/* Unchecked styles */
+[type="radio"]:not(:checked) + label:before {
+  border-radius: 50%;
+  border: 2px solid $gray-light;
+}
+[type="radio"]:not(:checked) + label:after {
+  border-radius: 50%;
+  border: 2px solid $gray-light;
+  z-index: -1;
+
+  transform: scale(0);
+}
+
+/* Checked styles */
+[type="radio"]:checked + label:before {
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+[type="radio"]:checked + label:after {
+  border-radius: 50%;
+  border: 2px solid $blue;
+  background-color: $blue;
+  z-index: 0;
+  transform: scale(1.02);
+}
+
+/* Radio With gap */
+[type="radio"].with-gap:checked + label:before {
+  border-radius: 50%;
+  border: 2px solid $blue;
+}
+[type="radio"].with-gap:checked + label:after {
+  border-radius: 50%;
+  border: 2px solid $blue;
+  background-color: $blue;
+  z-index: 0;
+  transform: scale(.5);
+}
+
+/* Disabled Radio With gap */
+[type="radio"].with-gap:disabled:checked + label:before {
+  border: 2px solid $gray-light;
+}
+[type="radio"].with-gap:disabled:checked + label:after {
+  border: none;
+  background-color: $gray-light;
+}
+
+/* Disabled style */
+[type="radio"]:disabled:not(:checked) + label:before,
+[type="radio"]:disabled:checked + label:before {
+  background-color: transparent;
+  border-color: $gray-light;
+}
+[type="radio"]:disabled + label {
+  color: $gray-light;
+}
+[type="radio"]:disabled:not(:checked) + label:before {
+  border-color: $gray-light;
+}
+[type="radio"]:disabled:checked + label:after {
+  background-color: $gray-light;
+  border-color: $gray-light;
+}
+
+/***************
+     Switch
+***************/
+.switch,
+.switch * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+.switch label {
+    cursor: pointer;
+    font-weight: normal;
+}
+.switch label input[type=checkbox]{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.switch label input[type=checkbox]:checked + .lever {
+    background-color: $blue;
+}
+.switch label input[type=checkbox]:checked + .lever:after {
+    background-color: $blue-light;
+}
+.switch label .lever {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 15px;
+    background-color: $gray-light;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.switch label .lever:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: $gray-lighter;
+    border-radius: 21px;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.4);
+    left: -5px;
+    top: -3px;
+    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+// Switch active style
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active:after {
+       box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), 0 0 0 15px transparentize($gray-light, .9);
+}
+input[type=checkbox]:not(:disabled) ~ .lever:active:after {
+       box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), 0 0 0 15px rgba(0, 0, 0, .08);
+}
+.switch label input[type=checkbox]:checked + .lever:after {
+    left: 24px;
+}
+
+// Disabled Styles
+
+.switch input[type=checkbox][disabled] + .lever{
+  cursor: default;
+  background-color: $gray-lighter;
+}
+.switch label input[type=checkbox][disabled] + .lever:after,
+.switch label input[type=checkbox][disabled]:checked + .lever:after {
+    background-color: $gray-lightest;
+}
+
+
+// Form control feedback states
+//
+// Apply contextual and semantic states to individual form controls.
+
+.form-control-feedback {
+  margin-top: $form-feedback-margin-top;
+}
+
+.form-control-success,
+.form-control-warning,
+.form-control-danger {
+  padding-right: ($input-padding-x * 3);
+  background-repeat: no-repeat;
+  background-position: center right ($input-height / 4);
+  background-size: ($input-height / 2) ($input-height / 2);
+}
+
+// Form validation states
+.has-success {
+  @include form-control-validation($brand-success);
+
+  .form-control-success {
+    background-image: $form-icon-success;
+  }
+}
+
+.has-warning {
+  @include form-control-validation($brand-warning);
+
+  .form-control-warning {
+    background-image: $form-icon-warning;
+  }
+}
+
+.has-danger {
+  @include form-control-validation($brand-danger);
+
+  .form-control-danger {
+    background-image: $form-icon-danger;
+  }
+}
+
+
+// Inline forms
+//
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center; // Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
+
+  // Because we use flex, the initial sizing of checkboxes is collapsed and
+  // doesn't occupy the full-width (which is what we want for xs grid tier),
+  // so we force that here.
+  .form-check {
+    width: 100%;
+  }
+
+  // Kick in the inline
+  @include media-breakpoint-up(sm) {
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    // Inline-block all the things for "inline"
+    .form-group {
+      display: flex;
+      flex: 0 0 auto;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    // Allow folks to *not* use `.form-group`
+    .form-control {
+      display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+
+    // Make static controls behave like regular ones
+    .form-control-static {
+      display: inline-block;
+    }
+
+    .input-group {
+      width: auto;
+    }
+
+    .form-control-label {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    // Remove default margin on radios/checkboxes that were used for stacking, and
+    // then undo the floating of radios and checkboxes to match.
+    .form-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .form-check-label {
+      padding-left: 0;
+    }
+    .form-check-input {
+      position: relative;
+      margin-top: 0;
+      margin-right: $form-check-input-margin-x;
+      margin-left: 0;
+    }
+
+    // Custom form controls
+    .custom-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 0;
+    }
+    .custom-control-indicator {
+      position: static;
+      display: inline-block;
+      margin-right: $form-check-input-margin-x; // Flexbox alignment means we lose our HTML space here, so we compensate.
+      vertical-align: text-bottom;
+    }
+
+    // Re-override the feedback icon.
+    .has-feedback .form-control-feedback {
+      top: 0;
+    }
+  }
+}
+
+// Range ========================================================================== 
+
+.range-field {
+  position: relative;
+}
+
+input[type=range],
+input[type=range] + .thumb {
+  //@extend .no-select;
+  cursor: pointer;
+}
+
+input[type=range] {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: 15px 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=range] + .thumb {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  border: none;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-color: $blue;
+  margin-left: 7px;
+
+  transform-origin: 50% 50%;
+  transform: rotate(-45deg);
+
+  .value {
+    display: block;
+    width: 30px;
+    text-align: center;
+    color: $blue;
+    font-size: 0;
+    transform: rotate(45deg);
+  }
+
+  &.active {
+    border-radius: 50% 50% 50% 0;
+
+    .value {
+      color: $input-bg;
+      margin-left: -1px;
+      margin-top: 8px;
+      font-size: 10px;
+    }
+  }
+}
+
+// WebKit
+input[type=range] {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: $track-height;
+  background: #c2c0c2;
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: $range-height;
+  width: $range-width;
+  border-radius: 50%;
+  background-color: $blue;
+  transform-origin: 50% 50%;
+  margin: -5px 0 0 0;
+  transition: .3s;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+// FireFox
+input[type=range] {
+  // fix for FF unable to apply focus style bug 
+  border: 1px solid white;
+
+  //required for proper track sizing in FF
+}
+
+input[type=range]::-moz-range-track {
+  height: $track-height;
+  background: #ddd;
+  border: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: $range-height;
+  width: $range-width;
+  border-radius: 50%;
+  background: $blue;
+  margin-top: -5px;
+}
+
+// hide the outline behind the border
+input[type=range]:-moz-focusring {
+  outline: 1px solid #fff;
+  outline-offset: -1px;
+}
+
+input[type=range]:focus::-moz-range-track {
+  background: #ccc;
+}
+
+// IE 10+
+input[type=range]::-ms-track {
+  height: $track-height;
+
+  // remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead
+  background: transparent;
+
+  // leave room for the larger thumb to overflow with a transparent border
+  border-color: transparent;
+  border-width: 6px 0;
+
+  //remove default tick marks
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #777;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #ddd;
+}
+
+input[type=range]::-ms-thumb {
+  border: none;
+  height: $range-height;
+  width: $range-width;
+  border-radius: 50%;
+  background: $blue;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #888;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #ccc;
+}

@@ -1,0 +1,25 @@
+<template name="teamDashboard">
+<!--div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			{{> yield 'badgesArea'}}
+		</div>
+	</div>
+</div-->
+<div class="container-fluid ">
+	<div class="row grid">
+		<div class="msnry-item col-xs-12 col-md-4">
+			{{> teamDeliveries }}
+		</div>
+		<div class="msnry-item col-xs-12 col-md-8">
+			{{> teamActivityChart }}
+		</div>
+		<div class="msnry-item col-xs-12 col-md-4">
+			{{> teamDistributionChart }}
+		</div>
+		<div class="msnry-item col-xs-12 col-md-8">
+			{{> teamListing }}
+		</div>
+	</div>
+</div>
+</template>

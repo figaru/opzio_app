@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "tooltipster": {
+      "version": "4.1.8",
+      "resolved": "https://registry.npmjs.org/tooltipster/-/tooltipster-4.1.8.tgz",
+      "from": "tooltipster@4.1.8"
+    }
+  }
+}

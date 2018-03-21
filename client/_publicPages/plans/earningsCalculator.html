@@ -1,0 +1,38 @@
+<template name="earningsCalculator">
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-12 mt-4">
+			<div class="row">
+				<div class="col-md-12 col-lg-4 mb-2">
+					<p class="text-muted mb-1">
+						The number of people whose time is charged by the hour
+					</p>
+					<div class="input-group">
+						<div class="input-group-addon">Team size</div>
+						<input type="number" class="form-control text-center" value="1" min="1" max="5000" id="numberOfUsers">
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-4 mb-3">
+					<p class="text-muted mb-1">
+						On average, the hourly rate of each person
+					</p>
+					<div class="input-group">
+						<div class="input-group-addon">Hourly Rate ($)</div>
+						<input type="number" class="form-control text-center" value="50" min="1" max="1000" id="hourlyRate">
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-4 mb-3">
+					<p class="text-muted mb-1">
+						Estimated work that is not billed to clients
+					</p>
+					<div class="input-group">
+						<div class="input-group-addon">Unbilled work (%)</div>
+						<input type="number" class="form-control text-center" value="15" min="1" max="100" id="nonAccountedPercentage">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12" id="earningsEstimates"></div>
+	</div>
+</div>
+</template>

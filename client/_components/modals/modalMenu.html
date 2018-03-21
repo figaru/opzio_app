@@ -1,0 +1,18 @@
+<template name="modalMenu">
+{{# if isAdmin }}
+<span class="nav-link pull-right no-hover t-0 r-0">
+	<div class="dropdown">
+	    <a href="#" class="dropdown-toggle btn btn-lg btn-primary shadow shadow-interact modal-menu" id="modalDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    	<i class="fa fa-plus"></i>
+	    </a>
+		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="modalDropdown">
+			<a class="dropdown-item modal-trigger" href="#" data-name="addProject" title="Create a new project"><i class="fa fa-briefcase"></i>&nbsp;&nbsp;New project</a>
+
+			<a class="dropdown-item modal-trigger" href="#" data-name="addUser" title="Invite a user to your organization"><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invite user</a>
+			
+			<!--a class="dropdown-item modal-trigger" href="#" title="Create a new task"><i class="fa fa-tasks"></i>&nbsp;&nbsp;&nbsp;&nbsp;New task</a-->
+		</div>
+	</div>
+</span>
+{{/if}}
+</template>

@@ -1,0 +1,43 @@
+<template name="projectPlanningPanel">
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label>Start date</label>
+			{{#if project.startDate }}
+			<input id="startDate" class="form-control datepicker" value="{{ getProjectDate project.startDate }}" data-content="{{ project.startDate }}" placeholder="{{ getProjectDate project.startDate }}">
+			{{else}}
+			<input id="startDate" class="form-control datepicker" placeholder="Unset">
+			{{/if}}
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label>End date</label>
+			{{#if project.endDate }}
+			<input id="endDate" class="form-control datepicker" value="{{ formatDate project.endDate 'DD/MM/YYYY' }}" data-content="{{ project.endDate }}" placeholder="{{ formatDate project.endDate 'DD/MM/YYYY' }}">
+			{{else}}
+			<input id="endDate" class="form-control datepicker" placeholder="Unset">
+			{{/if}}
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label>
+				Planned time
+				<i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Planned time</h3><p>Use this field to specify how many time you plan working on this project.<br> You can insert a value of hours such as:<br>- Numeric: 1, 24, 120.<br>- Smart string:<ul><li>4h 30m = 4.5h</li><li>1d = 8h</li><li>1w = 40h</li><li>1M = 168h</li></ul><p>You can change the the default values for smart string on your <a href='#'>organization profile</a></p>"></i> 
+			</label>
+			{{#if project.plannedTime }}
+			<input id="projectPlannedTime" name="planned-time" type="text" class="form-control" placeholder="{{ parseHoursToString project.plannedTime }}" data-content="{{ project.plannedTime }}" value="{{ parseHoursToString project.plannedTime }}">
+			{{else}}
+			<input id="projectPlannedTime" name="planned-time" type="text" class="form-control" placeholder="0" data-content="0" value="0">
+			{{/if}}
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label>Priority</label>
+			<input dsiabled class="form-control" name="priority" type="text" placeholder="Priority">
+		</div>
+	</div>
+</div>
+</template>

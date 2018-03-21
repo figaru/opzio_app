@@ -1,0 +1,124 @@
+<template name="finishRegisterAccount">
+<section class="section grey">
+	<span class="section__overlay first"></span>
+	<span class="section__overlay second"></span>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-md-flex flex-row align-items-center justify-content-center mih-80 py-5">
+					<div class="bg-white shadow miw-50 p-3">
+						<h4 class="font-weight-light text-uppercase text-center">Finish Account</h4>
+						<hr class="w-25">
+						<div class="container">
+							<form id="registerForm">
+								<div class="row">
+									<div class="col-sm-12 col-lg-6">
+										<div class="form-group">
+											<label class="control-label" for="firstName">First Name</label>
+											<input type="text" class="form-control" id="firstName" placeholder="John">
+											<small class="form-text form-error firstNameError"></small>
+										 </div>
+									</div>
+									<div class="col-sm-12 col-lg-6">
+										<div class="form-group">
+											<label class="control-label" for="lastName">Last Name</label>
+											<input type="text" class="form-control" id="lastName" placeholder="Snow">
+											<small class="form-text form-error lastNameError"></small>
+										 </div>
+									</div>
+									<div class="col-12">
+										<div class="form-group">
+											<label class="control-label" for="organizationName">Organization</label>
+											<input type="text" class="form-control" id="organizationName" placeholder="Company Inc.">
+											<small class="form-text form-error organizationError"></small>
+										 </div>
+									</div>
+									<div class="col-12">
+										<div class="form-group">
+											<div class="dropdown">
+												<button class="btn btn-outline-primary dropdown-toggle" type="button" id="teamSizeDropdown" data-toggle="dropdown" data-plan="single" aria-haspopup="true" aria-expanded="false">
+											    Team size: <span class="planText">Just me</span>
+											    </button>
+												<div class="dropdown-menu" aria-labelledby="teamSizeDropdown">
+													<a class="dropdown-item planOption" data-plan="single" href="#">Just me</a>
+													<a class="dropdown-item planOption" data-plan="lite" href="#">2-15 members</a>
+													<a class="dropdown-item planOption" data-plan="medium" href="#">16-50 members</a>
+													<a class="dropdown-item planOption" data-plan="large" href="#">51-100 members</a>
+													<h6 class="dropdown-header">More than 100 members?<br>Get in touch regarding our Enterprise solution</h6>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12 col-lg-3">
+										<button type="submit" id="finishAccount" class="btn btn-primary rounded text-white pull-right">Create</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="purple-gradient animate anim-60 py-3 px-4 miw-20 mh-50">
+						<h5 class="font-weight-light text-uppercase text-center">Regain control of your time</h5>
+						<hr class="w-25 bg-white">
+						<p class="white font-weight-light">But without wasting time, right?<br>Installing our plugins, create some projects and you can go back at what you were doing.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	<!--div class="container">
+		<div class="row push-top">
+			<div class="col-xs-12 col-sm-6">
+				<div class="panel">
+					<div class="panel-header">
+						<h2 class="panel-title">Register {{#if orgName}}on {{orgName}} {{/if}}</h2>
+					</div>
+					<div class="panel-description" action="">
+						<form id="registerForm">
+							<div class="form-group">
+								<input type="text" class="form-control {{ className }}" id="firstName" placeholder="First Name" />
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control {{ className }}" id="lastName" placeholder="Last Name" />
+							</div>
+							<div class="form-group">
+								{{#if email}}
+									<input type="email" class="form-control {{ className }}" id="email" placeholder="{{ email }}" value="{{ email }}"/>
+								{{else}}
+									<input type="email" class="form-control {{ className }}" id="email" placeholder="Email"/>
+									<div class="error emailError"></div>
+								{{/if}}
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control {{ className }}" id="password" placeholder="Password">
+							</div>
+							<div class="form-group">
+								{{#if orgName}}
+									<input type="text" class="form-control {{ className }}" disabled id="organization" placeholder="{{ orgName }}" />
+								{{else}}
+									<input type="text" class="form-control {{ className }}" id="organization" placeholder="Organization/Team Name" />
+								{{/if}}
+							</div>
+							<div class="form-group align-right">
+								<button class="btn large {{ className }}" id="createAccount" form="registerForm" type="button">Register</button>
+							</div>
+							<input type="text" style="display:none;" id="orgId" value="{{ orgId }}"/>
+							<input type="text" style="display:none;" id="inviteToken" value="{{ inviteToken }}"/>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-sm-offset-1">
+				<div class="side-content">
+					<h2 class="title align-center">{{ title }}</h2>
+					<h4 class="body align-center">{{ body }}</h4>
+					<br>
+					<div class="align-center">
+						<img class="opzio-bot hover" src="/images/bot/happy2.png" alt="Opzio Bot">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div-->
+	<!--div class="bottom-background {{ className }}"></div-->
+</template>

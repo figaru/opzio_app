@@ -1,0 +1,105 @@
+<template name="projectBadges">
+	<!--div class="gesture-wrapper right"><img src="/images/gestures/swipe_right.png" alt="Swipe"></div-->
+
+	<div id="badgesArea" class="swiper-container badges-area main">
+		<div class="swiper-wrapper">
+			{{> projectActivity }}
+			{{> projectTime }}
+			{{> projectRealization }}
+			<!--{{> projectUsers }}
+			{{> projectVariation }}
+			{{> projectTasks }}-->
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</template>
+
+<template name="projectActivity">	
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Validation <i class="fa fa-info-circle badgeTooltip" title="<h6><span class='d-block w-100 mb-2'>Validation</span><span class='font-weight-light'>Valid VS. Total registered time for given period.</span></h6>"></i></h2>
+		</div>
+		<div class="panel-description">
+			<div id="projectActivity" class="chart radial-chart"></div>
+			<span class="label metric">--/--</span>
+			<span class="label description badgeTooltip help-cursor" title="<h6><span class='font-weight-light'>The % of validated time for the given period.</span></h6>">--/--</span>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="projectTime">	
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Time <i class="fa fa-info-circle badgeTooltip periodGoalLegend" title="<h6><span class='d-block w-100 mb-2'>Time</span><span class='font-weight-light'>All registered work for this project (validated time only).<br><br><span class='legend'><div class='square-color blue'></div> <div class='legend-text'>Period goal</div></span> <span class='legend'><div class='square-color bluedark'></div> <div class='legend-text'>Planning completion</div></span>  </span></h6>"></i></h2>
+		</div>
+		<div class="panel-description">
+			<div id="projectTime" class="chart radial-chart"></div>
+			<span class="label metric badgeTooltip help-cursor" title="<h6><span class='font-weight-light'>Total validated work since project creation.</span></h6>">--/--</span>
+			<span class="label description badgeTooltip help-cursor" title="<h6><span class='font-weight-light'>How much has been completed for the given period's time goal.</span></h6>">--/--</span>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="projectRealization">	
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Billing Realization <i class="fa fa-info-circle badgeTooltip" title="<h6><span class='d-block w-100 mb-2'>Billing Realization</span><span class='font-weight-light'>How much certain (validated time) billable work has been registered Vs. Total potential billable work (includes non-validated time).<br><br><span class='legend'><div class='square-color blue'></div> <div class='legend-text'>Period Billable Vs. Billing goal</div></span> <span class='legend'><div class='square-color bluedark'></div> <div class='legend-text'>Period Valid Vs. Uncertain billable ratio</div></span>  </span></h6>"></i></h2>
+		</div>
+		<div class="panel-description">
+			<div id="projectRealization" class="chart radial-chart"></div>
+			<span class="label metric badgeTooltip help-cursor" title="<h6><span class='font-weight-light'>Certain Billable Vs. Total Billable for given time period.</span></h6>">--/--</span>
+			
+			<span class="label description badgeTooltip help-cursor" title="<h6><span class='font-weight-light'>Certain Billable Value Vs. Total Billable Value for project's whole active period.</span></h6>">--/--</span>
+		</div>
+	</div>
+</div>
+</template>
+
+
+<template name="projectUsers">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">Active Users</h2>
+	</div>
+	<div class="panel-description">
+		<canvas id="projectUsers" class="chart" height="" width=""></canvas>
+		<span class="label metric">--/--</span>
+		<span class="label description">--/--</span>	
+	</div>
+</div>
+</template>
+
+<template name="projectVariation">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">Variation</h2>
+	</div>
+	<div class="panel-description">
+		<span class="label icon">
+			<i class="fa fa-minus-circle"></i>
+		</span>
+		<span class="label metric">--/--</span>
+		<!--span class="label description">Projects</span-->
+	</div>
+</div>
+</template>
+
+<template name="projectTasks">
+<div class="panel stats-badge">
+	<div class="panel-header">
+		<h2 class="panel-title">Due date</h2>
+	</div>
+	<div class="panel-description">
+		<span class="label icon">
+			<i class="fa fa-flag"></i>
+		</span>
+		<span class="label metric">--/--</span>
+		<!--span class="label description">Projects</span-->
+	</div>
+</div>
+</template>

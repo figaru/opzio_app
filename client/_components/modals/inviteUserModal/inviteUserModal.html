@@ -1,0 +1,74 @@
+<template name="inviteUserModal">
+<div id="newUserModal" class="projectModal modal fade text-center" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+	<div class="modal-dialog text-left" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="userModalLabel">Invite User</h5>
+				<span class="mx-3 ml-auto text-blue">
+					<h6 id="availableInvites" class="m-0">{{ getAvailableInvites }}</h6>
+				</span>
+				<!--a href="#" class="badge blue-gradient animate mr-3">
+					<h6 class="m-0 mb-1">Manage plan</h6>
+				</a-->
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="newUserForm" class="modal-form">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6">
+							<div class="form-group">
+								<label class="control-label" for="userInviteEmail">User Email</label>
+								<input id="userInviteEmail" class="form-control" type="email" placeholder='john@example.com'>
+								<div class="error emailError"></div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<div class="form-group force-focused-alt mt-4 pull-left">
+								<label class="control-label">Role</label>
+								{{> userRoleMenu }}
+							</div>
+						</div>
+					</div>
+				</form>
+				{{#if invitedUsers }}
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="">Pending invites</label>
+							<div id="invitedUsersList">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Email</th>
+											<th>Send date</th>
+											<th>Registered</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										{{#each invitedUsers }}
+											<tr class="inviteRow" data-invite="{{this._id}}">
+												<th class="inviteEmail">{{this.email}}</th>
+												<td> {{ formatDate this.createDate "DD/MM/YY HH:mm" }}</td>
+												<td> {{ getInviteStatus }} </td>
+												{{{ getInviteActions }}}
+											</tr>
+										{{/each}}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/if}}
+
+			</div>
+			<div class="modal-footer">				
+				<button type="button" id="inviteUser" class="btn btn-primary modal-action modal-primary-action">Invite</button>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

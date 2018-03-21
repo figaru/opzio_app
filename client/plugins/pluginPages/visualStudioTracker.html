@@ -1,0 +1,33 @@
+<template name="visualStudioTracker">
+	<div class="container-fluid">
+		<div class="row tracker card p-3 mb-5">
+			<div class="col-12">
+				<img class="tracker-img" src="/images/trackers/vstudio.png" alt="Visual Studio">
+				<h2 class="browserValid font-weight-light">Visual Studio</h2>
+				<div class="browserDownload">
+					<!--span class="badge grey-full"><i class="fa fa-exclamation-circle"></i> Beta</span-->
+					<span class="badge badge-primary"><a href="/plugins/opzio_vs_2015.vsix" target="_blank"><fa class="fa fa-download"></fa> Download (VS 2015)</a></span>
+					<span class="badge badge-secondary"><a href="/plugins/opzio_vs_2017.vsix" target="_blank"><fa class="fa fa-download"></fa> Download (VS 2017)</a></span>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="tutorial-instructions">
+					<h3>Installing</h3>
+					<p><b>1)</b> Download the .vsix extension file for the Visual Studio version you use (download 2015 for 2016 as well).</p> 
+					<p><b>2)</b> Double click the .vsix file and chose the VS version to install the extension.</p>
+					<img class="tutorial-image" src="/images/trackers/tutorials/visual_studio/wizard.png" alt="VS Install Wizard">
+					<br><br>
+					<p><b>3)</b> Within Visual Studio, confirm the extension is enabled by clicking on <em>Tools</em> > <em>Extensions</em>.</p>
+					<img class="tutorial-image" src="/images/trackers/tutorials/visual_studio/extensions_settings.png" alt="VS Extension Settings">
+					<br><br>
+					<img class="tutorial-image" src="/images/trackers/tutorials/visual_studio/enable_extension.png" alt="VS Enable Extension">
+					<br><br>
+					<p><b>4)</b> Open the extension settings interface and enter your token <em><b>{{ currentUser.profile.token }}</b></em> in the API KEY prompt.<br>You can always find your token in your <a href="/user/{{ currentUser._id}}/settings">profile settings</a>.</p>
+					<img class="tutorial-image" src="/images/trackers/tutorials/visual_studio/opzio_settings.png" alt="VS Opzio Extension">
+					<br><br>
+					<p><b>5)</b> Use Visual Studio and your time will be tracked for you automatically according to your <a href="{{ pathFor route='userDashboard' userId=currentUser._id hash='settings' }}">privacy settings</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

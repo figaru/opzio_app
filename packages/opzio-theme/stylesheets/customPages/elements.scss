@@ -1,0 +1,15 @@
+.color-palette{
+	padding: 0;
+	width: 100%;
+	li{
+		list-style-type: none;
+		padding: 15px;
+		margin: 0;
+		width: 100%;
+		text-align: right;
+		a:hover, a:focus, a:active{
+			text-decoration: none;
+			cursor: default;
+		}
+	}
+}

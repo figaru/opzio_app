@@ -1,0 +1,385 @@
+// Core variables and mixins
+@import "{opzio-theme}/stylesheets/imports/_variables.scss";
+@import "{opzio-theme}/stylesheets/imports/mixins";
+// Reset and dependencies
+@import "{opzio-theme}/stylesheets/imports/normalize";
+@import "{opzio-theme}/stylesheets/imports/print";
+// Core CSS
+@import "{opzio-theme}/stylesheets/imports/reboot";
+@import "{opzio-theme}/stylesheets/imports/type";
+@import "{opzio-theme}/stylesheets/imports/images";
+@import "{opzio-theme}/stylesheets/imports/code";
+@import "{opzio-theme}/stylesheets/imports/grid";
+@import "{opzio-theme}/stylesheets/imports/tables";
+@import "{opzio-theme}/stylesheets/imports/forms";
+@import "{opzio-theme}/stylesheets/imports/selectize";
+@import "{opzio-theme}/stylesheets/imports/buttons";
+// Components
+@import "{opzio-theme}/stylesheets/imports/transitions";
+@import "{opzio-theme}/stylesheets/imports/dropdown";
+@import "{opzio-theme}/stylesheets/imports/button-group";
+@import "{opzio-theme}/stylesheets/imports/input-group";
+@import "{opzio-theme}/stylesheets/imports/custom-forms";
+@import "{opzio-theme}/stylesheets/imports/nav";
+@import "{opzio-theme}/stylesheets/imports/navbar";
+@import "{opzio-theme}/stylesheets/imports/card";
+@import "{opzio-theme}/stylesheets/imports/breadcrumb";
+@import "{opzio-theme}/stylesheets/imports/pagination";
+@import "{opzio-theme}/stylesheets/imports/badge";
+@import "{opzio-theme}/stylesheets/imports/jumbotron";
+@import "{opzio-theme}/stylesheets/imports/toastr";
+@import "{opzio-theme}/stylesheets/imports/progress";
+@import "{opzio-theme}/stylesheets/imports/media";
+@import "{opzio-theme}/stylesheets/imports/list-group";
+@import "{opzio-theme}/stylesheets/imports/responsive-embed";
+@import "{opzio-theme}/stylesheets/imports/close";
+@import "{opzio-theme}/stylesheets/imports/svg-icons";
+// Components w/ JavaScript
+@import "{opzio-theme}/stylesheets/imports/modal";
+@import "{opzio-theme}/stylesheets/imports/tooltip";
+@import "{opzio-theme}/stylesheets/imports/popover";
+@import "{opzio-theme}/stylesheets/imports/carousel";
+// Utility classes
+@import "{opzio-theme}/stylesheets/utilities/utilities";
+
+
+
+//APP IMPORTS
+@import "imports/_actionsMenu";
+@import "imports/_animations";
+@import "imports/_cards";
+@import "imports/_charts";
+@import "imports/_custom_fa";
+@import "imports/_glitch";
+@import "imports/_icons";
+@import "imports/_inputs";
+@import "imports/_loader";
+@import "imports/_mainNav";
+@import "imports/_modal";
+@import "imports/_statsBadges";
+@import "imports/_table";
+@import "imports/_toolbar";
+@import "imports/_tooltip";
+@import "imports/_utils";
+
+@import "imports/_vis";
+@import "imports/_fullCalendar";
+@import "imports/_datetimepicker";
+
+
+
+body{
+	font-family: 'Lato', sans-serif;
+	overflow-x: hidden;
+
+	&.fixed{
+		position: fixed;
+		overflow-y: hidden;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	&.grey{
+		background: $gray-lightest;
+		.section__overlay{
+			position: absolute;
+			display: block;
+			z-index: -1;
+			&.first{
+				top: -5%;
+				margin-left: 15%;
+
+				transform: rotate(-25deg);
+				width: 100%;
+				height: 400px;
+				//margin-top: -150px;
+				//margin-left: 250px;
+
+				background: -moz-linear-gradient(-45deg, rgba(255,255,255,0) 0%, rgba(237,237,237,0) 52%, rgba(221,221,221,1) 100%);
+				background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(237,237,237,0) 52%,rgba(221,221,221,1) 100%);
+				background: linear-gradient(135deg, rgba(255,255,255,0) 0%,rgba(237,237,237,0) 52%,rgba(221,221,221,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#dddddd',GradientType=1 );
+			}
+			&.second{
+				transform: rotate(25deg);
+				width: 100%;
+				height: 100%;
+				top: 65%;
+				margin-left: -450px;
+
+
+				background: -moz-linear-gradient(-45deg, rgba(221,221,221,1) 0%, rgba(241,241,241,0) 35%, rgba(255,255,255,0) 61%);
+				background: -webkit-linear-gradient(-45deg, rgba(221,221,221,1) 0%,rgba(241,241,241,0) 35%,rgba(255,255,255,0) 61%);
+				background: linear-gradient(135deg, rgba(221,221,221,1) 0%,rgba(241,241,241,0) 35%,rgba(255,255,255,0) 61%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#00ffffff',GradientType=1 );
+			}
+		}
+	}
+	&.fullscreen-calendar{
+		margin: 0!important;
+		.nav-wrapper{
+			display: none;
+		}
+		.main-content{
+			margin-top: -68px;
+			transition: margin 0.4s;
+			width: 103vw;
+			margin-left: -5px;
+			position: absolute;
+			.section-container{
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.main-content {
+	margin-top: 0px;
+	transition: margin 0.4s;
+	overflow-x: hidden;
+	@include media-breakpoint-up(xl) {
+		margin-top: 10px;
+		transition: margin 1.2s;
+	}
+
+	@include media-breakpoint-down(sm) {
+		//transform: translate3d(0, 8px, 0);
+		.section-container{
+			padding-right: 2px;
+			padding-left: 2px;
+			> .row{
+				padding: 0 15px!important;
+			}
+		}
+	}
+}
+
+//Generalistic app classes
+.section-content{
+	background: $white;
+	margin-top: -2px;
+	border-radius: 4px;
+	border: 1px solid $gray-lighter;
+	@include media-breakpoint-down(sm) {
+		padding-right: 2px;
+		padding-left: 2px;
+	}
+}
+
+.side-navigation{
+	li, a{
+		font-weight: 300;
+	}
+}
+
+
+/*
+	Login
+*/
+
+.side-content{
+	opacity: 0;
+	margin-top: -30px;
+	transition: opacity 1.5s, margin 1s;
+	h2{
+		font-size: 24px;
+		margin: 10px 0; 
+	}
+	&.display{
+		opacity: 1;
+		margin-top: 0px;
+		transition: opacity 1.5s, margin 1s;
+	}
+}
+
+.chart-content{
+	margin: 0 auto;
+	width: 100%;
+
+	.chart{
+		width: 100%;
+		min-height: 200px;
+		height: 200px;
+
+		&.h-400{
+			height: 200px;
+		}
+	}
+}
+
+//Legent square colors for badges tooltip content
+.legend{
+	display: block;
+	margin-bottom: 5px;
+	.square-color{
+		display: inline-block;
+		float: left;
+		height: 25px;
+		width: 25px;
+		border-radius: 4px;
+		&.bluedark{
+			background: $blue;
+		}
+		&.blue{
+			background: $blue-light;
+		}
+	}
+
+	.legend-text{
+		display: inline-block;
+		width: 80%;
+		margin-left: 10px;
+		height: 25px;
+		padding-bottom: 15px;
+	}
+}
+
+/**
+ Utility classes
+**/
+
+.push-top{
+	margin-top: 100px;
+	/*
+	@media (max-width: $medium-screen){
+		margin-top: 60px;
+	}
+	
+	@media (min-width: $medium-screen-up){
+		margin-top: 90px;
+	}
+
+	@media (max-width: $xsmall-screen){
+		margin-top: 20px;
+	}
+	*/
+}
+
+.no-shadow{
+	box-shadow: none!important;
+	&.btn{
+		&:hover{
+			-moz-box-shadow: 0px -2px 0px rgba(0,0,0,.075)!important;
+			-webkit-box-shadow: 0px -2px 0px rgba(0,0,0,.075)!important;
+			box-shadow: inset 0px -2px 0px rgba(0,0,0,.075)!important;			
+		}
+	}
+}
+
+//Display help cursor on hover
+.help-cursor:hover{
+	cursor: help!important;
+}
+
+//White Circle
+.white-circle{
+	background: $white;
+	text-align: center;
+	height: 400px;
+	width: 400px;
+	margin: 0 auto;
+	border-radius: 50%;
+
+	img{
+		padding: 5% 0;
+	}
+
+	hr{
+		border-color: transparent;
+	}
+
+	@include media-breakpoint-down(sm) {
+		height: 200px;
+		width: 200px;
+		hr{
+			margin: 0;
+		}
+	}
+}
+
+//Tracker pages
+
+.tracker{
+	background: transparent;
+	
+	.tracker-img{
+		float: left;
+		margin-right: 15px;
+		width: 100px;
+		max-width: 100%;
+	}
+
+	.browserValid{
+		margin-top: 0;
+	}
+
+	.browserDownload{
+		.badge{
+			font-size: 1em;
+			padding: 8px 15px;
+			a:hover{
+				cursor: pointer;
+			}
+		}
+	}
+	
+	.tutorial-instructions{
+		h4{
+			margin-top: 15px;
+		}
+	}
+
+	.tutorial-image{
+		margin-left: 25px;
+		border: 1px solid #eee;
+		max-width: 100%;
+	}
+	&.card{
+		background: $white;
+	}
+}
+
+
+.anim-shake{
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+}
+
+//Animation
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    -ms-transform: rotate(-4deg); /* IE 9 */
+    -webkit-transform: rotate(-4deg); /* Chrome, Safari, Opera */
+    transform: rotate(-4deg);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    -ms-transform: rotate(-3deg); /* IE 9 */
+    -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+    transform: rotate(-3deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+     -ms-transform: rotate(3deg); /* IE 9 */
+    -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes highlight {
+    0% { text-shadow: 0 0 5px $blue; }
+    100% { text-shadow: none; }
+}
+
+@-webkit-keyframes highlight {
+    0% { text-shadow: 0 0 5px $blue; }
+    100% { text-shadow: none; }
+}

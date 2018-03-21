@@ -1,0 +1,33 @@
+.opzio-bot{
+	display: block;
+	margin: 0 auto;
+	max-width: 250px;
+	vertical-align: middle;
+	
+	&.hover{
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		box-shadow: 0 0 1px transparent;
+
+		-webkit-animation-name: soft-hover-float, soft-hover;
+		animation-name: soft-hover-float, soft-hover;
+		-webkit-animation-duration: .3s, 1.5s;
+		animation-duration: .3s, 1.5s;
+		-webkit-animation-delay: 0s, .3s;
+		animation-delay: 0s, .3s;
+		-webkit-animation-timing-function: ease-out, ease-in-out;
+		animation-timing-function: ease-out, ease-in-out;
+		-webkit-animation-iteration-count: 1, infinite;
+		animation-iteration-count: 1, infinite;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+		-webkit-animation-direction: normal, alternate;
+		animation-direction: normal, alternate;
+	}
+
+
+	@media screen and (max-width: 768px){
+		width: 200px;
+		margin: 0 auto;
+	}
+}

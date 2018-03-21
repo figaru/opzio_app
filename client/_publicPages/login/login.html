@@ -1,0 +1,42 @@
+<template name="login">
+<section class="section grey">
+	<span class="section__overlay first"></span>
+	<span class="section__overlay second"></span>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex flex-row pull-for-nav align-items-center justify-content-center mih-100">
+					<div class="col-sm-12 col-md-5">
+						<div class="card border-0 pull-for-nav shadow">
+							<div class="card-block">
+								<h3 class="card-title text-blue">Sign in</h3>
+								<form id="login-form">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label class="control-label" for="email">Email</label>
+											<input type="email" class="form-control purple input-lg" id="email" placeholder="email@example.com" />
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label class="control-label" for="password">Password</label>
+											<input autocomplete="new-password" type="password" class="form-control purple input-lg" id="password" placeholder="Password">
+										</div>
+									</div>
+
+									<div class="col-xs-12 align-right">
+										<div class="form-group">
+											<a href="#" class="card-link pull-left">Forgot password?</a>
+											<button id="loginButton" class="btn blue-gradient animate anim-60 shadow shadow-interact rounded pull-right" type="submit" tabindex="3">Sign in</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</template>

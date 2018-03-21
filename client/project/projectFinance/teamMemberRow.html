@@ -1,0 +1,12 @@
+<template name="teamMemberRow">
+	<tr data-userid="{{ member.user }}">
+		<td class="pt-4">
+			<a href="#" target="_blank" >{{ getUserFullName member.user }}</a>
+		</td>
+		<td>
+			<div class="form-group mb-0 mt-2 mw-30">
+				<input class="form-control mt-0 userHourRate" type="number" data-currentvalue="{{ getTeamMemberHourRate member }}" placeholder="Hour Rate" id="memberHourRate_{{member.user}}" value="{{ getTeamMemberHourRate member }}">
+			</div>
+		</td>
+	</tr>
+</template>

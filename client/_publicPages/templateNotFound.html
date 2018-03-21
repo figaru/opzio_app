@@ -1,0 +1,31 @@
+<template name="templateNotFound">
+{{#if currentUser }}
+{{> privateNav }}
+{{else}}
+{{> publicNav nottransparent=true }}
+{{/if}}
+<section class="section push-for-nav">
+	<!--span class="section__overlay first"></span>
+	<span class="section__overlay second"></span-->
+	<div class="container push-for-nav">
+		<div class="col-12">
+			<div class="d-flex justify-content-center">
+				<div id="mainContent" class="main-content glitch-container d-flex justify-content-center align-items-center shadow">
+					<div class="glitch-text">
+						<span class="glitch delay-2 character character-down" data-text="4">4</span>
+						<span class="glitch character character-down" data-text="0">0</span>
+						<span class="glitch delay-4 character character-up" data-text="4">4</span>
+						<p>The page you're looking for doesn't exist.<br><a href="{{ pathFor route='home'}}">Back Home</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="text-center my-4">
+				<br>
+				<img class="opzio-bot hover" style="width:180px;" src="/images/bot/confused.png" alt="Confused Opzio">
+			</div>
+		</div>
+	</div>
+</section>
+{{> publicFooter simple=true}}
+</template>
+

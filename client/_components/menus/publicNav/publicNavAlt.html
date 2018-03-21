@@ -1,0 +1,33 @@
+<template name="publicNavAlt">
+<div id="searchResults" class="search-results"></div>
+<ul class="gn-menu-main transparent expanded alt">
+	<li class="top-link left">
+		<a href="/" class="menu-brand main-link hidden-xs homeNavButton">
+			<img src="/images/logo_negative.png" alt="opz.io">
+		</a>
+		<a href="/" class="no-padding homeNavButton">
+			<img class="head-image" src="/images/bot/opz_head.png" alt="">
+		</a>
+	</li>
+
+	<li class="top-link right">
+		<a href="{{ pathFor route='login' }}" class="main-link btn loginNavButton">Login</a>
+	</li>
+
+	<li class="top-link right hide-on-xs public">
+		<div class="dropdown">
+		  <button class="btn btn-secondary dropdown-toggle" type="button" id="secondary-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		  	<span id="submenuTitle" class="submenu-title">Solutions</span>
+		    <i class="fa fa-angle-down"></i>
+		  </button>
+		  <ul class="dropdown-menu dropdown-menu-right purple" aria-labelledby="secondary-menu">
+
+			<li class="menu-option"><a href="{{ pathFor route='solutions' industry='freelancers-time-management-online-software' }}" class="main-link serviceMenuCTA">For Individuals</a></li>
+
+			<li class="menu-option"><a href="{{ pathFor route='solutions' industry='it-service-and-agency-teams-management-software' }}" class="main-link serviceMenuCTA">For Teams</a></li>
+
+		  </ul>
+		</div>
+	</li>
+</ul>
+</template>

@@ -1,0 +1,133 @@
+.main-nav{
+  top: 0;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  background: $black;
+  z-index: 100;
+  
+  .navigation{
+    background: $white;
+    height: inherit;
+    display: block;
+    
+    &.menu-button{
+      width: 50px;
+      text-align: center;
+      transition: background .3s;
+      &:hover{
+        cursor: pointer;
+        background: $purple;
+        transition: background .3s;
+        .menu-bar{
+          background: $white;
+          transition: background .1s;
+        }
+      }
+    }
+    
+    .menu-bar{
+      height: 4px;
+      background: $black;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      width: 60%;
+      transition: background .1s;
+      &:nth-of-type(1){
+        margin-top: 30%;
+      }
+      &:nth-of-type(2){
+        margin-top: 10%;
+      }
+      &:nth-of-type(3){
+        margin-top: 10%;
+      }
+    }
+  }
+}
+
+//Secondary navigation
+
+.navigation-header{
+  max-width: 100%;
+  overflow: hidden;
+  //background: $gray-lighter;
+  height: 60px;
+  //width: 100%;
+
+  .swiper-container{
+    height: 60px;
+    overflow: visible;
+    margin: initial;
+  }
+  
+  .bottom-line{
+    width: 100%;
+    display:block;
+    margin-top:-1px;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+.tab-slider{
+  padding: 10px 5px 0px;
+  display: block;
+  width: 600px;
+  position: relative;
+  
+  .tab-item{
+    position: relative;
+    display: inline-block;
+    padding: 8px 10px;
+    width: auto;
+    height: 34px;
+    border: solid transparent;
+    border-width: 3px 1px 0px 1px;
+    border-color: transparent;
+    transition: background .4s, border-color .4s;
+
+    a{
+      color: $black;
+      font-weight: 300;
+      //line-height: 1.8em;
+      &:hover, &:focus, &:active{
+        text-decoration: none;
+      }
+      .svg-icon{
+        float: left;
+        margin-right: 10px;
+      }
+    }
+    &:hover{
+      border-top: 3px solid $blue;
+      //background: rgba(217, 217, 217, 0.5);
+      padding: 8px 10px 6px;
+      z-index: -1;
+      background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 68%, rgba(255,255,255,0) 100%);
+      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 68%,rgba(255,255,255,0) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 68%,rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+      transition: background .4s, border-color .4s;
+    }
+    
+    &.active{
+      background: $white;
+      border-color: $gray-lighter;
+      border-radius: 3px 3px 0 0;
+      border-top-color: $blue;
+      box-shadow: 0 9px 0px 0px white, 
+                  0 0px 0px 0px white, 
+                  12px 0 25px -10px rgba(0, 0, 0, 0.2), 
+                  -12px 0px 25px -10px rgba(0, 0, 0, 0.2);
+
+      //0px 3px 25px -5px rgba(0, 0, 0, 0.5)
+                  
+      i{
+        color: $blue;
+      }
+    }
+    
+  }
+}

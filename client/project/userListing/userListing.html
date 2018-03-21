@@ -1,0 +1,43 @@
+<template name="userListing">
+<div class="panel">
+	<div class="panel-header">
+		<div class="controls">
+			<span class="collapse-panel expanded"><i class="fa fa-angle-up"></i></span>
+		</div>
+		<h2 class="panel-title tooltipster" title="<h2>This is title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus numquam quis beatae totam aliquid dolorum hic, aspernatur blanditiis laudantium similique. Enim nihil nulla nobis laudantium odit quas doloribus, praesentium rem!</p>">Team</h2>
+	</div>
+	<div class="panel-description ">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Total</th>
+					<th>Validated</th>
+					<th>Uncertain</th>
+				</tr>
+			</thead>
+			<tbody id="projectsListingTable">
+				{{#each users }}
+				{{> userListItem }}
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<!--div class="panel-footer"></div-->
+</div>
+</template>
+
+<template name="userListItem">
+<tr data-user="{{ this.user }}">
+	<th><a href="#">{{ getUserShortName this.user }}</a></th>
+	<td class="userTotalTime">
+		<span class="load-spinner m-progress"></span>
+	</td>
+	<td class="userValidatedTime">
+		<span class="load-spinner m-progress"></span>
+	</td>
+	<td class="userUnknownTime">
+		<span class="load-spinner m-progress"></span>
+	</td>
+</tr>
+</template>

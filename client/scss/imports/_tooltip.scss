@@ -1,0 +1,38 @@
+//Calendar Event Tooltips (for hover event)
+.tooltip-wrapper{
+	//background: rgba(0,0,0,0.3);
+	.timeline-tooltip{
+		display: block;
+		//background: $gray-lighter;
+		//padding: 15px;
+		margin: 0px;
+		min-height: 100px;
+		min-width: 100px;
+		max-width: 650px;
+
+		&:after, &:before{
+			position: absolute;
+		    display: inline-block;
+		    border-bottom-color: rgba(0, 0, 0, 0.2);
+		    content: '';
+		}
+		&:before{
+			bottom: -9px;
+			left: 15px;
+		    border-right: 7px solid transparent;
+		    border-left: 7px solid transparent;
+		    border-bottom: 7px solid #ccc;
+		    transform: rotate(180deg);
+		}
+	}
+	&.bottom{
+		.timeline-tooltip{
+			&:before{
+				bottom: initial;
+				top: -9px;
+			    transform: rotate(00deg);
+			    border-bottom: 9px solid #ccc;
+			}
+		}
+	}
+}

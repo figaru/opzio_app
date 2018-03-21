@@ -1,0 +1,70 @@
+<template name="projectListItem">
+<div class="px-2 mb-2 card-wrapper internal-msnry-item internal-grid-sizer {{#if isHalf}}half{{/if}}">
+	<div class="card list-item has-chart projectRow list-item" data-id="{{ project._id }}" data-projectname="{{ project.name }}" data-codename="{{ project.codeName }}">
+
+		<div class="card-header p-2">
+			<div class="controls">	
+				{{{ getProjectPriority project }}}
+				{{{ getProjectState project }}}
+			</div>
+			<a href="{{ pathFor route='projectDashboard' projectId=project._id hash='dashboard' }}" class="project-name card-title">{{ project.name }}</a>
+		</div>
+		<div class="card-block py-0">
+			<div class="row">
+				<div class="col-12">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td class="w-25 border-0 text-left px-1">
+									<span class="text-muted font-weight-light"><i class="fa fa-clock-o"></i> Total</span>
+									<span class="projectTotal list-item-metric text-gray font-weight-light d-block">N/A</span>
+								</td>
+								<td class="w-25 border-0 text-left px-1">
+									<span class="text-muted font-weight-light"><i class="fa fa-usd"></i> Billed</span>
+									<span class="projectBilled list-item-metric text-gray font-weight-light d-block">N/A</span>
+								</td>
+								<td class="w-25 border-0 text-left px-1">
+									<span class="text-muted font-weight-light"><i class="fa fa-users"></i> Team</span>
+									<span class="projectTeam list-item-metric text-gray font-weight-light d-block">N/A</span>
+								</td>
+								<td class="w-25 border-0 text-left px-1">
+									<span class="text-muted font-weight-light"><i class="fa fa-calendar-o"></i> Delivery</span>
+									<span class="projectDelivery list-item-metric text-gray font-weight-light d-block">N/A</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card-block p-0">
+			<div class="projectChart">
+				<div id="projectChart_{{project._id}}" style="height:50px;"></div>
+				<small class="projectSmallLabel"><span class="periodTotal text-muted"></span> <span class="font-weight-light">in last 7 days</span></small>
+			</div>
+		</div>
+		<div class="card-footer bg-white p-0">
+			<div class="horizontal-bar">
+				<div class="column-wrapper column-tooltip">
+					<div class="column completion">
+						<span class="bar-tooltip"><span class="content"></span><!--span class="arrow-top"></span--></span>
+					</div>
+					<div class="column remaining">
+						<span class="bar-tooltip"><span class="content"></span><!--span class="arrow-top"></span--></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="userRowItem">
+<tr>
+	<td>
+		<a href="{{pathFor route='userDashboard' userId=this.user hash='dashboard'}}" class="rounded" title="{{ getUserFullName this.user }}">{{ getUserInitials this.user }}</a></td>
+	<td class="userBillableTime"></td>
+	<td class="userNonBillableTime"></td>
+	<td class="userTotalTime"></td>
+</tr>
+</template>

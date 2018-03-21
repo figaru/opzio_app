@@ -1,0 +1,37 @@
+<template name="userLogsPanel">
+<div class="col-12 msnry-item grid-sizer">
+	<div class="panel hourLog non-hoverable {{ collapsePanelOption this.validCount this.totalCount }}">
+		<div class="panel-header">
+			<div class="controls">
+				<span class="collapse-panel"><i class="fa fa-angle-up collapse-panel"></i></span>
+				{{> panelLogActions}}
+				{{> panelLogsSelector }}
+			</div>
+			<h2 class="panel-title collapse-panel"> <i class="fa fa-info-circle tooltipster panel-tooltip pull-left" title="{{ getPanelTooltipContent this }}"></i> {{ getLogTitle this }} <span class="valid-percent {{badgeStateClass this.validCount this.totalCount}}">{{ getStringFromEpoch this.totalTime true }}</span></h2>
+		</div>
+		<div class="panel-description hourLog">
+			<table class="rwd-table table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Source</th>
+						<th>Title</th>
+						<th>Category</th>
+						<th>Project</th>
+						<th>Time</th>
+						<th>Private</th>
+						<th>Validated</th>
+						<th>Actions</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each this.logs}}
+					{{> userLogRow }}
+				{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</template>

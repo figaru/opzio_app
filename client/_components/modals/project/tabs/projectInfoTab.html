@@ -1,0 +1,63 @@
+<template name="projectInfoTab">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="projectName">Name</label>
+				<input type="text" class="form-control" id="projectName" placeholder="Project or client name">
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="projectCode">Code</label>
+				<input type="text" class="form-control" id="projectCode" placeholder="Unique identifier">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="form-group">
+				<label class="control-label" for="projectBrief">Description</label>
+				<textarea class="form-control" id="projectBrief" cols="15" rows="5" data-placeholder="Project description"></textarea>
+				<!--div id="projectBrief" contenteditable="true" data-placeholder="Project description" data-name="brief" class="form-control dynamic-height projectBrief"></div-->
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="projectStartDate">Start Date</label>
+				<input id="projectStartDate" class="form-control datepicker" value="" placeholder="">
+			</div>
+		</div>
+		<div class="col-xs-6 col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="projectEndDate">End Date</label>
+				<input id="projectEndDate" class="form-control datepicker" value="" placeholder="">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 mt-2">
+			<div class="form-group">
+				<label class="control-label" for="teamSelect">Team</label>
+				<input class="form-control green demo-default team-select selectized" type="text" id="teamSelect" name="project-team" placeholder="Choose team members">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!--div class="row">
+	<div class="col-xs-12 col-md-4">
+		<div class="form-group">
+			<label>
+				Planned time
+				<i class="fa fa-info-circle"></i>
+			</label>
+			<input id="projectPlannedTime" name="planned-time" type="text" class="form-control" placeholder="0" data-content="0" value="0">
+		</div>
+	</div>
+</div-->
+</template>

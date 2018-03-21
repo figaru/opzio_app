@@ -1,0 +1,41 @@
+<template name="projectsMenu">
+{{#if canViewMenu }}
+<div class="navigation-header">
+	<nav class="tab-slider menu-swiper swiper-container" role="navigation">
+		<div class="swiper-wrapper">
+			<span class="tab-item swiper-slide" data-section="dashboard" data-index="0">
+				<a href="{{ pathFor route='projectsDashboard' section='dashboard' }}">
+					<!--i class="svg-icon user-dashboard"></i--> 
+					<i class="fa fa-bar-chart"></i>
+					Dashboard
+					</a>
+			</span>
+			<span class="tab-item swiper-slide" data-section="list" data-index="1">
+				<a href="{{ pathFor route='projectsDashboard' section='list' }}">
+					<i class="fa fa-th-list"></i>
+					List
+					</a>
+			</span>
+			<!--span class="tab-item swiper-slide" data-section="financial" data-index="2">
+				<a href="#"><i class="fa fa-usd"></i> Financial</a>
+			</span-->
+			<!--
+			<span class="tab-item swiper-slide" data-section="timeline" data-index="1">
+				<a href="{{ pathFor route='projectsDashboard' section='timeline' }}"><i class="fa fa-map-o"></i> Timeline</a>
+			</span>
+			{{#if canViewListing}}
+			<span class="tab-item swiper-slide" data-section="list" data-index="2">
+				<a href="{{ pathFor route='projectsDashboard' section='list' }}"><i class="fa fa-list"></i> List</a>
+			</span>
+			{{/if}}
+			{{#if canViewSettings}}
+			<span class="tab-item swiper-slide" data-section="settings" data-index="3">
+				<a href="{{ pathFor route='projectsDashboard' section='settings' }}"><i class="fa fa-cog"></i> Settings</a>
+			</span>
+			{{/if}}
+			-->
+		</div>
+	</nav>
+</div>
+{{/if}}
+</template>

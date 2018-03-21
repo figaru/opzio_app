@@ -1,0 +1,386 @@
+<template name="userSettings">
+<div class="container-fluid section-container">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow">
+			<div class="row">
+				<div class="col-sm-3 hidden-sm-down">
+					{{> userSettingsSideNav }}
+				</div>
+				<div id="settings" class="col-sm-12 col-md-9">
+					<!--div class="row">
+						<div id="info" class="col-12">
+							<div class="card border-0">
+								<div class="card-block p-2">
+									<h5 class="card-title">Account Info</h5>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group">
+												<label class="control-label" for="firstName">First Name</label>
+												<input class="form-control" type="text" id="firstName" placeholder="First name" data-initialvalue="{{ user.profile.firstName }}" value="{{ user.profile.firstName }}" aria-describedby="firstname">
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group">
+												<label class="control-label" for="lastName">Last Name</label>
+												<input class="form-control" type="text" id="lastName" placeholder="Last name" data-initialvalue="{{ user.profile.lastName }}" value="{{ user.profile.lastName }}" aria-describedby="lastname">
+											</div>
+										</div>
+										<div id="token" class="col-12">
+											<div class="form-group">
+												<label class="control-label" for="userToken">Token</label>
+												<input disabled id="userToken" type="text" class="text-center form-control" value="{{ user.profile.token }}" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div-->
+
+					<div id="privacy" class="row">
+						<div class="col-12">
+							<div class="card border-0">
+								<div class="card-block p-2">
+									<h3 class="card-title font-weight-light">Tracking</h3>
+									<p>Here you can change your tracking preferences as well as verifying that plugins are running correctly.</p>
+									<div class="row">
+										<div id="plugins" class="col-12">
+											<h5 class="font-weight-light">Plugins <small class="text-muted"><i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Plugins</span><span class='font-weight-light'>The list of plugins you currently have sending data to Opz.io.<br>Installed plugins show up automatically. If you want to revoke data being stored for any of these plugins just set is as inactive.</span></h6>"></i></small>
+											<a href="{{ pathFor route='choosePlugins' }}" class="btn btn-sm blue-gradient animate pull-right">All plugins</a>
+											</h5>
+											{{# if user.trackers.length }}
+											{{ initTooltips }}
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>Source</th>
+														<th>First activity</th>
+														<th>Last Activity</th>
+														<th><span id="tipActive">Active <small class="text-muted"><i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Active</span><span class='font-weight-light'>At any moment you can turn off specific plugins. These will still try to send heartbeats but Opz.io won't receive or process them.</span></h6>"></i></small></span></th>
+													</tr>
+												</thead>
+												<tbody id="pluginsListingTable">
+													{{# each user.trackers }}
+														<tr class="pluginRow" data-plugintype="{{ this.tracker }}">
+															<th>{{ capitalizeFirstLetter this.tracker }}</th>
+															<td>{{ formatDate this.createDate 'DD/MM/YYYY HH:mm:ss' }}</td>
+															<td>{{ formatDate this.updateDate 'DD/MM/YYYY HH:mm:ss' }}</td>
+															<td>
+																<div class="switch">
+																	<label>
+																		No
+																		{{#if this.active }}
+																		<input class="plugin-state-toggle" checked type="checkbox"/>
+																		{{else}}
+																		<input class="plugin-state-toggle" type="checkbox"/>
+																		{{/if}}
+																		<span class="lever"></span>
+																		Yes
+																	</label>
+																</div>
+															</td>
+														</tr>
+													{{/each}}
+												</tbody>
+											</table>
+											{{ else }}
+											<div class="align-center">
+												<h3>Looks you haven't installed any plugin yet.</h3>
+												<h5>Or if you just installed one, give it some seconds before it shows up.</h5>
+												<h5><a href="{{ pathFor route='choosePlugins' }}" class="btn btn-primary">Install Plugins</a></h5>
+											</div>
+											{{/if}}
+										</div>
+										<div id="periods" class="col-12 mb-3">
+											<div class="row">
+												<div class="col-12">
+													<h5 class="font-weight-light">Tracking Period <small class="text-muted"><i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Tracking Period</span><span class='font-weight-light'>Specify the time periods you wish your data to be tracked by Opz.io.</span></h6>"></i></small></h5>
+													
+													<label class="font-weight-light">Days <small class="text-muted"><i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Days</span><span class='font-weight-light'>Specify the days you wish data to be tracked by Opz.io.</span></h6>"></i></small></label>
+													<div class="row">
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 1 }}
+															<input checked class="privacyDay" type="checkbox" data-value="1" id="monday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="1" id="monday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="monday">Monday</label>
+														</div>
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 2 }}
+															<input checked class="privacyDay" type="checkbox" data-value="2" id="tuesday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="2" id="tuesday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="tuesday">Tuesday</label>
+														</div>
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 3 }}
+															<input checked class="privacyDay" type="checkbox" data-value="3" id="wednesday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="3" id="wednesday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="wednesday">Wednesday</label>
+														</div>
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 4 }}
+															<input checked class="privacyDay" type="checkbox" data-value="4" id="thursday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="4" id="thursday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="thursday">Thursday</label>
+														</div>
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 5 }}
+															<input checked class="privacyDay" type="checkbox" data-value="5" id="friday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="5" id="friday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="friday">Friday</label>
+														</div>
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 6 }}
+															<input checked class="privacyDay" type="checkbox" data-value="6" id="saturday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="6" id="saturday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="saturday">Saturday</label>
+														</div>
+														<div class="col-xs-6 col-sm-4 col-lg-3">
+															{{#if isSelectedWorkDay 7 }}
+															<input checked class="privacyDay" type="checkbox" data-value="7" id="sunday" />
+															{{else}}
+															<input class="privacyDay" type="checkbox" data-value="7" id="sunday" />
+															{{/if}}
+															<label class="weekday" data-action="private" for="sunday">Sunday</label>
+														</div>
+													</div>
+												</div>
+												<div class="col-12">
+													<div class="row">
+														<div class="col-12">
+															<label class="font-weight-light">Hours <small class="text-muted"><i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Hours</span><span class='font-weight-light'>Specify the hours you wish data to be tracked by Opz.io.</p><p><b>Tip:</b> if you wish to be tracked 24/7, tick all week days and select from 00:00 to 23:00 hours.</span></h6>"></i></small></label>
+														</div>
+														<div class="col-6">
+															<label class="font-weight-light" for="startHour">Start hour</label>
+															<br>
+															<div class="dropdown">
+															  <button class="btn btn-primary dropdown-toggle no-caret" type="button" id="startHour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+															  	<span id="selectedStartHour" data-value="{{user.workStartHour}}" class="submenu-title">{{ userWorkStartHour }}</span>
+															    <i class="fa fa-angle-down"></i>
+															  </button>
+
+															  <ul class="dropdown-menu mh-30 overflow-y-scroll" aria-labelledby="startHour">
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="0" href="#">00:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="1" href="#">01:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="2" href="#">02:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="3" href="#">03:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="4" href="#">04:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="5" href="#">05:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="6" href="#">06:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="7" href="#">07:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="8" href="#">08:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="9" href="#">09:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="10" href="#">10:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="11" href="#">11:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="12" href="#">12:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="13" href="#">13:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="14" href="#">14:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="15" href="#">15:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="16" href="#">16:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="17" href="#">17:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="18" href="#">18:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="19" href="#">19:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="20" href="#">20:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="21" href="#">21:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="22" href="#">22:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" data-type="startHour" data-value="23" href="#">23:00</a>
+																</li>
+															  </ul>
+															</div>
+
+														</div>
+														<div class="col-6">
+															<label class="font-weight-light" for="endHour">End hour (including)</label>
+															<br>
+															<div class="dropdown">
+															  <button class="btn btn-primary dropdown-toggle no-caret" type="button" id="endHour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+															  	<span id="selectedEndHour" data-value="{{user.workEndHour}}" class="submenu-title">{{ userWorkEndHour }}</span>
+															    <i class="fa fa-angle-down"></i>
+															  </button>
+
+															  <ul class="dropdown-menu mh-30 overflow-y-scroll" aria-labelledby="endHour">
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="0" href="#">00:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="1" href="#">01:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="2" href="#">02:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="3" href="#">03:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="4" href="#">04:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="5" href="#">05:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="6" href="#">06:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="7" href="#">07:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="8" href="#">08:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="9" href="#">09:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="10" href="#">10:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="11" href="#">11:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="12" href="#">12:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="13" href="#">13:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="14" href="#">14:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="15" href="#">15:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="16" href="#">16:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="17" href="#">17:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="18" href="#">18:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="19" href="#">19:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="20" href="#">20:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="21" href="#">21:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="22" href="#">22:00</a>
+																</li>
+																<li>
+																	<a class="dropdown-item trackingHour" data-type="endHour" data-value="23" href="#">23:00</a>
+																</li>
+															  </ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="notifications" class="row">
+						<div class="card border-0 mt-4">
+							<div class="card-block p-2">
+								<h3 class="card-title font-weight-light">Email Notifications <small class="text-muted"><i class="fa fa-info-circle tooltipster" title="<h6><span class='d-block miw-80 w-100 mb-2'>Notification Preferences</span><span class='font-weight-light'>Configure which email notifications you wish to receive as well as their frequency.</span></h6>"></i></small></h3>
+								<div class="container-fluid">
+									<div class="row">
+										<div id="plugins" class="col-12">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>Type</th>
+														<th>Last sent</th>
+														<th>Frequency</th>
+														<th>Hour</th>
+														<th>Active</th>
+													</tr>
+												</thead>
+												<tbody id="pluginsListingTable">
+													{{# each user.notificationOptions }}
+														{{{ notificationRow this }}}
+													{{/each}}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--
+					{{> integrations }}
+					-->
+
+					<!--{{ > userRulesArea }}-->
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

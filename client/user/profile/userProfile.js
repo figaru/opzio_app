@@ -1,0 +1,3 @@
+// Template.userProfile.onRendered(function(){
+	
+// });

@@ -1,0 +1,27 @@
+{
+  "name": "opz_app",
+  "author": "Lawrence Braun",
+  "version": "1.0.0",
+  "homepage": "http://opz.io",
+  "description": "Opz.io Web App",
+  "private": true,
+  "scripts": {
+    "start": "meteor run --settings settings.json"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "bcrypt": "^1.0.2",
+    "clipboard": "^1.7.1",
+    "clusters": "0.0.4",
+    "fullcalendar": "^3.4.0",
+    "interact-js": "^2.0.1",
+    "jquery": "^2.2.4",
+    "jquery.joyride": "^2.2.0",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.18.1",
+    "nouislider": "^9.2.0",
+    "stripe": "^4.22.0",
+    "tether": "^1.4.0",
+    "tooltipster": "^4.2.5"
+  }
+}

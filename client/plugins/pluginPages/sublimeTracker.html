@@ -1,0 +1,25 @@
+<template name="sublimeTracker">
+<div class="container-fluid">
+	<div class="row tracker card p-3 mb-5">
+		<div class="col-12">
+			<img class="tracker-img" src="/images/trackers/sublime_text.png"/>
+			<h2 class="browserValid font-weight-light">Sublime Text</h2>
+			<div class="browserDownload"><span class="badge badge-info">Install through Package Control</span></div>
+		</div>
+		<div class="col-12">
+			<div class="tutorial-instructions">
+				<h3>Installing</h3>
+				<p><b>1)</b> Install <a href="https://packagecontrol.io/installation" target="_blank">Package Controll.</a></p>
+				<p><b>2)</b> Inside Sublime, press <em>ctrl+shift+p</em> (Windows, Linux) or <em>cmd+shift+p</em> (OS X).</p>
+				<p><b>3)</b> Type <em>add repository</em> in the prompt, and press <m>enter</m> with <m>Package Control: Add Repository</m> selected.</p>
+				<p><b>4)</b> Enter the URL <m>https://github.com/opzio/opzio-sublime</m> in the prompt interface and press <m>enter</m>.</p>
+				<p><b>5)</b> Press <em>ctrl+shift+p</em> (Windows, Linux) or <em>cmd+shift+p</em> (OS X) to re-open Package Controll.</p>
+				<p><b>6)</b> Type <em>install</em>, then press <em>enter</em> with <em>Package Control: Install Package</em> selected.</p>
+				<p><b>7)</b> Type <em>opzio</em>, then press <em>enter</em> with the <em>Opzio</em> plugin selected.</p>
+				<p><b>8)</b> Enter your token <em><b>{{ currentUser.profile.token }}</b></em> in the API KEY prompt.<br>You can always find your token in your <a href="/user/{{ currentUser._id}}/settings">profile settings</a>.</p>
+				<p><b>9)</b> Use Sublime and your time will be tracked for you automatically.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

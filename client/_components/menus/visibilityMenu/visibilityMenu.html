@@ -1,0 +1,22 @@
+<template name="visibilityMenu">
+<div class="dropup">
+
+  <button id="projectVisibilityMenu" class="btn btn-outline-default form-control dropdown-toggle no-caret visibilityMenu" type="button" data-visibility="internal" data-value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  	<span class="submenu-title"><i class="fa fa-low-vision"></i> Internal</span>
+    <i class="fa fa-angle-up dropdown-carret"></i>
+  </button>
+  
+  <ul class="dropdown-menu pull-left">
+  	<h6 class="dropdown-header">Visibility</h6>
+    <li class="menu-option dropdown-item visibility" data-value="2" data-visibility="public">
+      <a href="#"><i class="fa fa-eye"></i> Public</a>
+    </li>
+    <li class="menu-option dropdown-item visibility" data-value="1" data-visibility="internal">
+      <a href="#"><i class="fa fa-low-vision"></i> Internal</a>
+    </li>
+    <li class="menu-option dropdown-item visibility" data-value="0" data-visibility="private">
+      <a href="#"><i class="fa fa-eye-slash"></i> Private</a>
+    </li>
+  </ul>
+</div>
+</template>

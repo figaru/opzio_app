@@ -1,0 +1,30 @@
+$white:  #fff !default;
+$black:  #000 !default;
+
+$red:    #F03131 !default;
+$orange: #FFA726 !default;
+$yellow: #FFC642 !default;
+$green:  #35BA43 !default;
+$aqua:   #30DBD6 !default;
+$teal:   $aqua !default;
+$pink:   #EC407A !default;
+$purple: #5C6BC0 !default;
+
+$blue:        #009BDD !default;
+$blue-light:  #5ECFFF !default;
+
+// Create grayscale
+$gray-dark:                 #292b2c !default;
+$gray:                      #464a4c !default;
+$gray-light:                #636c72 !default;
+$gray-placeholder:          #BBB !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             $blue !default;
+$brand-success:             $green !default;
+$brand-info:                $teal !default;
+$brand-warning:             $orange !default;
+$brand-danger:              $red !default;
+$brand-inverse:             $gray-dark !default;

@@ -1,0 +1,40 @@
+<template name="windowsTracker">
+<div class="row" id="windows-plugin">
+	<div class="tracker card p-3 mb-5">
+		<div class="col-12">
+			<img class="tracker-img" src="/images/trackers/windows_logo.png" alt="Microsoft Windows">
+			<h2 class="browserValid font-weight-light">Windows</h2>
+			<div class="browserDownload">
+				<span class="badge badge-gray"><i class="fa fa-exclamation-circle"></i> Beta</span>
+				<span class="badge badge-primary ml-2 shadow shadow-interact"><a href="/plugins/opzio_windows_setup.zip" target="_blank"><fa class="fa fa-download"></fa> Download Extension</a></span>
+			</div>
+			<div class="tutorial-instructions">
+				<br>
+				<h3>Installing</h3>
+				<p><b>1)</b> Download the provided ZIP file.</p> 
+				<p><b>2)</b> Extract the .exe file. Windows Smartscreen may warn you that the application is unknown as shown below. Click on <em>More Info</em> and click <em>Run Anyway</em></p>
+				<img class="tutorial-image" src="/images/trackers/tutorials/windows/windows_smartscreen.png" alt="Windows Smartscreen Warning">
+				<br><br>
+				<p><b>3)</b> Follow the installation wizards' instructions.</p>
+				<p><b>4)</b> Login using your Opz.io credentials. Once the plugin is running you will see a notification such as below.</p>
+				<img class="tutorial-image" src="/images/trackers/tutorials/windows/windows_opzio_running_message.png" alt="Plugin Running Windows Message">
+				<br><br>
+				<p><b>5)</b> You can find the plugin running in the system tray.</p>
+				<img class="tutorial-image" src="/images/trackers/tutorials/windows/windows_opzio_system_tray.png" alt="Plugin System Tray Menu">
+				<br>
+				<br>
+				<p><b>6)</b> The plugin will start running automatically when you turn on your computer, sending data to Opz.io according to your <a href="{{ pathFor route='userDashboard' userId=currentUser._id section='settings' }}">privacy settings</a></p>
+			</div>
+			<div class="tutorial-instructions">
+				<h4>Known Issues</h4>
+				<p><b>Antivirus blocking plugin</b></p><p>Some antivirus vendors may scan and decide to block the plugin. After installing, before logging in, make sure your antivirus is not in the process of scanning the plugin for known threats. Additionally, you may need to add the plugin to the antivirus whitelist in order to run.</p>
+				<p><b>No data sent after installing</b></p><p>In some cases, you may need to restart your computer for the plugin to start tracking your activity.</p>
+				<!--p><b>Suspend/Hibernation issues</b></p><p>After Windows goes into suspend/hibernation mode the plugin may stop working. Try exiting the plugin by doing right-click on the system tray icon then <em>exit</em> then restarting the plugin and performin login again. If you still don't receive any data, try restarting your computer.</p>
+				<p><b>Lost internet connection</b></p><p>When losing internet connection while using the plugin, it may stop sending data even after you re-establish the connection. Try exiting the plugin by doing right-click on the system tray icon then <em>exit</em> then restarting the plugin and performin login again. If you still don't receive any data, try restarting your computer.</p-->
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

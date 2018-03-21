@@ -1,0 +1,141 @@
+<template name="choosePlugins">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-md-3 hidden-sm-down">
+			<nav id="sideNav" class="p-fixed">
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link font-weight-light" href="#plugins">Plugins</a>
+						<ul class="nav flex-column sidenav">
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#what-are-plugins">What are Plugins?</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#which-to-use">Which ones should I use?</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#what-data">What data is sent to Opz.io?</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link font-weight-light" href="#browsing-plugins">Browsing</a>
+						<ul class="nav flex-column sidenav">
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#chrome-plugin">Google Chrome</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#firefox-plugin">Mozilla Firefox</a>
+							</li>
+
+							<!--li class="nav-item">
+								<a class="nav-link font-weight-light" href="#safari">Safari</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light disabled" href="#edge">Edge</a>
+							</li-->
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link font-weight-light" href="#system-plugins">Generalistic (OS)</a>
+						<ul class="nav flex-column sidenav">
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#windows-plugin">Microsoft Windows</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#apple-plugin">Apple MacOS</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link font-weight-light" href="#technical-plugins">Technical</a>
+						<ul class="nav flex-column sidenav">
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#sublime-plugin">Sublime Text</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#android-plugin">Android Studio (soon)</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#atom-plugin">Atom.io (soon)</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#phpstorm-plugin">PHP Storm (soon)</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#pycharm-plugin">PyCharm (soon)</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#vstudio-plugin">Visual Studio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#xcode-plugin">Xcode (soon)</a>
+							</li>
+						</ul>
+					</li>
+
+					<!--li class="nav-item">
+						<a class="nav-link font-weight-light" href="#documentation">Documentation</a>
+						<ul class="nav flex-column sidenav">
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#office365">Office 365</a>
+							</li>
+							<ul class="nav flex-column sidenav">
+								<li class="nav-item">
+									<a class="nav-link font-weight-light" href="#word">Word</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link font-weight-light" href="#excel">Excel</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link font-weight-light" href="#powerpoint">PowerPoint</a>
+								</li>
+							</ul>
+							<li class="nav-item">
+								<a class="nav-link font-weight-light" href="#googledocs">Google Docs</a>
+							</li>
+							<ul class="nav flex-column sidenav">
+								<li class="nav-item">
+									<a class="nav-link font-weight-light" href="#docs">Docs</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link font-weight-light" href="#sheets">Sheets</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link font-weight-light" href="#slides">Slides</a>
+								</li>
+							</ul>
+						</ul>
+					</li-->
+				</ul>
+			</nav>
+		</div>
+
+		<div class="col-xs-12 col-md-9">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="font-weight-light" id="plugins">Plugins</h1>
+					<a href="#browsing-plugins" class="visible-xs-block visible-sm-block">
+						<em>Scroll down to see plugins</em>
+					</a>
+					<br>
+					<br>
+					<h3 class="font-weight-light" id="what-are-plugins">What are Plugins?</h3>
+					<p>Plugins, extensions or add-ons are pieces of software you install on your day to day tools or operative system to track your activity autonomously.</p>
+
+					<h3 class="font-weight-light" id="which-to-use">Which ones should I use?</h3>
+					<p>Opz.io uses a combination of generalistic trackers and application specific trackers.<br>Some apps let you install addons/plugins, others don't and for the latter we need an OS installable tracker.</p>
+					<p>You can use as many you want to! In fact, the more trackers you use, the better Opz.io is able to understand what you're working on and create a more accurate profile. Feel free to use only those that make sense to you and your organization.</p>
+
+					<h3 class="font-weight-light" id="what-data">What data is sent to Opz.io?</h3>
+					<p>We try to send the least amount of data possible but enough for Opz.io to categorize your activities. For more details refer to each plugin's category.</p>
+				</div>
+			</div>
+
+			{{> pluginsListing }}
+			
+		</div>
+	</div>
+</div>
+</template>

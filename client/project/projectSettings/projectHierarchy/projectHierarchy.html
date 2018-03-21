@@ -1,0 +1,47 @@
+<template name="projectHierarchy">
+<div class="card border-0 mb-3">
+	<!--div class="panel-header">
+		<div class="controls">
+			<span class="collapse-panel expanded"><i class="fa fa-angle-up"></i></span>
+		</div>
+	</div-->
+	<div class="card-block">
+		<h4 class="card-title">Hierarchy <!--i class="fa fa-info-circle tooltipster"  title="<h3 class='title'>Hierarchy</h3><p>If you want to consider this project for categorization, just tick the rightmost checkbox. Unselecting the checkbox will make Opzio ignore this project for consequent activity categorization.</p><p>Use the settings below to add rules to the way this project is classified.</p>"></i--></h4>
+	</div>
+	<div class="card-block hierarchy">
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-12">
+							<p class="d-inline-block stronger">Treat <em class="px-4">{{project.name }}</em>as </p>
+							<div class="dropdown d-inline-block px-4">
+								<a class="btn btn-secondary dropdown-toggle no-caret" type="button" id="hierarchyType" data-action="{{ currentHierarchy }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span id="actionType">{{ currentHierarchy }}</span> <i class="fa fa-angle-down"></i></a>
+							  	<ul class="dropdown-menu" aria-labelledby="hierarchyType">
+									<li class="menu-option dropdown-item"><a href="#none" data-action="none" class="hierarchy-option">None</a></li>
+									<li class="menu-option dropdown-item"><a href="#child" data-action="child" class="hierarchy-option">Child</a></li>
+									<li class="menu-option dropdown-item"><a href="#parent" data-action="parent" class="hierarchy-option">Parent</a></li>
+							  	</ul>
+							</div>
+							
+							<p class="d-inline-block stronger px-4">of </p>
+							<a href="#" id="assignHierarchy" class="btn btn-primary pull-right">Assign</a>
+							<div class="form-group is-selectize pull-right mt-2 mr-3 miw-20">
+								<label class="control-label" for="assignToProject">
+									Assign to project
+									<!--i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Matching Keywords</h3><p>Add keywords that, when found in a log, will <em>increase</em> the categorization score."></i--> 
+								</label>
+
+								<input type="text" id="assignToProject" name="assignToProject" class="form-control demo-default selectized" placeholder="Assign to Project">
+							</div>
+							
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</template>

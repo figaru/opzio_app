@@ -1,0 +1,76 @@
+<template name="userBadges">
+	<!--div class="gesture-wrapper right"><img src="/images/gestures/swipe_right.png" alt="Swipe"></div-->
+
+	<div id="badgesArea" class="swiper-container badges-area main">
+		<div class="swiper-wrapper">
+			{{> userActivity }}
+			{{> userVariation }}
+			{{> userPerformanceBadge }}
+			{{> userProjects }}
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</template>
+
+<template name="userActivity">
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Activity <i class="fa fa-info-circle badgeTooltip tooltipster" title="<h6><span class='d-block w-100 mb-2'>Activity</span><span class='font-weight-light'>Valid VS. total registered time.<br>Note that other users may see wildely different values<br> depending on the projects you share in common and activities you set as<br> public and private.</span></h6>"></i></h2>
+		</div>
+		<div class="panel-description">
+			<div id="userActivity" class="chart radial-chart"></div>
+			<span class="label metric">--/--</span>
+			<span class="label description">--/--</span>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="userVariation">
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Variation <i class="fa fa-info-circle badgeTooltip" title="<h6><span class='d-block w-100 mb-2'>Variation</span> <span class='font-weight-light'>How your activity compares to the previous period you're currently viewing.<br>Only validated time is taken into account to calculate variation.</span></h6>"></i></h2>
+		</div>
+		<div class="panel-description">
+			<div id="userVariation" class="chart radial-chart"></div>
+			<!--span class="label icon">
+				<img src="">
+			</span-->
+			<span class="label metric">--/--</span>
+			<span class="label description"></span>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="userPerformanceBadge">
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Performance <i class="fa fa-info-circle badgeTooltip" title="<h6><span class='d-block w-100 mb-2'>Performance</span> <span class='font-weight-light'>Total billable value VS. total registered time for the given period.</span></h6>"></i></h2>
+		</div>
+		<div class="panel-description">
+			<div id="userVariation" class="chart radial-chart"></div>
+			<span class="label metric performanceMetric">N/A</span>
+			<span class="label description performanceDescription"></span>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="userProjects">
+<div class="stats-badge swiper-slide">
+	<div class="panel-content">
+		<div class="panel-header">
+			<h2 class="panel-title">Allocation <i class="fa fa-info-circle badgeTooltip" title="<h6><span class='d-block w-100 mb-2'>Allocation</span> <span class='font-weight-light'>The top projects that got most of the time allocated.</span></h6>"></i></h2>
+		</div>
+		<div class="panel-description no-gauge">
+			<!--canvas id="topProject" class="chart" height="100" width="100"></canvas-->
+			<span class="label metric">N/A</span>
+			<span class="label description"></span>
+		</div>
+	</div>
+</div>
+</template>

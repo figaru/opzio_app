@@ -1,0 +1,179 @@
+<template name="homepage">
+<section class="section py-5 blue-gradient pull-for-nav">
+    <div class="container pt-5">
+    	<div class="row">
+    		<div class="col-xs-12 col-md-6">
+    			<h1 class="mainsection__title pt-3">Optimize your time.<br>Increase your revenue.</h1>
+    			<br />
+    			<h4 class="mainsection__subtitle">Opz.io is an intelligent time tracking solution that lets you focus on your work.</h4>
+    			<br />
+    			<div class="form-group">
+    				<button class="btn btn-secondary rounded shadow"><span class="text-purple text-uppercase">Start Free Trial</span></button>
+    				
+    				<small class="form-text text-white">No credit card required. No spam.</small>
+
+    				<!--small class="disclaimer__cta"></small-->
+    			</div>
+    			
+    		</div>
+    		<div class="col-xs-12 col-md-6">
+    			<div class="mainsection__image__wrapper">
+    			  <img class="mainsection__image" src="/images/homepage/personal_dashboard.gif" alt="Personal Dashboard" />
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    
+    <span class="mainsection__overlay first blue-gradient-alt"></span>
+    
+    <span class="mainsection__overlay second"></span>
+   
+    <span class="mainsection__overlay third"></span>
+</section>
+  
+<section class="section py-5 grey">
+	<span class="section__overlay first"></span>
+	<span class="section__overlay second"></span>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 py-5">
+				<h2 class="text-blue font-weight-light">Professionals spend <span class="text-purple font-weight-normal">up to 6h per week</span> on administrative tasks.<br>That's <span class="text-purple font-weight-normal">26h per month</span> you could be doing something else.</h2>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="text-purple font-weight-light">What can we do for you?</h2>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+				<div class="card shadow mb-5 time-panel">
+					<div class="card-block pt-5 px-4">
+						<h5 class="card-title text-blue text-uppercase">Value time</h5>
+						<br>
+						<p class="card-text">Understand which activities generate profit and which ones generate losses.</p>
+						<span class="svg-wrapper pull-right">
+							{{> svgValueTime }}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card shadow mb-5">
+					<div class="card-block pt-5 px-4">
+						<h5 class="card-title text-blue text-uppercase">Boost profitability</h5>
+						<br>
+						<p class="card-text">Easily identify time-wasting activities and decrease non-billable work.</p>
+						<span class="svg-wrapper pull-right">
+							{{> svgGraphBar animated=true }}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card shadow mb-5">
+					<div class="card-block pt-5 px-4">
+						<h5 class="card-title text-blue text-uppercase">Facilitate decisions</h5>
+						<br>
+						<p class="card-text">Adopt data-driven management by leveraging on accurate information.</p>
+						<span class="svg-wrapper pull-right">
+							{{> svgStats }}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 py-5">
+				<h2 class="text-purple font-weight-light">How does it work?</h2>
+			</div>
+		</div>
+	</div>
+
+</section>
+<section class="section how-it-works py-5 mb-2">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-md-1 p-0"></div>
+			<div class="col-sm-12 col-md-10 step-container">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-4 text-right step">
+							<h5 class="step-title">Install<br>Plugins</h5>
+							<span class="line line-1 half"></span>
+							<span class="line line-2 half"></span>
+							<div class="icon-wrapper">
+								{{> svgNumberOne }}
+							</div>
+							<p class="step-description px-5">Choose and install the plugins for the tools you work with. These will automatically track your activity.</p>
+							<!--div class="cta-wrapper px-5">
+								<a class="step-cta" href="{{ pathFor route='faqs' hash='what-can-be-tracked' }}">
+								What types of activities can I track?<br>
+								<span class="arrow">
+									{{> svgArrowRight }}
+								</span>
+								</a>
+							</div-->
+						</div>
+						<div class="col-sm-12 col-md-4 text-center step">
+							<h5 class="step-title">Create projects<br>and start working</h5>
+							<span class="line line-3"></span>
+							<div class="icon-wrapper">
+								{{> svgNumberTwo }}
+							</div>
+							<p class="step-description px-5">Add some projects to Opz.io so it knows where to assign your time. Then simply work as you normaly would.</p>
+							<!--div class="cta-wrapper px-5">
+								<a class="step-cta" href="{{ pathFor route='faqs' hash='what-data-is-used' }}">
+								What data is sent to Opz.io?<br>
+								<span class="arrow">
+									{{> svgArrowRight }}
+								</span>
+								</a>
+
+							</div-->
+						</div>
+						<div class="col-sm-12 col-md-4 text-center step">
+							<h5 class="step-title">Review<br>your work</h5>
+							<span class="line line-4"></span>
+							<div class="icon-wrapper">
+								{{> svgNumberThree }}
+							</div>
+							<p class="step-description px-5">Review Opz.io's time assignments and change or add any missing time. Generate your work reports on the fly.</p>
+							<!--div class="cta-wrapper px-5">
+								<a class="step-cta" href="{{ pathFor route='faqs' hash='why-do-i-need-to-review-work' }}">
+								I still need to review my work?<br>
+								<span class="arrow">
+									{{> svgArrowRight }}
+								</span>
+								</a>
+							</div-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-1 p-0"></div>
+		</div>
+	</div>
+</section>
+<section class="py-5 pm-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="text-purple font-weight-light">Ideal for</h2>
+			</div>
+		</div>
+		{{> idealFor }}
+	</div>
+</section>
+
+<!--
+{{ > inlineSignup }}
+-->
+
+</template>

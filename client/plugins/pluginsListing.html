@@ -1,0 +1,191 @@
+<template name="pluginsListing">
+
+<div class="row">
+	<div class="col-12 mt-5">
+		<h2 id="browsing-plugins">Browsing Plugins</h2>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<b>Sent Data:</b>
+				<ul>
+					<li>URL of the website</li>
+					<li>Title of the website</li>
+				</ul>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<b>Frequency:</b>
+				<ul>
+					<li>every 10 seconds if you are actively using the browser</li>
+					<li>when you switch browser tabs</li>
+					<li>when you switch browser windows</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div id="chrome-plugin" class="col-12">
+				<div class="tracker card p-3 mb-5">
+					{{> chromeTracker }}
+				</div>
+			</div>
+			<div id="firefox-plugin" class="col-12">
+				<div class="tracker card p-3 mb-5">
+					{{> firefoxTracker }}
+				</div>
+			</div>
+			<!--div id="opera-plugin" class="col-xs-12">
+				<div class="tracker">
+					{{> operaTracker }}
+				</div>
+			</div>
+			<div id="safari-plugin" class="col-xs-12">
+				<div class="tracker">
+					{{> safariTracker }}
+				</div>
+			</div>
+			<div id="edge-plugin" class="col-xs-12">
+				<div class="tracker">
+					{{> edgeTracker }}
+				</div>
+			</div>
+			<div id="ie-plugin" class="col-xs-12">
+				<div class="tracker">
+					{{> explorerTracker }}
+				</div>
+			</div-->
+		</div>
+	</div>
+
+	<div class="col-12 mt-5">
+		<h2 id="system-plugins">Generalistic (OS) Plugins</h2>
+		<p>OS Plugins let Opz.io track all applications you use on your computer that either don't allow for an extension to be installed or for those that we haven't created one yet. For instance if you work a lot on Microsoft Office tools such as <u>Word</u> or <u>Excell</u>, this is the plugin you need to install. Same goes for other applications like CAD related software.</p>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<b>Sent Data:</b>
+				<ul>
+					<li>absolute path of current file (if applicable, i.e. when using MS Word)</li>
+					<li>title of application (focused window only)</li>
+					<li>application name (<b>Note:</b> does not send browsing related data. For that install the addon/extension to your browser of choice)</li>
+				</ul>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<b>Frequency:</b>
+				<ul>
+					<li>every 10 seconds if you are actively using the computer</li>
+					<li>when you switch between applications</li>
+				</ul>
+			</div>
+		</div>
+		
+		{{ > windowsTracker }}
+
+		{{ > appleTracker }}
+				
+	</div>
+	<div class="col-12 mt-5">
+		<h2 id="technical-plugins">Technical Plugins</h2>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<b>Sent Data:</b>
+				<ul>
+					<li>absolute path of current file</li>
+					<li>timestamp as UNIX epoch</li>
+					<li>project based on revision control (i.e. GIT)</li>
+					<li>branch from a supported revision control</li>
+					<li>total number of lines from the given file</li>
+					<li>cursor position</li>
+					<li>syntax language based on file (i.e. Python, JavaScript)</li>
+					<li>libraries/frameworks based on file (i.e. Rails, Django)</li>
+				</ul>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<b>Frequency:</b>
+				<ul>
+					<li>every 2 minutes if you are actively using your text editor</li>
+					<li>when you switch between files</li>
+					<li>every time you save a file</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div id="sublime-plugin" class="col-12">
+				{{> sublimeTracker }}
+			</div>
+
+			<div id="vstudio-plugin" class="col-12">
+				{{ > visualStudioTracker }}
+			</div>
+
+			<div id="android-plugin" class="col-xs-12 col-sm-6">
+				<div class="tracker py-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<img class="tracker-img" src="/images/trackers/android_studio_grey.png" alt="Android Studio">
+								<h2 class="browserValid font-weight-light">Android Studio</h2>
+								<div class="browserDownload"><span class="badge badge-gray">Soon</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="atom-plugin" class="col-xs-12 col-sm-6">
+				<div class="tracker py-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<img class="tracker-img" src="/images/trackers/atomio_grey.png" alt="Atom.io Text Editor">
+								<h2 class="browserValid font-weight-light">Atom.io</h2>
+								<div class="browserDownload"><span class="badge badge-gray">Soon</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="phpstorm-plugin" class="col-xs-12 col-sm-6">
+				<div class="tracker py-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<img class="tracker-img" src="/images/trackers/phpStorm_grey.png" alt="PHP Storm">
+								<h2 class="browserValid font-weight-light">PHP Storm</h2>
+								<div class="browserDownload"><span class="badge badge-gray">Soon</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="pycharm-plugin" class="col-xs-12 col-sm-6">
+				<div class="tracker py-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<img class="tracker-img" src="/images/trackers/pyCharm_grey.png" alt="PyCharm">
+								<h2 class="browserValid font-weight-light">PyCharm</h2>
+								<div class="browserDownload"><span class="badge badge-gray">Soon</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="xcode-plugin" class="col-xs-12 col-sm-6">
+				<div class="tracker py-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<img class="tracker-img" src="/images/trackers/xCode_grey.png" alt="XCode">
+								<h2 class="browserValid font-weight-light">Xcode</h2>
+								<div class="browserDownload"><span class="badge badge-gray">Soon</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</template>

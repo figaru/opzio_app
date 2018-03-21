@@ -1,0 +1,60 @@
+<template name="inlineSignup">
+<section class="section grey py-5 mt-4">
+	<span class="section__overlay first"></span>
+	<span class="section__overlay second"></span>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 py-2">
+				<h2 class="text-blue font-weight-light">Start your 30 days trial</h2>
+			</div>
+			<div class="col-sm-12 col-lg-8">
+				<div class="card shadow mb-2">
+					<div class="card-block">
+						<h5 class="card-title text-blue text-uppercase">Create account</h5>
+						<h6 class="card-subtitle mb-2 text-muted">It takes less than a minute</h6>
+						<form>
+							<div class="row">
+								<div class="col-sm-12 col-md-5">
+									<div class="form-group m-0">
+										<label class="control-label" for="exampleInputEmail1">Email</label>
+										<input autocomplete="new-email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-5">
+									<div class="form-group m-0">
+										<label class="control-label" for="cardInputPassword">Password</label>
+										<input autocomplete="new-password" type="password" class="form-control" id="cardInputPassword" placeholder="Password">
+									 </div>
+								</div>
+								<div class="col-sm-12 col-md-2">
+									<!--input type="checkbox" id="cardInputCheckboxNormal">
+									<label data-action="select" for="cardInputCheckboxNormal">I've read an accept the <a href="#">terms and conditions</a></label-->
+									<br>
+									<a href="#" class="btn rounded shadow blue-gradient animate float-right text-uppercase">Sign Up</a>
+								</div>
+								<div class="col-12">
+									<div class="form-group">
+										<br>
+										<small class="pull-right form-text text-muted">No credit card required. No spam.</small>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-lg-4">
+				<div class="card shadow">
+					<div class="card-block">
+						<h3 class="text-blue font-weight-light text-uppercase">Suitable for single users, small, medium or large teams.</h3>
+						<h3 class="text-uppercase"><a href="{{ pathFor route='plans'}}" class="text-purple">View plans</a></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mb-5"></div>
+
+</section>
+</template>

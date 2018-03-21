@@ -1,0 +1,32 @@
+<template name="savingsCalculator">
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-sm-12 col-md-7 col-lg-8 mt-4">
+			<div class="row">
+				<div class="col-md-12 col-lg-4 mb-2">
+					<div class="input-group">
+						<div class="input-group-addon"><h4>Users</h4></div>
+						<input type="number" class="form-control text-center" value="1" min="1" max="5000" id="numberOfUsers">
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-8 mb-3">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<h4>Billing</h4>
+						</div>
+						<div class="switch form-control text-center">
+							<label>
+								Monthly
+								<input {{ isAnnnual }} id="billingCycle" type="checkbox">
+								<span class="lever"></span>
+								Annually
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-5 col-lg-4" id="planEstimates"></div>
+	</div>
+</div>
+</template>

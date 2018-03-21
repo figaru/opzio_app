@@ -1,0 +1,59 @@
+<template name="feedbackModal">
+<div id="feedbackModal" class="feedbackModal modal col-xs-11 col-sm-10 col-md-8 col-lg-5">
+	<div class="modal-content">
+		<h3 class="modal-title">Get in touch</h3>
+		<p>Found an bug? Have a feature you'd like to see implemented or simply want to leave your feedback? Use this form or find us through one of the channels below.</p>
+		<form id="feedbackForm" class="modal-form">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label for="">Message</label>
+						<textarea class="form-control" style="width:100%;resize:none;" name="feedbackMessage" id="" cols="5" rows="3"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 align-center">
+					<h4>Reach us on:</h4>
+				</div>
+				<div class="col-xs-4 align-center">
+					<img src="/images/icons/liame.png" alt="eml">
+					<p><a href="mailto:help@opz.io">help@opz.io</a></p>
+				</div>
+				<div class="col-xs-4 align-center">
+					<img src="/images/icons/epyks.png" alt="skp">
+					<p>opz_13 <i class="fa fa-info-circle tooltipster" title="<p>Search for this user on Skype</p>"></i></p>
+				</div>
+				<div class="col-xs-4 align-center">
+					<img src="/images/icons/koobecaf_messenger.png" alt="mgr">
+					<p>
+						<a href="http://m.me/teamopz.io" target="_blank">Messenger</a> <i class="fa fa-info-circle tooltipster" title='<p>Open the link <a href="http://m.me/teamopz.io" target="_blank">http://m.me/teamopz.io</a></p>'></i>
+					</p>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-1">
+					<div class="form-group">
+						<label for=""><img style="width:25px;margin-top:-3px;" src="/images/icons/kcals.png" alt="slk"> Add me to Opz.io's Slack group to provide feedback and follow updates.</label>
+						<div class="switch">
+							<label>
+								No
+								<input id="joinOnSlack" type="checkbox"/>
+								<span class="lever"></span>
+								Yes
+							</label>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</form>
+		<br>
+	</div>
+	<div class="modal-footer">
+		<button id="sendFeedback" class="modal-action modal-primary-action btn btn-primary white">Send</button>
+		<button data-dismiss="modal" class="modal-action modal-close btn pull-left">Cancel</button>
+	</div>
+</div>
+</template>

@@ -1,0 +1,125 @@
+//Size utilities
+.w-50px{
+	width: 50px;
+}
+.w-100px{
+	width: 100px;
+}
+.w-150px{
+	width: 150px;
+}
+.w-200px{
+	width: 200px;
+}
+.w-250px{
+	width: 250px;
+}
+.w-300px{
+	width: 300px;
+}
+
+//Display utilitis
+.hidden{
+	display: none!important;
+}
+.flatten{
+	height: 0px!important;
+	margin: 0!important;
+	padding: 0!important;
+}
+
+.forceEventVisibility{
+	display: table-row!important;
+	&.hidden{
+		display: none!important;
+	}
+}
+
+//Position utils
+.p-relative{
+	position: relative!important;
+}
+.p-fixed{
+	position: fixed!important;
+}
+.p-absolute{
+	position: absolute!important;
+}
+
+.t-0{
+	top: 0;
+}
+.r-0{
+	right: 0;
+}
+.b-0{
+	bottom: 0;
+}
+.l-0{
+	left: 0;
+}
+
+//Overflow
+.overflow-hidden{
+	overflow: hidden;
+}
+
+.overflow-x-hidden{
+	overflow-x: hidden;
+}
+
+.overflow-y-hidden{
+	overflow-y: hidden;
+}
+
+.overflow-x-scroll{
+	overflow-x: scroll;
+}
+
+.overflow-y-scroll{
+	overflow-y: scroll;
+}
+
+//Fontawesome tweak
+.fa.fa-usd.crossed{
+	&.red:after {
+		position: relative;
+		content: "";
+		font-size: 1.7em;
+		top: -1px;
+		transform: rotate(45deg);
+		margin-left: -14px;
+		width: 17px;
+		float: right;
+		display: inline-block;
+		height: 17px;
+		border-radius: 4px;
+		border: 1px solid rgba(255, 0, 0, 0.7);
+	}
+	&.green{
+		position: relative;
+		content: "";
+		font-size: 1.7em;
+		top: -1px;
+		transform: rotate(45deg);
+		margin-left: -14px;
+		width: 17px;
+		float: right;
+		display: inline-block;
+		height: 17px;
+		border-radius: 4px;
+		border: 1px solid rgba(53, 186, 67, 0.7);	
+	}
+}
+
+//Z-index
+.z-negative{
+	z-index: -1;
+}
+
+//Responsive utils
+.no-padding-sm{
+	@include media-breakpoint-down(sm) {
+		padding: 0!important;
+	}
+}

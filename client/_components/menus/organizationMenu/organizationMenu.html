@@ -1,0 +1,35 @@
+<template name="organizationMenu">
+{{#if canViewMenu }}
+<div class="navigation-header">
+	<nav class="tab-slider menu-swiper swiper-container" role="navigation">
+		<div class="swiper-wrapper">
+			<span class="tab-item swiper-slide" data-section="dashboard" data-index="0">
+				<a href="{{ pathFor route='mainDashboard' section='dashboard' }}">
+					<!--i class="svg-icon user-dashboard"></i--> 
+					<i class="fa fa-bar-chart"></i>
+					Dashboard
+					</a>
+			</span>
+			{{#if isAdmin}}
+			<span class="tab-item swiper-slide" data-section="team" data-index="1">
+				<a href="{{ pathFor route='mainDashboard' section='team' }}">
+					<!--i class="svg-icon user-dashboard"></i--> 
+					<i class="fa fa-users"></i>
+					Team
+					</a>
+			</span>
+			<!--span class="tab-item swiper-slide" data-section="profile" data-index="1">
+				<a href="{{ pathFor route='mainDashboard' section='profile' }}">
+					<i class="fa fa-info-circle"></i>
+					Profile
+					</a>
+			</span-->
+			<span class="tab-item swiper-slide" data-section="settings" data-index="4">
+				<a href="{{ pathFor route='mainDashboard' section='settings' }}"><i class="fa fa-cog"></i> Settings</a>
+			</span>
+			{{/if}}
+		</div>
+	</nav>
+</div>
+{{/if}}
+</template>

@@ -1,0 +1,31 @@
+<template name="projectDeliveries">
+<div class="panel">
+	<div class="panel-header">
+		<div class="controls">
+			<span class="collapse-panel expanded"><i class="fa fa-angle-up"></i></span>
+			<span class="modal-trigger" data-name="addTasklist">
+				<i class="fa fa-plus"></i>
+			</span>
+		</div>
+		<h2 class="panel-title">Tasks</h2>
+	</div>
+	<div class="panel-description">
+		<ul class="list-group {{#if rwdTasklistLength tasklists }}max-height{{/if}}">
+		{{#each tasklists }}
+		<li class="list-group-item">
+			<span class="item-date badge icon normal"><i class="fa fa-minus"></i></span>
+			<span class="item-date badge"><a href="#">{{ timeToDate this.endDate false }}</a></span>
+			<h4 class="list-group-item-heading"><a href="#">{{this.projectCodeName}}-{{this.taskNumber}}</a></h4>
+			<h5 class="list-group-item-subheading">{{this.name}}</h5>
+			<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing  unto watanabe some todo shiet elit...</p>
+		</li>
+		{{else}}
+		<li class="list-group-item no-items">
+			<h4>Looks you haven't created any tasks for this project.</h4>
+			<h5>Add one <a href="#" class="modal-trigger" data-name="addTasklist">here</a>.</h5>
+		</li>
+		{{/each}}
+		</ul>
+	</div>
+</div>
+</template>

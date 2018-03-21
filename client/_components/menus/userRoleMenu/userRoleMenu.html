@@ -1,0 +1,16 @@
+<template name="userRoleMenu">
+<div class="dropdown modal-control mt-1">
+	<button class="btn btn-default form-control dropdown-toggle userRole member align-left" type="button" data-role="member" data-value="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		<span class="submenu-title">Member</span>
+		<i class="fa fa-angle-down dropdown-carret"></i>
+	</button>
+	<ul class="dropdown-menu pull-right" aria-labelledby="userRole">
+		<li class="menu-option dropdown-item role" data-value="1" data-role="admin">
+			<a href="#admin">Admininistrator</a>
+		</li>
+		<li class="menu-option dropdown-item role" data-value="0" data-role="member">
+			<a href="#member">Member</a>
+		</li>
+	</ul>
+</div>
+</template>

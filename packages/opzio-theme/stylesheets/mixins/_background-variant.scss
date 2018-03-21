@@ -1,0 +1,35 @@
+// Contextual backgrounds
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%) !important;
+    }
+  }
+}
+
+@mixin bg-blue-gradient() {
+	background: rgb(48,219,214);
+	background: -moz-linear-gradient(45deg, rgba(48,219,214,1) 0%, rgba(0,155,221,1) 45%, rgba(61,174,219,1) 75%, rgba(48,219,214,1) 100%);
+	background: -webkit-linear-gradient(45deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+	background: linear-gradient(45deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30dbd6', endColorstr='#30dbd6',GradientType=1 );
+}
+
+@mixin bg-blue-gradient-alt() {
+	background: rgb(48,219,214);
+	background: -moz-linear-gradient(125deg, rgba(48,219,214,1) 0%, rgba(0,155,221,1) 45%, rgba(61,174,219,1) 75%, rgba(48,219,214,1) 100%);
+	background: -webkit-linear-gradient(125deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+	background: linear-gradient(125deg, rgba(48,219,214,1) 0%,rgba(0,155,221,1) 45%,rgba(61,174,219,1) 75%,rgba(48,219,214,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30dbd6', endColorstr='#30dbd6',GradientType=1 );
+}
+
+@mixin animate-gradient(){
+	background-size: 400% 400%;
+	-webkit-animation: gradientAnimation 60s ease infinite;
+	-moz-animation: gradientAnimation 60s ease infinite;
+	animation: gradientAnimation 60s ease infinite;
+}

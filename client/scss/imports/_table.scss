@@ -1,0 +1,346 @@
+.rwd-table:not(.table-condensed){
+	width: 100%;
+	tbody{
+		tr{
+			color: $black;
+			background-color: $white;
+			transition: background .2s, color .2s;
+			&:hover, &.selected{
+				background: $gray-lightest;
+				transition: background .2s, color .2s;
+			}
+
+			&[data-validated="true"]{
+				background: $aqua;
+				&:nth-of-type(odd) {
+					background-color: $aqua;
+					&:hover, &.selected{
+						background: $aqua;
+						transition: background .2s;
+					}
+				}
+			}
+			
+			&:nth-of-type(odd) {
+				background-color: $gray-lightest;
+				&:hover, &.selected{
+					background: $gray-lightest;
+					transition: background .2s;
+				}
+			}
+
+			td{
+				padding: 6px 2px 2px;
+				background: inherit;
+				&:nth-of-type(1){
+					padding-left: 10px;	
+				}
+				&:last-of-type{
+					padding-right: 10px;	
+				}
+
+				&.capped-width{
+					max-width: 250px;
+					overflow: hidden;
+					span{
+						//Use a really long width to conteplate very long urls, specially those with parameters
+						width: 5000px;
+					    display: block;
+					}
+				}
+				&.dropdown-td{
+					.fa{
+						display: inline-block;
+					}
+				}
+
+				.cover{
+					height: 25px;
+					width: 25px;
+					background: inherit;
+					display: inline;
+					float: right;
+					margin-top: -22px;
+					margin-right: -2px;
+					position: relative;
+				}
+
+				.classificationTooltip{
+					margin: 9px 3px;
+					float: left;
+				}
+
+
+				.changePrivacy{
+					color: $gray-light;
+					&:active, &:focus{
+						color: $gray;
+					}
+					&:hover{
+						color: $gray;
+						cursor: pointer;
+					}
+					.fa-eye{
+						color: $gray-light;
+					}
+					.fa-eye-slash{
+						color: $gray-lighter;
+					}
+				}
+
+				input{
+					&.projectInput, &.categoryInput{
+						padding: 6px 2px 2px;
+						border: none;
+						box-shadow: none;
+						background: transparent;
+						&:hover{
+							cursor: pointer;
+						}
+
+					}
+				}
+
+				input[type="checkbox"] + label{
+					height: 15px;
+					padding-left: 25px;
+				}
+
+				input[type="checkbox"].filled-in:disabled:checked + label{
+					cursor: not-allowed;
+					&:hover{
+						cursor: not-allowed;
+					}
+				}
+				
+				input[type="checkbox"].filled-in:disabled:checked + label:after{
+					background-color: rgba(165, 193, 167, 0.60);
+					border-color: transparent;
+					cursor: not-allowed;
+					&:hover{
+						cursor: not-allowed;
+					}
+				}
+
+				.selectize-control{
+					display: inline-block;
+				}
+				
+				.selectize-control.single .selectize-input{
+					padding: 6px 2px 2px;
+					border: none;
+					box-shadow: none;
+					background: transparent;
+					&:after{
+						content: ' ';
+						display: inline-block;
+						position: relative;
+						margin-bottom: 3px;
+						border-style: solid;
+						border-width: 5px 5px 0 5px;
+						border-color: #333333 transparent transparent transparent;
+						left: 3px;
+					}
+				}
+
+				//Floppy disc icon
+				.unsavedChanges{
+					color: $orange;
+					font-size: 1.2em;
+					margin-left: 6px;
+				}
+
+			}
+
+			&.projectRow{
+				.project-name{
+					font-size: 1.3em;
+					line-height: 2.5em;
+					padding: 12px 0;
+					.highlighted{
+						background: $aqua;
+						color: $white;
+					}
+				}
+			}
+
+			.showOnRwd{
+				display: none;
+			}
+			.hideOnRwd{
+				display: block;
+			}
+		}
+		th{
+			.highlighted{
+				background: $aqua;
+				color: $white;
+			}
+		}
+	}
+}
+
+.table{
+	tbody{
+		tr{
+			td{
+				&.log-name{
+					text-align: left;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+				.rounded{
+					padding: 5px;
+					border-radius: 50%;
+				    line-height: 25px;
+					width: 35px;
+					height: 33px;
+					text-align: center;
+					display: block;
+					background: $gray-lightest;
+					color: $gray;
+					/*
+					-moz-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
+					-webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
+					box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
+					*/
+					&:hover{
+						background: $gray-light;
+					}
+				}
+				input[type="checkbox"] + label{
+					margin-bottom: 0;
+				}
+
+				input[type="checkbox"].filled-in:not(:checked) + label:after,
+				input[type="checkbox"].filled-in.variant:checked + label:after{
+					top: 5px;
+				}
+				input[type="checkbox"].filled-in.variant:checked + label:before{
+					top: 1px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table.rwd-table:not(.table-condensed){
+		display: block;
+	}
+
+	table.rwd-table:not(.table-condensed){
+		thead, tbody, th, td, tr{
+			display: block;
+		}
+	}
+
+	.rwd-table:not(.table-condensed){
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		tbody{
+			tr { 
+				border: 1px solid #ccc;
+				color: $black;
+				&:hover, &.selected{
+					background: white;
+					color: $black;
+					//transition: background .2s, color .2s;
+				}
+
+				&.projectRow{
+					.project-name{
+						font-size: 1.3em;
+						line-height: 2.5em;
+						padding: 12px 5px;
+					}
+				}
+
+				td {
+					/* Behave  like a "row" */
+					height: 50px;
+					line-height: 25px;
+					border: none;
+					border-bottom: 1px solid #eee;
+					position: relative;
+					padding-top: 14px;
+					padding-left: 50%!important;
+					//overflow-x: hidden;
+
+					&.capped-width{
+						max-width: 100%;
+					}
+
+					&:before {
+						/* Now like a table header */
+						position: absolute;
+						font-weight: 600;
+						font-size: 1.1em;
+						/* Top/left values mimic padding */
+
+						top: 14px;
+						left: 6px;
+						width: 45%;
+						padding-right: 10px;
+						white-space: nowrap;
+						line-height: 21px;
+					}
+					
+					//@media (max-width: $medium-screen-up){
+					@include media-breakpoint-down(md){
+						padding-left: 40%;
+						line-height: 22px;
+						&:before{
+							width: 15%;
+						}
+					}
+				}
+
+				.showOnRwd{
+					display: block;
+					&.dropdown{
+						position: absolute;
+						top: 7px;
+						right: 8px;
+					}
+				}
+
+				.hideOnRwd{
+					display: none;
+				}
+			}
+			/*
+			Label the data
+			*/
+			//td:nth-of-type(1):before { content: "\00a0 "; }
+			td:nth-of-type(1):before { content: "Selected"; }
+			td:nth-of-type(2):before { content: "URL"; }
+			td:nth-of-type(3):before { content: "Title"; }
+			td:nth-of-type(4):before { content: "Category"; }
+			td:nth-of-type(5):before { content: "Project"; }
+			td:nth-of-type(6):before { content: "Time"; }
+			td:nth-of-type(7):before { content: "Private"; }
+			td:nth-of-type(8):before { content: "Validated"; }
+
+			&.project-table{
+				td{
+					//&:nth-of-type(1):before { content: ""; }
+					&:nth-of-type(1):before { content: "State"; }
+					&:nth-of-type(2):before { content: "Priority"; }
+					&:nth-of-type(3):before { content: "Delivey Date"; }
+					&:nth-of-type(4):before { content: "Team"; }
+
+					.dropdown{
+						margin-top: -6px;
+					}
+				}
+			}
+		}
+	}
+}

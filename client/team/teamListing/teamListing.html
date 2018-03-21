@@ -1,0 +1,28 @@
+<template name="teamListing">
+<div class="panel">
+	<div class="panel-header">
+		<h2 class="panel-title">Team listing</h2>
+	</div>
+	<div class="panel-description ">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>User</th>
+				</tr>
+			</thead>
+			<tbody id="teamListingTable">
+				{{#each teamMember }}
+				{{> teamListItem }}
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<!--div class="panel-footer"></div-->
+</div>
+</template>
+
+<template name="teamListItem">
+<tr data-project="{{ this._id }}">
+	<th><a href="{{pathFor route='userDashboard' userId=this._id }}">{{ getUserFullName this }}</a></th>
+</tr>
+</template>

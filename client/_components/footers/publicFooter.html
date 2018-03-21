@@ -1,0 +1,258 @@
+<template name="publicFooter">
+<footer class="{{#if fixed }}footer{{else}}relative{{/if}}">
+
+	{{#if simple}}
+	<div class="footer-links">
+		<div class="container">
+			<hr class="mt-4">
+			<div class="row">
+				<div class="col-12">
+					<div class="d-flex flex-row justify-content-between align-items-baseline">
+						<div class="p-3">
+							<h6 class="text-blue text-uppercase mb-3">Solutions</h6>
+							<ul class="list-unstyled">
+								<!--
+								<li class="list-header text-gray-light">By Industry</li>
+								<li><a href="{{ pathFor route='solutions' industry='legal-practitioners-time-management-software'}}" class="text-black">Legal</a></li>
+								<li><a href="{{ pathFor route='solutions' industry='consulting-project-resources-management-software'}}" class="text-black">Consulting</a></li>
+								<li><a href="{{ pathFor route='solutions' industry='it-services-time-management-software'}}" class="text-black">IT Services</a></li>
+								-->
+								<li class="list-header text-gray-light">By Industry</li>
+								<li><a href="#" class="text-black">Legal</a></li>
+								<li><a href="#" class="text-black">Consulting</a></li>
+								<li><a href="#" class="text-black">IT Services</a></li>
+								<li class="list-header text-gray-light mt-2">By Size</li>
+								<li><a href="#" class="text-black">Individuals</a></li>
+								<li><a href="#" class="text-black">Teams</a></li>
+							</ul>
+						</div>
+						<div class="p-3 hidden-sm-down">
+							<h6 class="text-blue text-uppercase mb-3">Features</h6>
+							<ul class="list-unstyled">
+								<li><a href="#" class="text-black">Activity Tracking</a></li>
+								<li><a href="#" class="text-black">Real Time Reports</a></li>
+								<li><a href="#" class="text-black">Project Management</a></li>
+							</ul>
+						</div>
+						<div class="p-3">
+							<h6 class="text-blue text-uppercase mb-3">Plugins</h6>
+							<ul class="list-unstyled">
+								<li><a href="#" class="text-black">Browsing</a></li>
+								<li><a href="#" class="text-black">Documentation</a></li>
+								<li><a href="#" class="text-black">Programming</a></li>
+								<li><a href="#" class="text-black">Custom Made</a></li>
+								<li class="list-header mt-2"></li>
+								<li><a href="#" class="text-black">View all</a></li>
+								<!--
+								<li><a href="{{ pathFor route='publicPlugins' hash='browsing'}}" class="text-black">Browsing</a></li>
+								<li><a href="{{ pathFor route='publicPlugins' hash='documentation'}}" class="text-black">Documentation</a></li>
+								<li><a href="{{ pathFor route='publicPlugins' hash='programming'}}" class="text-black">Programming</a></li>
+								<li><a href="#" class="text-black">Custom Made</a></li>
+								<li class="list-header mt-2"></li>
+								<li><a href="{{ pathFor route='publicPlugins' }}" class="text-black">View all</a></li>
+								-->
+							</ul>
+							<!--
+							<h6 class="text-blue text-uppercase mb-3">Plans</h6>
+							<ul class="list-unstyled">
+								<li><a href="{{ pathFor route='plans' }}" class="text-black">Lite</a></li>
+								<li><a href="{{ pathFor route='plans' }}" class="text-black">Medium</a></li>
+								<li><a href="{{ pathFor route='plans' }}" class="text-black">Large</a></li>
+								<li class="mt-2"></li>
+								<li>
+									<a class="btn blue-gradient animate rounded shadow shadow-interact text-uppercase" href="#">Start Trial</a>
+								</li>
+							</ul>
+							-->
+						</div>
+						<div class="p-3 hidden-xs-down">
+							<h6 class="text-blue text-uppercase mb-3">Opzio</h6>
+							<ul class="list-unstyled">
+								<li><a href="#" class="text-black">About</a></li>
+								<li><a href="#" class="text-black">F.A.Q.</a></li>
+								<li><a href="#" class="text-black">Blog</a></li>
+								<li><a href="#" class="text-black">Contact</a></li>
+							</ul>
+							<span class="hidden-sm-down">
+								<h6 class="text-blue text-uppercase mb-3">Legal</h6>
+								<ul class="list-unstyled">
+									<li><a href="#" class="text-black">Terms &amp; Conditions</a></li>
+									<li><a href="#" class="text-black">Privacy Policy</a></li>
+								</ul>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="disclaimer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 p-4">
+					<small class="text-gray-light">Opz.io is a time tracking solution that provides real-time reporting and analytics. Ideal for the lawyers, consultants or IT service providers, such as software developers. It removes the need to use timesheets or breaking your workflow by using manual timers through automatic time tracking of the activities performed on a computer. To be used by either a single user or for teams of any size, Opz.io provides real-time information on the performance of your ongoing operations in a transparent and accurate way.</small>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="trademark bg-gray text-right">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p class="m-0 p-2 text-gray-lighter">Opz.io 2016-2017. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{else}}
+	<!--div class="top-area mb-4">
+		<div class="container">
+			<div class="bot-wrapper">
+				<img src="/images/bot/neutral.png" class="bot opzio-bot hover" alt="Opzio Bot">
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-sm-7 col-md-9">
+					<div class="row">
+						<div class="col-7">
+							<h2 class="text-blue font-weight-light">Get back control of your time</h2>
+						</div>
+						<div class="col-8">
+							<p>The only time tracking solution that doesn't break your workflow.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 hidden-sm-down">
+					<img src="/images/opzio_logo_transparent_black_blue_dot_400.png" class="logo" alt="Opzio Logo Black">
+				</div>
+			</div>
+		</div>
+	</div-->
+	<div class="plugins-area">
+		<div class="container">
+			<hr>
+			<h4 class="text-muted font-weight-light">Works with..</h4>
+			<div class="row">
+				<div class="col-12">
+					<div class="d-flex flex-row justify-content-between align-items-baseline flex-sm-wrap">
+						<div class="p-2">
+							<img src="/images/homepage/plugins/office_365.png" alt="Microsoft Office 365" title="Microsoft Office 365, including Outlook, Word, Excel and PowerPoint">
+						</div>
+						<div class="p-2">
+							<img src="/images/homepage/plugins/google_suite.png" alt="G Suite Tools" title="Google Suite, inculding Gmail, Calendar, Drive, Docs, Sheets and Slides">
+						</div>
+						<div class="p-2 hidden-sm-down">
+							<img src="/images/homepage/plugins/chrome.png" alt="Google Chrome Browser" title="Google Chrome Browser">
+						</div>
+						<div class="p-2 hidden-md-down">
+							<img src="/images/homepage/plugins/firefox.png" alt="Mozilla Firefox Browser" title="Mozilla Firefox Browser">
+						</div>
+						<div class="p-2 hidden-xs-down">
+							<img src="/images/homepage/plugins/jetbrains.png" alt="JetBrains IDEs" title="Jet Brains IDEs, including IntelliJ IDEA, PyCharm, PhpStorm and WebStorm">
+						</div>
+						<div class="p-2 hidden-md-down">
+							<img src="/images/homepage/plugins/sublime_text.png" alt="Sublime Text" title="Sublime Text Editor">
+						</div>
+					</div>
+					<!--h4 class="text-muted font-weight-light text-right mt-2">..and much more <a href="{{ pathFor route='publicPlugins' }}">View Plugins</a></h4-->
+					<h4 class="text-muted font-weight-light text-right mt-2">..and much more <a href="#">View Plugins</a></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-links">
+		<div class="container">
+			<hr class="mt-4">
+			<div class="row">
+				<div class="col-12">
+					<div class="d-flex flex-row justify-content-between align-items-baseline">
+						<div class="p-3">
+							<h6 class="text-blue text-uppercase mb-3">Solutions</h6>
+							<ul class="list-unstyled">
+								<li class="list-header text-gray-light">By Industry</li>
+								<!--li><a href="{{ pathFor route='solutions' industry='legal-practitioners-time-management-software'}}" class="text-black">Legal</a></li>
+								<li><a href="{{ pathFor route='solutions' industry='consulting-project-resources-management-software'}}" class="text-black">Consulting</a></li>
+								<li><a href="{{ pathFor route='solutions' industry='it-services-time-management-software'}}" class="text-black">IT Services</a></li-->
+								<li><a href="#" class="text-black">Legal</a></li>
+								<li><a href="#" class="text-black">Consulting</a></li>
+								<li><a href="#" class="text-black">IT Services</a></li>
+								<li class="list-header text-gray-light mt-2">By Size</li>
+								<li><a href="#" class="text-black">Individuals</a></li>
+								<li><a href="#" class="text-black">Teams</a></li>
+							</ul>
+						</div>
+						<div class="p-3 hidden-sm-down">
+							<h6 class="text-blue text-uppercase mb-3">Features</h6>
+							<ul class="list-unstyled">
+								<li><a href="#" class="text-black">Activity Tracking</a></li>
+								<li><a href="#" class="text-black">Real Time Reports</a></li>
+								<li><a href="#" class="text-black">Project Management</a></li>
+							</ul>
+						</div>
+						<div class="p-3">
+							<h6 class="text-blue text-uppercase mb-3">Plugins</h6>
+							<ul class="list-unstyled">
+								<!--li><a href="{{ pathFor route='publicPlugins' hash='browsing'}}" class="text-black">Browsing</a></li>
+								<li><a href="{{ pathFor route='publicPlugins' hash='documentation'}}" class="text-black">Documentation</a></li>
+								<li><a href="{{ pathFor route='publicPlugins' hash='programming'}}" class="text-black">Programming</a></li-->
+								<li><a href="#" class="text-black">Browsing</a></li>
+								<li><a href="#" class="text-black">Documentation</a></li>
+								<li><a href="#" class="text-black">Programming</a></li>
+								<li><a href="#" class="text-black">Custom Made</a></li>
+								<!--li class="list-header mt-2"></li>
+								<li><a href="{{ pathFor route='publicPlugins' }}" class="text-black">View all</a></li-->
+							</ul>
+							<!--h6 class="text-blue text-uppercase mb-3">Plans</h6>
+							<ul class="list-unstyled">
+								<li><a href="{{ pathFor route='plans' }}" class="text-black">Lite</a></li>
+								<li><a href="{{ pathFor route='plans' }}" class="text-black">Medium</a></li>
+								<li><a href="{{ pathFor route='plans' }}" class="text-black">Large</a></li>
+								<li class="mt-2"></li>
+								<li>
+									<a class="btn blue-gradient animate rounded shadow shadow-interact text-uppercase" href="#">Start Trial</a>
+								</li>
+							</ul-->
+						</div>
+						<div class="p-3 hidden-xs-down">
+							<h6 class="text-blue text-uppercase mb-3">Opzio</h6>
+							<ul class="list-unstyled">
+								<li><a href="#" class="text-black">About</a></li>
+								<!--li><a href="{{ pathFor route='faqs' }}" class="text-black">F.A.Q.</a></li-->
+								<li><a href="#" class="text-black">F.A.Q.</a></li>
+								<li><a href="#" class="text-black">Blog</a></li>
+								<li><a href="#" class="text-black">Contact</a></li>
+							</ul>
+							<span class="hidden-sm-down">
+								<h6 class="text-blue text-uppercase mb-3">Legal</h6>
+								<ul class="list-unstyled">
+									<li><a href="#" class="text-black">Terms &amp; Conditions</a></li>
+									<li><a href="#" class="text-black">Privacy Policy</a></li>
+								</ul>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="disclaimer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 p-4">
+					<small class="text-gray-light">Opz.io is a time tracking solution that provides real-time reporting and analytics. Ideal for the lawyers, consultants or IT service providers, such as software developers. It removes the need to use timesheets or breaking your workflow by using manual timers through automatic time tracking of the activities performed on a computer. To be used by either a single user or for teams of any size, Opz.io provides real-time information on the performance of your ongoing operations in a transparent and accurate way.</small>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="trademark bg-gray text-right">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p class="m-0 p-2 text-gray-lighter">Opz.io 2016-2017. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+
+</footer>
+</template>

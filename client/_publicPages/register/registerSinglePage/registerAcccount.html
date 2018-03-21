@@ -1,0 +1,153 @@
+<template name="registerAccount_deprec">
+
+<div class="background no-padding purple">
+	<div class="container">
+		<div class="full-height section no-border highlight-panel">
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="section-header">Create New Account</h1>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-5">
+					<div class="feature-panel highlight-on-hover">
+						<div class="signup-form">
+							<div class="row">
+								<div class="col-xs-12">
+									<h2>Free Plan</h2>
+									<small>All fields mandatory</small>
+									<br>
+								</div>
+							</div>
+							<div class="row">
+								<form id="registerForm" data-valid="false">
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<input type="text" class="form-control purple input-lg" id="firstName" placeholder="First Name" />
+											<div class="error firstNameError"></div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<input type="text" class="form-control purple input-lg" id="lastName" placeholder="Last Name" />
+											<div class="error lastNameError"></div>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<input type="email" class="form-control purple input-lg" id="email" placeholder="Your email"/>
+											<div class="spinning-loader"></div>
+											<div class="error emailError"></div>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<input type="password" class="form-control purple input-lg" id="password" placeholder="Password">
+											<div class="error passwordError"></div>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<input type="password" class="form-control purple input-lg" id="confirmPassword" placeholder="Confirm Password">
+											<div class="error confirmPasswordError"></div>
+										</div>
+									</div>
+									<div class="col-xs-12 align-right">
+										<div class="form-group">
+											<button class="btn btn-secondary btn-lg" id="createAccount" form="registerForm" type="button">Signup</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-7">
+					
+					<div class="plan-features">
+						<h2>Free plan includes</h2>
+						<ul>
+							<li><em>1</em> User Account</li>
+							<li><b>5</b> Projects</li>
+							<li>Up to <b>15</b> Days of History</li>
+							<li><b>24/7</b> Live Support</li>
+						</ul>
+						<img class="opzio-bot hover" src="/images/bot/happy2.png" alt="Opzio Bot">
+					</div>
+				</div>
+			</div>
+
+			<div class="container push-top">
+				<h2 class="background-header align-center">Here to assist you</h2>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="section service-features product-features">
+							<div class="row">
+								
+								<div class="col-xs-12 col-md-4">
+									<div class="product-feature">
+										<div class="align-center">
+											<div class="icon-placeholder">
+												<img src="/images/icons/rewind-time.png">
+											</div>
+											<h4><b>No more breaking your workflow</b></h4>
+										</div>
+										<p class="description alt">Work as your normaly would, we don't want to bother you with alerts or forcing you to use timers. Access your data at any time, it's instantly available!</p>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-md-4">
+									<div class="product-feature">
+										<div class="align-center">
+											<div class="icon-placeholder">
+												<img src="/images/icons/pie-chart.png">
+											</div>
+											<h4><b>See where your attention is going</b></h4>
+										</div>
+										<p class="description alt">Need help balancing your workflow between multiple projects? Opz.io lets you visualize what's going on to help you decide.</p>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-md-4">
+									<div class="product-feature no-border">
+										<div class="align-center">
+											<div class="icon-placeholder">
+												<img src="/images/icons/graph-up.png">
+											</div>
+											<h4><b>Be more productive</b></h4>
+										</div>
+										<p class="description alt">We bring you authentic information about yourself, allowing you to use it to enhance the way you work and become more productive.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="push-top"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="bottom-footer">
+	<div class="signupOverlay">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="section no-border push-top white">
+					<i class="twa twa-tada twa-4x"></i>
+					<h2>Thanks for signing up!</h2>
+					<h4>Setting up your account - you'll be redirected in some seconds.</h4>
+					<div class="spinning-loader"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img src="/images/logo_negative.png" alt="Opz.io">
+	<small>2017 &reg; Opz.io</small>
+	<ul class="bottom-links">
+		<li> <a href="#"> Home </a> </li>
+		<li> <a href="#"> F.A.Q. </a> </li>
+		<li> <a href="#"> Terms</a> </li>
+	</ul>
+</div>
+</template>

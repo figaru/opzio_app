@@ -1,0 +1,52 @@
+<template name="projectVisibility">
+<div class="card border-0 mb-3">
+	<!--div class="panel-header">
+		<div class="controls">
+			<span class="collapse-panel expanded"><i class="fa fa-angle-up"></i></span>
+		</div>
+	</div-->
+	<div class="card-block">
+		<h4 class="card-title font-weight-light">Visibility <!--i class="fa fa-info-circle tooltipster"  title="<h3 class='title'>Visibility</h3><p>Set the project's visibility.<br><br>If set for categorization:<ul><li>Public visibility: will allow it to be considered for tracking, even if user is not part of the team</li><li>Internal visibility: will be considered for tracking only for owner/admins and assigned team members</li><li>Private visibility: will be considered for tracking only for the owner</li></ul></p>"></i--></h4>
+	</div>
+	<div class="card-block">
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-12">
+							<div class="row">
+								
+							
+								<div class="col-xs-12 col-sm-4">
+									<input name="visibility-group" type="radio" id="visibility2" />
+									<label for="visibility2">
+										Public
+										<p class="mt-2">Any organization member can access the project. Only the owner and admins can edit.<br>
+										</p>
+									</label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<input name="visibility-group" type="radio" id="visibility1" />
+									<label for="visibility1">
+										Internal
+										<p class="mt-2">Only team members, owner and admin can access the project.</p>
+									</label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<input name="visibility-group" type="radio" id="visibility0" />
+									<label for="visibility0">
+										Private
+										<p class="mt-2">Only the owner can see, edit and log time to this project.</p>
+									</label>
+									<br><br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</template>

@@ -1,0 +1,80 @@
+<template name="appNavigation">
+<div class="nav-wrapper fixed-top">
+	<div class="menu-wrap">
+		<nav class="menu">
+			<div class="icon-list">
+				<a href="/user/{{ currentUser._id }}#dashboard" title="My area">
+					<i class="fa fa-user"></i>
+					<span>Me</span>
+				</a>
+				<a href="{{pathFor route='mainDashboard' hash='dashboard'}}" title="Team area">
+					<i class="fa fa-rocket"></i>
+					<span>My Team</span>
+				</a>
+				<!--div class="dropdown">
+					<a href="#" class="dropdown-toggle no-pip" id="dashboardsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	<i class="fa fa-bar-chart-o"></i>
+				    	<span>Dashboard</span>
+				    </a>
+					<div class="dropdown-menu" aria-labelledby="dashboardsDropdown">
+						<a class="dropdown-item" href="/user/{{ currentUser._id }}#dashboard"><i class="fa fa-user"></i> Personal</a>
+						<a class="dropdown-item" href="{{pathFor route='mainDashboard' hash='dashboard'}}"><i class="fa fa-users"></i> Team</a>
+					</div>
+				</div-->
+				<!--a href="{{ pathFor route='userDashboard' userId=currentUser._id section='timesheet' }}" title="Manage your time entries">
+					<i class="fa fa-clock-o"></i>
+					<span>My Time</span>
+				</a-->
+				<a href="{{ pathFor route='projectsDashboard' section='dashboard'}}" title="View all projects">
+					<i class="fa fa-cubes"></i>
+					<span>Projects</span>
+				</a>
+				<a href="{{ pathFor route='choosePlugins'}}" title="Get tracking plugins">
+					<i class="fa fa-download"></i>
+					<span>Plugins</span>
+				</a>
+				<!--a href="#">
+					<i class="fa fa-newspaper-o"></i>
+					<span>Feed</span>
+				</a>
+				<a href="#">
+					<i class="fa fa-cogs"></i>
+					<span>Settings</span>
+				</a-->
+				<div class="dropdown">
+					<a href="#" class="dropdown-toggle no-pip" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	<i class="fa fa-cogs"></i>
+				    	<span>Settings</span>
+				    </a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
+						<!--a class="dropdown-item" href="{{ pathFor route='userDashboard' userId=currentUser._id section='profile' }}"><i class="fa fa-user"></i> Profile</a-->
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="{{ pathFor route='userDashboard' userId=currentUser._id section='settings' }}" title="Change your personal settings"><i class="fa fa-cog"></i> Settings</a>
+					    <a class="dropdown-item" href="#" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+					</div>
+				</div>
+				<!--a href="#">
+					<i class="fa fa-sign-out"></i>
+					<span>Logout</span>
+				</a-->
+			</div>
+		</nav>
+	</div>
+	<button class="menu-button" id="open-button" title="Main menu">
+		<span class="menu-toggler"></span>
+	</button>
+	<div class="external-menu">
+		<span class="nav-link pull-left px-0 nav-breadcrumbs" id="breadcrumbs">
+			<span class="btn btn-lg mw-60 overflow-x-hidden">{{{ menuTitle }}}</span>
+		</span>
+		
+		{{> modalMenu }}
+		
+		{{> yield "helpMenuArea" }}
+		
+		<span class="nav-link pull-right no-hover">
+			{{> yield "dateRangeMenuArea" }}
+		</span>
+	</div>
+</div>
+</template>

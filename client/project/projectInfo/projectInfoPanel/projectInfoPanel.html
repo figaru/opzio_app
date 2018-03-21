@@ -1,0 +1,39 @@
+<template name="projectInfoPanel">
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label>Name</label>
+			<input class="form-control" name="name" type="text" value="{{ getProjectFromID project._id }}" placeholder="Project Name">
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label>
+				Code
+				<i class="fa fa-info-circle tooltipster" title="<h3 class='title'>Project Code</h3><p>A unique identifier of your project.<br>You can change it as long as it is composed by 3 characters (letters only) and is unique accross your projects."></i> 
+			</label>
+			<input class="form-control" id="projectCodeName" name="code" type="text" value="{{ project.codeName }}" placeholder="Project code name">
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<div class="form-group">
+			<label>Brief</label>
+			{{#if project.brief }}
+			<div id="projectBrief" contenteditable data-name="brief" class="form-control dynamic-height">{{{ project.brief }}}</div>
+			{{else}}
+			<div id="projectBrief" contenteditable data-name="brief" class="form-control dynamic-height">Describe your project</div>
+			{{/if}}
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="form-group">
+			<label for="url">URL</label>
+			{{#if project.url}}
+			<input class="form-control" name="url" type="text" value="{{ project.url }}">
+			{{else}}
+			<input class="form-control" name="url" type="text" value="" placeholder="http://example.com">
+		{{/if}}
+		</div>
+	</div>
+</div>
+</template>

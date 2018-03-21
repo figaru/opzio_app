@@ -1,0 +1,51 @@
+<template name="priorityMenu">
+<div class="dropdown">
+
+  <button class="btn btn-outline-primary form-control dropdown-toggle no-caret priorityMenu normal" type="button" data-priority="normal" data-value="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  	<span class="submenu-title"><i class="fa normal"></i> Normal</span>
+    <i class="fa fa-angle-down dropdown-carret"></i>
+  </button>
+  
+  <ul class="dropdown-menu pull-left">
+    <h6 class="dropdown-header">Priority</h6>
+    <li class="menu-option dropdown-item priority very-high" data-value="2" data-priority="very-high">
+      <a href="#veryHigh" class="very-high"><i class="fa fa-angle-double-up"></i> Very high</a>
+    </li>
+
+    <li class="menu-option dropdown-item priority high" data-value="1" data-priority="high">
+      <a href="#high" class="high"><i class="fa fa-angle-up"></i> High</a>
+    </li>
+
+    <li class="menu-option dropdown-item priority normal" data-value="0" data-priority="normal">
+      <a href="#normal" class="normal"><i class="fa fa-minus"></i> Normal</a>
+    </li>
+
+    <li class="menu-option dropdown-item priority low" data-value="-1" data-priority="low">
+      <a href="#low" class="low"><i class="fa fa-angle-down"></i> Low</a>
+    </li>
+
+    <li class="menu-option dropdown-item priority very-low" data-value="-2" data-priority="very-low">
+      <a href="#veryLow" class="very-low"><i class="fa fa-angle-double-down"></i> Very Low</a>
+    </li>
+  </ul>
+
+  <!--div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a href="#veryHigh" class="menu-option dropdown-item priority very-high" data-value="2" data-priority="very-high"><i class="fa fa-angle-double-up"></i> Very high</a>
+
+      <a href="#high" class="menu-option dropdown-item priority high" data-value="1" data-priority="high"><i class="fa fa-angle-up"></i> High</a>
+
+    <li class="menu-option dropdown-item priority normal" data-value="0" data-priority="normal">
+      <a href="#normal" class="normal"><i class="fa fa-minus"></i> Normal</a>
+    </li>
+
+    <li class="menu-option dropdown-item priority low" data-value="-1" data-priority="low">
+      <a href="#low" class="low"><i class="fa fa-angle-down"></i> Low</a>
+    </li>
+
+    <li class="menu-option dropdown-item priority very-low" data-value="-2" data-priority="very-low">
+      <a href="#veryLow" class="very-low"><i class="fa fa-angle-double-down"></i> Very Low</a>
+    </li>
+
+  </div--> 
+</div>
+</template>

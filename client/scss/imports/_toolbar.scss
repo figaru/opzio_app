@@ -1,0 +1,67 @@
+@mixin font-style {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.toolbar{
+	background-color: $gray-lightest;
+	height: 55px;
+	padding: 5px;
+	margin-bottom: 15px;
+	width: 100%;
+
+	.toollist{
+		display: inline-block;
+		margin: 0;
+		padding: 5px;
+
+		li:not(.menu-option){
+			list-style-type: none;
+			display: inline-block;
+			&.search-input{
+				input[type="text"]{
+					padding-left: 25px;
+				}
+				&:after{
+					@include font-style;
+					content: "\f002";
+					display: block;
+					position: relative;
+					left: 5px;
+					margin-top: -30px;
+					padding: 2px 0px;
+					height: 25px;
+					width: 0;
+				}
+			}
+
+			&.checkbox-input{
+				padding-top: 6px;
+				input[type="checkbox"] + label {
+					padding-left: 28px;
+					line-height: 22px;
+					font-size: .9em;
+				    font-weight: 300;
+				}
+			}
+		}
+
+		&.left-side{
+			float: left;
+			li:not(.menu-option){
+				float: right;
+				margin-right: 5px;
+			}
+		}
+		&.right-side{
+			float: right;
+			li:not(.menu-option){
+				float: left;
+				margin-left: 5px;
+			}
+		}
+	}
+}

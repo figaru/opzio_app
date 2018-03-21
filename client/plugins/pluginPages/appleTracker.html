@@ -1,0 +1,36 @@
+<template name="appleTracker">
+<div class="row" id="apple-plugin">
+	<div class="tracker card p-3 mb-5">
+		<div class="col-12">
+			<img class="tracker-img" src="/images/trackers/apple_logo.png" alt="Apple MacOS">
+			<h2 class="browserValid font-weight-light">MacOS</h2>
+			<div class="browserDownload">
+				<span class="badge badge-primary ml-2 shadow shadow-interact"><a href="/plugins/opzio_mac.zip" target="_blank"><fa class="fa fa-download"></fa> Download Plugin</a></span>
+			</div>
+			<div class="tutorial-instructions">
+				<br>
+				<h3>Installing</h3>
+				<p><b>1)</b> Download the provided ZIP file.</p> 
+				<p><b>2)</b> Extract <em>Opzio Installer.dmg</em> file and run it. Mac will alert you saying this is an app downloaded from the internet; click on <em>Open</em> to run it.</p>
+				<img class="tutorial-image mw-50" src="/images/trackers/tutorials/mac/mac_warning.png" alt="Mac Warning">
+				<br><br>
+				<p><b>3)</b> Once the installer opens up, drag Opz.io into yout Application's folder to install it.</p>
+				<img class="tutorial-image mw-50" src="/images/trackers/tutorials/mac/mac_install.png" alt="Mac Installer">
+				<br><br>
+				<p><b>4)</b> After installing, open Opz.io. You'll be prompted with a dialog asking to provide system access permissions to Opz.io in order for the application to correctly track your work.<br>These settings can be found under <em>System Preferences > Security &amp; Privacy > Privacy </em> </p>
+				<img class="tutorial-image mw-50" src="/images/trackers/tutorials/mac/mac_security.gif" alt="Mac Security">
+				<br><br>
+				<p><b>5)</b> You can find the plugin running in the system tray. After logging with your credentials, you can set the plugin to start automatically when your Mac starts up.</p>
+				<img class="tutorial-image mw-50" src="/images/trackers/tutorials/mac/mac_tray.png" alt="Plugin System Tray Menu">
+				<br>
+				<br>
+				<p><b>6)</b> You can now unmount the installer by selecting <em>Eject</em>.</p>
+				<img class="tutorial-image mw-30" src="/images/trackers/tutorials/mac/mac_unmount.png" alt="Unmount Disk">
+				<br>
+				<br>
+				<p><b>7)</b> Once turned on, Opz.io will start sending data to Opz.io according to your <a href="{{ pathFor route='userDashboard' userId=currentUser._id section='settings' }}">privacy settings</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

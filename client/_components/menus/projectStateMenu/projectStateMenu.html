@@ -1,0 +1,33 @@
+<template name="projectStateMenu">
+	<div class="dropdown modal-control">
+		<button class="btn btn-outline-primary form-control no-caret dropdown-toggle projectState initiate" type="button" data-state="initiate" data-value="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			<span class="submenu-title"><i class="fa initiate"></i> Initiate</span>
+		<i class="fa fa-angle-down dropdown-carret"></i>
+		</button>
+		<ul class="dropdown-menu pull-left" aria-labelledby="projectState">
+			<h6 class="dropdown-header">State</h6>
+			<li class="menu-option state dropdown-item initiate" data-value="0" data-state="initiate">
+				<a href="#initiate"><i class="fa fa-circle-o"></i> Initiate</a>
+			</li>
+			<li class="menu-option state dropdown-item plan" data-value="1" data-state="plan">
+				<a href="#plan"><i class="fa fa-flask"></i> Planning</a>
+			</li>
+			<li class="menu-option state dropdown-item execute" data-value="2" data-state="execute">
+				<a href="#execute"><i class="fa fa-dot-circle-o"></i> Executing</a>
+			</li>
+			<li class="menu-option state dropdown-item maintain" data-value="3" data-state="maintain">
+				<a href="#maintain"><i class="fa fa-circle"></i> Maintaining</a>
+			</li>
+			<li class="menu-option state dropdown-item delivered" data-value="4" data-state="delivered">
+				<a href="#delivered"><i class="fa fa-check-circle"></i> Delivered</a>
+			</li>
+			<li class="menu-option state dropdown-item paused" data-value="5" data-state="paused">
+				<a href="#paused"><i class="fa fa-circle-o-notch"></i> Paused</a>
+			</li>
+			<li class="menu-option state dropdown-item dropped" data-value="6" data-state="dropped">
+				<a href="#dropped"><i class="fa fa-thumbs-down"></i> Dropped</a>
+			</li>
+
+		</ul>
+	</div>
+</template>

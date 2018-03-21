@@ -1,0 +1,48 @@
+<template name="dashboardTimeline">
+	<div class="panel">
+		<div class="panel-header">
+			<div class="controls">
+				<!--span class="collapse-panel expanded"><i class="fa fa-angle-up"></i></span-->
+				
+				<div class="dropdown">
+					<a class="btn btn-default dropdown-toggle" type="button" id="projectTimelineOrder" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Order by
+						<i class="fa fa-caret-down"></i>
+					</a>
+
+					<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="projectTimelineOrder">
+						<li class="menu-option dropdown-submenu pull-left">
+							<a class="menu-option dropdownOpener" tabindex="-1" href="!#">Create Date</a>
+							<ul class="dropdown-menu fluid">
+								<li class="menu-option"><a href="#" class="project-timeline-order" data-field="createDate" data-order="-1">Ascending <i class="fa fa-sort-amount-asc"></i></a></li>
+								<li class="menu-option"><a href="#" class="project-timeline-order" data-field="createDate" data-order="1">Descending <i class="fa fa-sort-amount-desc"></i></a></li>
+							</ul>
+						</li>
+						<li class="menu-option dropdown-submenu pull-left">
+							<a class="menu-option dropdownOpener" tabindex="-1" href="!#">Delivery Date</a>
+							<ul class="dropdown-menu fluid">
+								<li class="menu-option"><a href="#" class="project-timeline-order" data-field="deliveryDate" data-order="1">Ascending <i class="fa fa-sort-amount-asc"></i></a></li>
+								<li class="menu-option"><a href="#" class="project-timeline-order" data-field="deliveryDate" data-order="-1">Descending <i class="fa fa-sort-amount-desc"></i></a></li>
+							</ul>
+						</li>
+					</ul>
+
+				  	<!--ul class="dropdown-menu dropdown-menu-right actionDropdown" aria-labelledby="projectTimelineOrder">
+				  		<li class="menu-option state" data-order="createDate">
+				  			<a href="#createDate">Create Date</a>
+				  		</li>
+				  		<li class="menu-option state" data-order="deliveryDate">
+				  			<a href="#deliveryDate">Delivery Date</a>
+				  		</li>
+				  	</ul-->
+				</div>
+			</div>
+			<h2 class="panel-title">Projects Timeline</h2>
+		</div>
+		<div class="panel-description padding-0-15">
+			{{ drawDashboardTimeline }}	
+			<div class="timeline max-height dashboard" id="projectTimeline"></div>
+		</div>
+		<!--div class="panel-footer"></div-->
+	</div>
+</template>

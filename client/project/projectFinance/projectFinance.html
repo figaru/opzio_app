@@ -1,0 +1,131 @@
+<template name="projectFinance">
+<div class="container-fluid">
+	<div class="row px-3">
+		<div class="col-12 py-2 section-content shadow">
+			<div class="row grid">
+				<div class="msnry-item col-12 grid-sizer">
+					<div id="budget" class="card border-0 mb-3" data-valueperteam="{{#if project.applyHourValuePerTeam }}true{{else}}false{{/if}}">
+						{{#if hasSetupBudget }}
+						<div class="card-block">
+							<div class="card-controls pull-right d-inline-block">
+								{{#if isHourValue project}}
+								<span class="btn btn-sm btn-success saveChanges hidden" id="saveHourBillingChanges"><i class="fa fa-floppy-o"></i> Apply</span>
+								{{else}}
+								<span class="btn btn-sm btn-success saveChanges hidden" id="saveFixedBudgetChanges"><i class="fa fa-floppy-o"></i> Apply</span>
+								{{/if}}
+
+							</div>
+							<h4 class="card-title font-weight-light d-inline-block">Budget </h4>
+							<h6 class="card-subtitle text-muted">
+								{{# if isHourValue project}}
+								This project has a <b>variable buget</b>, charged by the hour.
+								{{else}}
+								This project has a <b>fixed buget</b>.
+								{{/if}}
+							</h6>
+						</div>
+
+						<div id="hourValuePanel" class="card-block py-0 hidden">
+							<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<label>Billing option</label>
+										<div class="row">
+											{{#if project.applyHourValuePerTeam}}
+											<div class="col-sm-12 col-md-6">
+												<input name="project-billing-group" class="changeBillingOption" type="radio" id="individualMemberOption" value="1" />
+												<label for="individualMemberOption">Apply specific hour rates to each team member</label>
+											</div>
+											<div class="col-sm-12 col-md-6">
+												<input checked name="project-billing-group" class="changeBillingOption" type="radio" id="teamBillingOption" value="0" />
+												<label for="teamBillingOption">Apply same hour rate across all team members</label>
+											</div>
+											{{else}}
+											<div class="col-sm-12 col-md-6">
+												<input checked name="project-billing-group" class="changeBillingOption" type="radio" id="individualMemberOption" value="1" />
+												<label for="individualMemberOption">Apply specific hour rates to each team member</label>
+											</div>
+											<div class="col-sm-12 col-md-6">
+												<input name="project-billing-group" class="changeBillingOption" type="radio" id="teamBillingOption" value="0" />
+												<label for="teamBillingOption">Apply same hour rate across all team members</label>
+											</div>
+											{{/if}}
+										</div>
+									</div>
+									<div class="row" id="billingSetupPanels">
+										<div class="col-12" id="projectRateSetupPanel">
+											<div class="d-flex flex-row justify-content-center">
+												<div class="mw-30">
+													<div class="form-group">
+														<label for="projectHourValue" class="control-label">Project hour rate</label>
+														<input class="form-control" type="number" placeholder="Project hour rate" id="projectHourValue" value="{{project.hourValue}}">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12" id="teamRateSetupPanel">
+											<table class="table">
+											  <thead>
+											    <tr>
+											      <th class="border-0">Team member</th>
+											      <th class="border-0">Hour Rate <i class="fa fa-info-circle tooltipster" title="<p>Defaults to member's base hour rate. You can override this value specifically for this project here.</p>"></i></th>
+											    </tr>
+											  </thead>
+											  <tbody>
+												{{# each project.team }}
+											  	{{> teamMemberRow member=this }}
+												{{/each}}
+											  </tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="fixedCostPanel" class="card-block py-0 hidden">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6">
+									<div class="form-group">
+										<label class="control-label" for="fixedBudget">Budget Value</label>
+										<input class="form-control" type="number" placeholder="Total project budget" id="fixedBudget">
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6">
+									stuff
+								</div>
+								<div class="col-xs-12 col-sm-6">
+									stuff
+								</div>
+							</div>
+						</div>
+						{{ else }}
+						<div class="card-block text-center">
+							<h5 class="font-weight-light">Looks like you haven't setup a budget for this project</h5>
+							<br>
+							<h6 class="font-weight-light">Choose a costing option</h6>
+							<div class="switch">
+								<label>
+									<span>Fixed Value</span>
+									<input id="budgetType" checked type="checkbox">
+									<span class="lever"></span>
+									<span>Hour Value</span>
+								</label>
+							</div>
+							<a href="#" id="createBudget" class="btn btn-outline-primary rounded mt-4">Create Budget</a>
+						</div>
+						{{/ if }}
+					</div>
+					<!--
+					<h3>Project finance</h3>
+					{{#if project.budget}}
+					<input name="budget" type="number" class="form-control" value="{{ project.budget }}">
+					{{else}}
+					<input name="budget" type="number" class="form-control" placeholder="0">
+					{{/if}}
+					-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>

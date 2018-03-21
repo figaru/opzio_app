@@ -1,0 +1,92 @@
+body .modal-dialog { /* Width */
+    max-width: 90%;
+    width: auto !important;
+    display: inline-block;
+}
+
+#clusterModalContainer{
+	.modal-content{
+		margin-bottom: 50px;
+	}
+
+	.clusterTopFilters{
+		margin: 15px 0;
+		padding: 5px;
+		height: 50px;
+		border-radius: 0.3rem;
+		border: 2px solid $blue;
+	}
+}
+
+#modalTableFilterContainer{
+	z-index: 2000;
+	transform: translate3d(0, 0px, 0);
+	transition: transform .2s;
+	
+	&.hiddenFilter{
+		transform: translate3d(0, 50px, 0);
+		transition: transform .2s;
+	}
+
+	#modalTableFilters{
+		margin:0 auto;
+		width: 100%;
+		max-width: 650px;
+		background: $gray-lightest;
+		height: 50px;
+		padding: .4em;
+		border-top: 2px solid $blue;
+		border-right: 2px solid $blue;
+		border-left: 2px solid $blue;
+		border-top-right-radius: 0.3rem;
+		border-top-left-radius: 0.3rem;
+	}
+}
+
+.groupLogsSelector{
+	ul{
+		width: 15rem;
+	}
+	.dropdown-item{
+		padding: 0;
+		a{
+			padding: 0.5rem 1.5rem;
+			display: block;
+			color: $black;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		&.half{
+			width: 49%;
+			display: inline-block;
+			text-align: center;
+		}
+	}
+}
+
+.modalActions{
+	position: absolute;
+	display: inline-block;
+	opacity: 0;
+	transition: opacity, .2s;
+	right: 23px;
+
+	&.visible{
+		opacity: 1;
+		transition: opacity, .2s;
+	}
+
+	&.bottom{
+		width: 100%;
+		position: relative;
+		right: initial;
+	}
+
+	.dropdown-item{
+		a:hover{
+			color: $black;
+			text-decoration: none;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+/* Tasklist State icons */
+.fa.to-do, .fa.initiate{
+	color: $blue!important;
+	&::before{
+		content: "\f10c";
+	}
+}
+
+.fa.plan{
+	color: $purple!important;
+	&::before{
+		content: "\f0c3";
+	}
+}
+
+.fa.doing, .fa.execute{
+	color: $orange!important;
+	&::before{
+		content: "\f192";
+	}
+}
+
+.fa.maintain{
+	color: $aqua!important;
+	&::before{
+		content: "\f111";
+	}
+}
+
+.fa.done, .fa.delivered{
+	color: $green;
+	&::before{
+		content: "\f058";
+	}
+}
+.fa.paused{
+	color: $gray-lighter;
+	&::before{
+		content: "\f1ce";
+	}
+}
+.fa.dropped{
+	color: $red;
+	&::before{
+		content: "\f165";
+	}
+}
+
+/* Tasklist Priority Colors/icons */
+.fa.very-high{
+	background: transparent;
+	color: $red;
+	&:before{
+		content: "\f102";
+	}
+}
+
+.fa.high{
+	background: transparent;
+	color: lighten($red, 20%);
+	&:before{
+		content: "\f106";
+	}
+}
+
+.fa.normal{
+	background: transparent;
+	color: $green;
+	font-size: .8em;
+	&:before{
+		content: "\f068";
+	}
+}
+
+.fa.low{
+	background: transparent;
+	color: $blue;
+	&:before{
+		content: "\f107";
+	}
+}
+
+.fa.very-low{
+	background: transparent;
+	color: lighten($blue, 20%);
+	&:before{
+		content: "\f103";
+	}
+}

@@ -1,0 +1,22 @@
+<template name="timesheetPanelsVisibility">
+<div class="dropdown dropup pull-left timesheetPanelsVisibility">
+	<a class="btn btn-default dropdown-toggle no-shadow" type="button" id="panelsVisibility" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-eye"></i> Visibility <i class="fa fa-caret-down"></i></a>
+  	<ul class="dropdown-menu" aria-labelledby="panelsVisibility">
+ 		<li class="dropdown-header">Panels</li>
+ 		<li class="menu-option">
+ 			<div data-action="expandPanels" data-type="all" class="main-link panelsAction"><i class="fa fa-expand"></i> Expand All</div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-action="collapsePanels" data-type="all" class="main-link panelsAction"><i class="fa fa-compress"></i> Collapse All</div>
+ 		</li>
+		<li class="dropdown-header">Logs</li>
+
+ 		<li class="menu-option">
+ 			<div data-action="showValid" class="main-link action toggleValid"><i class="fa fa-eye"></i> Show All</div>
+ 		</li>
+ 		<li class="menu-option">
+ 			<div data-action="hideValid" class="main-link action toggleValid"><i class="fa fa-eye-slash"></i> Hide Valid</div>
+ 		</li>
+  	</ul>
+</div>
+</template>
